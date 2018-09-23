@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<title>Simon Gravelle webpage</title>
+<meta charset="UTF-8">
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--<link rel="stylesheet" href="./w30.css">-->
+<link rel="stylesheet" href="./wcss.css">
+<!--<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>-->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+<style>
+	html,body,h1,h3,h4,h5,h6 {font-family: Times New Roman, sans-serif;}
+</style>
+<body class="BackgroundColor">
+	<div class="Content TopMargin" style="max-width:1400px;">
+		<div class="RowPadding">
+			<div class="FULL">
+				<div class="Container1 Card BackWhite MarginBottom">
+		  			<br>
+					<div class="clearfix">
+						<h2><a href="./index.html">Back to the main page</a></h2>
+					</div>
+				<br>
+				</div>
+				<div class="Container1 Card BackWhite MarginBottom">
+		  			<br>
+					<div class="clearfix">
+						<img class="img2" src="./Images/water_reaxFF.jpg" alt="Image" width="200">
+						<h2>Tutorial: simulating bulk water using reactive force field</h2>
+						<p align="justify">This molecular dynamics tutorial describes the <a href="https://lammps.sandia.gov/" TARGET="_BLANK">LAMMPS</a> input files for simulating bulk water using reactive force field.</p>
+						<p align="justify">Reaxff really is an amazing force field, it is an intermediate between conventional force field and quantum description.</p>
+					</div>
+					<div class="hr1"></div>
+					<div class="clearfix">
+						<h2>Step 1: npt equilibrium</h2>
+						<p align="justify">
+						Let us define the units as real instead of the default lj.
+						<div class="lammps">units real</div>
+						We want to simulate a periodic box. 
+						<div class="lammps">boundary p p p</div>
+						Let us use atom style "full", allowing for the use of bonds, angles, dihedrals, impropers and charges. Note that it it not necessary for reaxff to have so many characteristics.
+						<div class="lammps">atom_style full</div>
+						We need to specify the number, type and initial position of the atoms. We create a second file, "data.H2O", containing the information corresponding to one water molecule. 
+						<div class="lammps">3 atoms</div>
+						the types of atoms (2) oxygen and hydrogen
+						<div class="lammps">2 atom types</div>
+						The box dimensions will be modified during equilibration steps, but we want it to be reasonable from the start. From the density of bulk water (997 kg/m<sup>3</sup>) and using the water molar mass (18 g/mol), we get that the volume occupied by one single molecule of water is approximately 0.03 angstrom<sup>3</sup>.
+						<div class="lammps">
+						0 3.1 xlo xhi
+						<br>
+						0 3.1 ylo yhi
+						<br>
+						0 3.1 zlo zhi
+						</div>
+						Still within "data.H2O", we specify the masses of both atoms.
+						<div class="lammps">
+						Masses
+						<br><br>
+						1 15.9994
+						<br>
+						2 1.00794
+						</div>
+						Finally we specify the atoms positions, chosen to be reasonable, i.e. the distance O-H is 1 angstrom, and the angle H-O-H is 140°. Note that, since we choose the atom style "full", we need to specify the atom-ID, the molecule-ID, the atom-type, the charge q, and the atoms coordinates x y z, but the specified charge value does not matter with reaxff so we just put 0.
+						<div class="lammps">
+						Atoms
+						<br><br>
+						1 1 1 0 0.24 0 0 <br>
+						2 1 2 0 1.24 0 0 <br>
+						3 1 2 0 0 0.97 0
+	 					</div>
+						The data file "data.H2O" is terminated, note that there is no need to specify values for "bond" or "angle" as we would do when using a classic molecular dynamics force field, such as TIP4P or spce. We call the data file from the main file.
+						<div class="lammps">read_data data.H2O</div>
+						</p>
+					</div>
+					<div class="clearfix">
+						<img class="img2" src="./Images/water_init_reaxFF.jpg" alt="Image" width="200">
+						<p align="justify">
+						 We replicate the system to form a box with 125 molecules, it will make a box of 15 nm x 15 nm x 15 nm, see the image on the right. 
+						<div class="lammps">replicate 5 5 5</div>
+						We use reax/c as a pair style
+						<div class="lammps">pair_style reax/c NULL</div>
+						As described on the LAMMPS page: "Style reax/c computes the ReaxFF potential of van Duin, Goddard and co-workers. ReaxFF uses distance-dependent bond-order functions to represent the contributions of chemical bonding to the potential energy." The NULL setting specifies that we use default settings here, not settings specified in another cfile. We fixes the pair coeff, and specify that the first atom type is an oxygen, and the second is an hydrogen. The force field parameter are given in the supplementary material of <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpcb.7b02548" TARGET="_BLANK">Zhang2017</a>.
+						<div class="lammps">pair_coeff * * ffield.reax O H</div>
+						We use the fix qeq/reax for the calculation of the charges. As described on the LAMMPS page: "The QEq method minimizes the electrostatic energy of the system by adjusting the partial charge on individual atoms based on interactions with their neighbors."
+						<div class="lammps">fix 1 all qeq/reax 1 0.0 10.0 1.0e-6 reax/c</div>
+						We choose the following parameter for the construction of neighbor list.
+						<div class="lammps">
+						neighbor 1.0 bin <br>
+						neigh_modify delay 1
+						</div>
+						We can give an initial velocity to the atoms
+						<div class="lammps">velocity all create 300.0 4928459 rot yes dist gaussian</div>
+						And we start by performing a npt step, imposing the temperature to be 300 K (ambient) and the pressure to be 1 atmosphere. The box dimensions will be adjusted during this step.
+						<div class="lammps">fix 2 all npt temp 300.0 300.0 100.0 iso 1.0 1.0 1000.0</div>
+						We want information to be returned to the terminal every 100 timesteps
+						<div class="lammps">thermo 100</div>
+						</p>
+					</div>
+					<div class="clearfix">
+						<img class="img2" src="./Images/water_dump.gif" alt="water_dump" width="200">
+						<p align="justify">
+						And we want to visualize the atom position using a dump, which can be read for example using <a href="https://www.ks.uiuc.edu/Research/vmd/" TARGET="_BLANK">VMD</a>. 
+						<div class="lammps">dump 1 all atom 100 dump.npt.lammpstrj</div>
+						</p>
+					</div>
+					<div class="clearfix">
+						<img class="img2" src="./Images/lx.jpg" alt="water_dump" width="200">
+						<p align="justify">
+						We can follow the box size evolution during the npt step, defining a variable and extracting the value of the variable in a data file called "lx.dat".
+						<div class="lammps">variable myLx equal lx<br>
+						fix 3 all ave/time 100 1 100 v_myLx file lx.npt.dat</div>
+					</div>
+					<div class="clearfix">
+						<img class="img2" src="./Images/rho.jpg" alt="water_dump" width="200">
+						<p align="justify">
+						Similarly, we can extract the value of the density (expressed in kg/m<sup>3</sup>). It stabilizes itself at 995 kg/m<sup>3</sup> which is reasonable. 
+						<div class="lammps">
+							group oxy type 1<br>
+							group hyd type 2<br>
+							variable nO equal count(oxy)	<br>
+							variable nH equal count(hyd)<br>
+							variable Na equal 6.022e23<br>
+							variable vol equal (lx*ly*lz*1e-30)<br>
+							variable rho equal (${nO}*15.9994+${nH}*1.00794)/${Na}/v_vol/1000<br>
+							fix 4 all ave/time 100 1 100 v_rho file rho.dat	
+						</div>
+					</div>
+					<div class="clearfix">
+						<img class="img2" src="./Images/q.jpg" alt="water_dump" width="200">
+						<p align="justify">
+						The charges as calculated by the fix qeq/reax are extracted as well. The charge of the oxygen stabilizes at -0.74e, where e is the charge of the electron, and the charge of the hydrogen stabilizes at 0.37e. 
+						<div class="lammps">
+							variable qO equal charge(oxy)/v_nO<br>
+							variable qH equal charge(hyd)/v_nH<br>
+							fix 5 all ave/time 100 1 100 v_qO v_qH file q.npt.dat<br>
+						</div>
+						Finally we extract the fluid temperature and pressure. Make sure both values reach the desired values, respectively 300 K and 1 atm.
+						<div class="lammps">
+							variable myT equal temp<br>
+							variable myP equal press<br>
+							fix 6 all ave/time 10 10 100 v_myT file t.npt.dat	<br>
+							fix 7 all ave/time 10 10 100 v_myP file p.npt.dat
+						</div>
+						The timestep is chosen to be 0.25 fs following reference <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpcb.7b02548" TARGET="_BLANK">Zhang2017</a>.
+						<div class="lammps">
+							timestep 0.25
+						</div>
+						Finally the simulation runs for 30 ps, before a restart file is created.
+						<div class="lammps">
+							run 30000 <br>
+							write_restart restart.npt.equil
+						</div>
+
+						</p>
+						<hr>
+						<h2>Step 2: nvt equilibrium</h2>
+						<p align="justify">
+						As a second step, we run the simulation in the nvt ensemble. In this case the volume is imposed, instead of the pressure. First we re-define the basic of the simulation, and we open the restart file "restart.npt.equil".
+						<div class="lammps">
+							units real <br>
+							boundary p p p <br>
+							atom_style full <br>
+							read_restart restart.npt.equil <br>
+							pair_style reax/c NULL checkqeq yes <br>
+							pair_coeff * * ffield.reax O H <br>
+							fix 1 all qeq/reax 1 0.0 10.0 1.0e-6 reax/c <br>
+							neighbor 1.0 bin <br>
+							neigh_modify delay 1
+						</div>
+						Following ref <a href="https://pubs.acs.org/doi/abs/10.1021/acs.jpcb.7b02548" TARGET="_BLANK">Zhang2017</a>, we use a Berendsen thermostat with a temperature damping constant of 100 fs. This thermostat resales the velocities of the atom every timestep. In addition, we use a fix nve as fix berendsen does not update atom position.
+						<div class="lammps">
+							fix 2 all temp/berendsen 300.0 300.0 100.0 <br>
+							fix 3 all nve
+						</div>
+						We may again generate a dump file and extract a few quantities during this second equilibrium step. There is no need to extract the density as the box dimension is maintained during an nvt step. 
+						<div class="lammps">
+							thermo 100 <br>
+							dump 1 all atom 100 dump.nvt.lammpstrj <br>
+							group oxy type 1 <br>
+							group hyd type 2 <br>
+							variable nO equal count(oxy) <br>
+							variable nH equal count(hyd) <br>
+							variable qO equal charge(oxy)/v_nO <br>
+							variable qH equal charge(hyd)/v_nH <br>
+							fix 4 all ave/time 100 1 100 v_qO v_qH file q.nvt.dat <br>
+							variable myT equal temp <br>
+							fix 5 all ave/time 10 10 100 v_myT file t.nvt.dat <br>	
+							timestep 0.25 <br>
+							run 30000 <br>
+							write_restart restart.nvt.equil <br>
+						</div>
+						</p>
+					</div>
+					<div class="hr1"></div>
+					<div class="clearfix">
+						<h2>Step 3: stationary measurement</h2>
+						<p align="justify">
+						Now that the system is at equilibrium, we can make some measurements, such as diffusion coefficient.
+						</p>
+						
+					</div>
+				</div>
+	
+				<!--
+				<div class="Container1 Card BackWhite">
+					<h2 class="TextGrey Padding">Education</h2>
+				</div>
+				-->
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+

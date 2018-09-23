@@ -59,12 +59,10 @@ a{font-family:Helvetica,sans-serif;font-weight:bold; color:#003C8C; text-decorat
 .Third{width:33.33333%}
 .Third{padding:0 8px}
 
-
-
+.lammps{color:#003C8C; padding-top:0px;padding-bottom:0px; margin:10px 10px;}
 
 .clearfix{overflow: auto;}
 .img2{float: right; padding-left:16px; padding-top:8px}
-
 
 
 .BackWhite{color:#000!important;background-color:#fff!important}
@@ -79,6 +77,8 @@ a{font-family:Helvetica,sans-serif;font-weight:bold; color:#003C8C; text-decorat
 .Twothird{float:left;width:100%}
 .Twothird{width:80%}
 .Twothird{padding:0 8px}
+
+.FULL{float:left;width:100%; width:100%; padding:0 8px}
 
 .Card{box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)}
 
