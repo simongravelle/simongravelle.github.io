@@ -1,163 +1,108 @@
 <!DOCTYPE html>
 <html>
-<title>Simon Gravelle webpage</title>
-<meta charset="UTF-8">
-<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-<!--<link rel="stylesheet" href="./w30.css">-->
-<link rel="stylesheet" href="./wcss.css">
-<!--<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>-->
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-<style>
-	html,body,h1,h3,h4,h5,h6 {font-family: Times New Roman, sans-serif;}
-</style>
-<body class="BackgroundColor">
-	<div class="Content TopMargin" style="max-width:1400px;">
-		<div class="RowPadding">
-			<div class="w3-third">
-				<div class="BackWhite TextGrey Box1">
-					<img src="./Images/simon_fac.jpg" style="width:100%" alt="Picture">
-					<div class="Container1">
-						<h2>Simon Gravelle</h2>
-						<p>
-							Postdoctoral researcher <br>
-							University Queen Mary <br>
-							London, UK
-						</p>
-						<p>
-							simon.gravelle at live.fr <br>
-							s.gravelle at qmul.ac.uk
-						</p>
-						
-						<div class="hr2"></div>
-						<p class="Large"><b>Interests</b></p>
-						<p>
-							Biomimetics <br>
-							Nanofluidics <br>
-							Thermodynamics <br>
-							Cytoskeleton dynamics <br>
-							Fluid-solid interaction <br>
-							Flow through porous media <br>
-						</p>
-						
-						<div class="hr2"></div>
-						<p class="Large"><b>Expertise</b></p>
-						<p>
-							Grand canonical Monte Carlo <br>
-							Finite elements method <br>
-							Umbrella sampling <br>
-							Molecular dynamics <br>
-							Finite elements method
-						</p>
-						
-						<div class="hr2"></div>
-						<p class="Large"><b>Career</b></p>
-						<p>
+	<title>Simon Gravelle webpage</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./wcss.css">
+	<body>
+		<div class="Content TopMargin" style="max-width:1400px;">
+			<div class="RowPadding">
+				<div class="w3-third">
+					<div class="BackWhite TextGrey">
+						<!--<div class="Container2">
+							<img src="./Images/simon_gravelle_UAI.jpg" style="width:100%" alt="Picture">
+						</div>-->
+						<div class="Container1">
+							<p class="Large"><b>Simon Gravelle</b></p>
+							<p>
+								Postdoctoral researcher <br>
+								University Queen Mary <br>
+								London, UK
+							</p>
+							<p>
+								simon.gravelle at live.fr <br>
+								s.gravelle at qmul.ac.uk
+							</p>
+
+							<img src="./Images/simon_gravelle_UAI.jpg" style="width:100%" alt="Picture">
+
+							<p class="Large2"><b>Interests</b></p>
+							<p>
+								Biomimetics <br>
+								Nanofluidics <br>
+								Thermodynamics <br>
+								Cytoskeleton dynamics <br>
+								Fluid-solid interaction <br>
+								Flow through porous media <br>
+							</p>
+							
+							<p class="Large2"><b>Expertise</b></p>
+							<p>
+								Grand canonical Monte Carlo <br>
+								Finite elements method <br>
+								Umbrella sampling <br>
+								Molecular dynamics <br>
+								Finite elements method
+							</p>
+							
+							<p class="Large2"><b>Career</b></p>
+							<p>
 							since 2019 - Postdoc n°2 <br>
-							Queen Mary U., London, UK <br> <br>
+							QMUL, London, UK <br> <br>
 							2016-2019 - Postdoc n°1 <br>
-							U. Adolfo Ibáñez, Viña, Chile <br> <br>
+							UAI, Viña del Mar, Chile <br>
+							Scholarship Fondecyt Postdoc <br> <br>
 							2012-2015 - PhD thesis <br>
-							U. Claude Bernard, Lyon, France
-						</p>
-						
-						<div class="hr2"></div>
-						<p class="Large"><b>Resume</b></p>
-						<p>
-							8 publications (including PNAS and PRL) <br>
-							more than 250 citations <br>
-							h-factor=6<br>
-						</p>
-						<a TARGET="_BLANK" href="SimonGravelle_resume.pdf"> <img src="Images/PDFsymbol.jpg" WIDTH="40px"></a>
-						<br>
-						last updated 07/2018
+							UCB, Lyon, France
+							</p>
+							
+							<p class="Large2"><b>Resume (<a TARGET="_BLANK" href="SimonGravelle_resume.pdf">download pdf</a>)</b></p>
+							<p>
+								8 publi (including PNAS, PRL) <br>
+								more than 250 citations <br>
+								h-factor=6
+							</p>
 
+						</div>
 					</div>
+	    			</div>
+				<div class="Twothird">
+					<div class="Container1 BackWhite MarginBottom">
+						<div class="clearfix Container5">
+							<img class="img2" src="./Images/water_reaxFF.jpg" alt="Reaxff" width="180">
+							<p class="Large"><b>
+								<a href="tutorial1MD.html">
+									Step-by-step tutorial &mdash; molecular dynamics for absolute beginer
+								</a>
+							</b></p>
+							
+							<p align="justify">
+								The system is a cube filled with water molecules (TIP4P/2005 model). Molecular dynamics simulations are performed with the code 								LAMMPS, atom visualisation is made with VMD, and data plotting with xmgrace.
+								The water is first equilibrated at ambient temperature and ambient pressure, then, basic quantities such as density, diffusion coefficient 									or viscosity are measured. 
+							</p>
+						</div>
+					
+						<!--
+						<div class="clearfix Container5">
+							<img class="img2" src="./Images/water_reaxFF.jpg" alt="Reaxff" width="200">
+							<p class="Large"><b>
+								<a href="tuto1_water_reaxff.html">
+									Tutorial &mdash; reactive force field for beginer
+								</a>
+							</b></p>
+							<p align="justify">
+								This molecular dynamics tutorial decribes one of my personnal 
+								<a href="https://lammps.sandia.gov/" TARGET="_BLANK">LAMMPS</a> 
+								input files for simulating bulk water using reactive force field.
+							</p>
+							
+							<p align="justify">
+								keywords &mdash; molecular dynamics, LAMMPS, reaxff
+							</p>
+						</div>
+						-->
+					</div>				
 				</div>
-				<br>
-    			</div>
-			<div class="Twothird">
-				<div class="Container1 Card BackWhite MarginBottom">
-		  			<br>
-					<div class="clearfix">
-						<img class="img2" src="./Images/water_reaxFF.jpg" alt="Reaxff" width="200">
-						<p class="Large"><b>
-							<a href="tutorial1MD.html">
-								Tutorial &mdash; molecular dynamics &mdash; absolute beginer
-							</a>
-						</b></p>
-						
-						<p align="justify">
-							This step-by-step tutorial is written to help a beginner to perform his very first 
-							molecular dynamics simulation. The simulated system is a cube filled with bulk liquid water, 
-							from which basic quantity such as density, diffusion coefficient or viscosity are measured.
-						</p>
-					
-						<p align="justify">
-							keywords &mdash; molecular dynamics, LAMMPS, TIP4P/2005
-						</p>
-					</div>
-					
-					<div class="hr1"></div>					
-					
-					<div class="clearfix">
-						<img class="img2" src="./Images/water_reaxFF.jpg" alt="Reaxff" width="200">
-						<h2>
-							<a href="tuto1_water_reaxff.html">
-								Tutorial &mdash; reactive force field &mdash; beginer
-							</a>
-						</h2>
-						<p align="justify">
-							This molecular dynamics tutorial decribes one of my personnal 
-							<a href="https://lammps.sandia.gov/" TARGET="_BLANK">LAMMPS</a> 
-							input files for simulating bulk water using reactive force field.
-						</p>
-						
-						<p align="justify">
-							keywords &mdash; molecular dynamics, LAMMPS, reaxff
-						</p>
-					</div>
-
-					<!--
-					
-					<div class="hr1"></div>
-					<div class="clearfix">
-						<img class="img2" src="./Images/Tillandsia.jpg" alt="Tillandsia" width="200">
-						<h2>What makes the desert plant Tillandsia so efficient for water capture?</h2>
-						<p align="justify">Combining micrographs of the plant epidermis and direct water flow measurement, our goal is to build a physical model explaining the water transport asymmetry that allow Tillandsia desert plant to survive in the Atacama. Our final goal is to mimick this property and fabricate artificial membranes with anomalous water transport properties.</p>
-					</div>
-					<div class="hr1"></div>
-					<div class="clearfix">
-						<img class="img2" src="./Images/pic01.jpg" alt="Aquaporin" width="200">
-						<h2> Does the hourglass shape of aquaporins optimize water permeability? </h2>
-						<p align="justify">Our answer is yes. Both numerical calculations and molecular dynamics simulations indicate that an aquaporin offers the minimal hydrodynamic resistance to flow thanks to its hourglass geometry which reduces the viscous entrance dissipation, see <a  href="http://www.pnas.org/content/early/2013/09/25/1306447110.abstract?sid=d4493ae9-7217-4e85-82ca-9492e1ed3fa8" TARGET="_BLANK"> PNAS2013</a> and <a href="http://scitation.aip.org/content/aip/journal/jcp/141/18/10.1063/1.4897253" TARGET="_BLANK"> JCP2014 </a> . See also a vulgarisation article (in french) <a href="http://www.medecinesciences.org/articles/medsci/abs/2015/02/medsci20153102p174/medsci20153102p174.html" TARGET="_BLANK"> MS2015 </a>.
-						</p>
-					</div>
-					
-					<div class="hr1"></div>
-					<div class="clearfix">
-						<img class="img2" src="./Images/water_molecules_cnt.jpg" alt="Aquaporin" width="200">
-						<h2>What equation rules the liquid transport through a nanopore below the continuum limit?</h2>
-						<p align="justify"> Liquid flow through a nanopore, which is a nanochannel with a low length over radius ratio, is controlled by the dissipation at the entrances. Using molecular dynamics simulations, we found that the classical continuum hydrodynamics is incredibly robust and predicts quantitatively transport below the continuum limit, even for pores with single file transport regime, see <a href="http://scitation.aip.org/content/aip/journal/jcp/141/18/10.1063/1.4897253" TARGET="_BLANK" style="text-decoration:none;"> JCP2014</a>.</p>
-					</div>
-					
-					<div class="hr1"></div>
-					<div class="clearfix">
-						<img class="img2" src="./Images/WaterCNT.jpg" alt="Aquaporin" width="200">
-						<h2>How does capillarity look like below the continuum limit?</h2>
-						<p align="justify"> We studied the capillary filling of sub-nano-metric carbon nanotubes (CNTs), and found strong deviations from the classical law of capillarity. These deviations are a consequence of the structuring of the fluid within the channel, that manifest itself in a way similar to a disjoining pressure. Strikingly, for some "magic" values of tube diameter, the tube switches from being effectivelly hydrophilic to being effectivelly, see <a href="http://journals.aps.org/pre/abstract/10.1103/PhysRevE.93.033123" TARGET="_BLANK" style="text-decoration:none;">PRE2016</a>. <!--See also details here <a href="CapilaryFillingCNT.html" TARGET="_BLANK" style="text-decoration:none;"> Capillary filling inside subnanometric carbon nanotube (CNT)</a>.
-					</div>
-					-->
-
-
-
-				<br>
-				</div>				
 			</div>
 		</div>
-	</div>
-	<footer class="Container1 Teal Center MarginTop">
-		<p>You wont find me easily on social media.</p>
-	</footer>
-</body>
+	</body>
 </html>
-
