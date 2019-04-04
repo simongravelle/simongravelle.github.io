@@ -41,6 +41,10 @@ a{text-decoration:none; color:#142336}
 .Container6{background-color: #EEF7EF; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
 .Container7{background-color: #F6F6F6; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
 
+.ContainerCode{font-family:ubuntu mono; background-color: #341C4D; color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:5px; margin-left:5px}
+
+.comment{font-family:ubuntu mono; color: #00CCCC;}
+
 /* FFE6E6 rouge - E6FFE6 vert - E6E6FF blue */
 
 .Box1{box-shadow:0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19)}
