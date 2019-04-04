@@ -37,8 +37,9 @@ a{text-decoration:none; color:#142336}
 .Container1{background-color: #E6E6E6; padding:0.005em 10px}
 .Container2{background-color: #E6E6E6; padding:5px 5px}
 
-.Container5{background-color: #E6E6FF; padding:5px 5px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
-.Container6{background-color: #E6FFE6; padding:5px 5px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
+.Container5{background-color: #E6E6FF; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
+.Container6{background-color: #EEF7EF; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
+.Container7{background-color: #F6F6F6; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
 
 /* FFE6E6 rouge - E6FFE6 vert - E6E6FF blue */
 
