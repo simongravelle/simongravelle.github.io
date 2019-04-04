@@ -71,7 +71,115 @@
 					</div>
 					<div class="Container1 BackWhite MarginBottom">
 						<div class="clearfix Container5">
-							<p class="Large"><b>Step-by-step tutorial &mdash; molecular dynamics for absolute beginer</b></p>
+							<p class="Large"><b>Step-by-step tutorial &mdash; molecular dynamics for absolute beginners</b></p>
+
+							<p align="justify">In order to follow this step-by-step tutorial, you need to download <a TARGET="_BLANK" href="https://lammps.sandia.gov/">LAMMPS</a>, which is an open source classical molecular dynamics code. You also need a text editor, a molecular visualisation program, such as <a TARGET="_BLANK" href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a>, and a data plotting program, such as <a TARGET="_BLANK" href="http://exciting-code.org/xmgrace-quickstart">Xmgrace</a>. Finally, I use Python to generate the initial configuration.
+							</p>
+							<br>
+							<p class="Large"><b>Step 1 &mdash; data file generation</b></p>
+							<p align="justify">Before running the simulation, we need to generate a file containing the initial positions of atoms. For the force field we use here (TIP4P/2005), we also need to which atoms are bonded together (O-H bond), and which atoms are constrained by an angle (H-O-H). I am using Python to generate this initial configuration file, but you can use another programming language and get the exact same result.</p>
+
+							<p align="justify">First we open an empty text file, name it "systemgeneration.py", and import mathematical functions.</p>
+
+							<div class="ContainerCode">from math import *</div>
+
+							<p align="justify">Then we define the water molecule parameters,<p>
+
+							<div class="ContainerCode">
+							typat=2; <span class="comment"># 2 types of atom in total (hydrogen and oxygen)</span> <br>
+							typbo=1; <span class="comment"># 1 type of bond (O-H)</span> <br>
+							typan=1; <span class="comment"># 1 type of angle (H-O-H)</span> <br> 
+							mH=1.00794; <span class="comment"># hydrogen mass in grams per mole</span> <br>
+							mO=15.9994; <span class="comment"># oxygen mass in grams per mole</span> <br>
+							alpha=104.5*pi/180; <span class="comment"># O-H-O angle (TIP4P/2005) in radian</span> <br>
+							r=0.9584; <span class="comment"># O-H bond distance (TIP4P/2005) in angstrom</span> <br>
+							qO=-1.1128; <span class="comment"># oxygen charge (TIP4P/2005) in multiple of electron charge</span> <br>
+							qH=0.5564; <span class="comment"># hydrogen charge (TIP4P/2005) in multiple of electron charge</span> <br>
+							dOO=3.1589; <span class="comment"># typical O-O distance in angstrom</span> <br>
+							</div> 
+							<p align="justify">the box initial dimensions,<p>
+							<div class="ContainerCode">
+							txlo=-15; txhi=15;<br>
+							tylo=-15; tyhi=15;<br>
+							tzlo=-15; tzhi=15;<br>
+							</div> 
+							<p align="justify">and initiate a few counters. <p>
+							<div class="ContainerCode">
+							cptAtom=0; <span class="comment"># for atom counting</span> <br>
+							cptBond=0; <span class="comment"># for bond counting</span> <br>
+							cptAngle=0; <span class="comment"># for angle counting</span> <br>
+							cptMolecule=0; <span class="comment"># for molecule counting</span> <br>
+							</div> 
+							<p align="justify">Then, I open a temporary file in which I write informations needed by LAMMPS, such as box dimensions, atoms mass,<p>
+							<div class="ContainerCode">
+								fichier = open("temp", "w") <br>
+								fichier.write(str(txlo) + " " + str(txhi) + " xlo xhi \n"); <br>
+								fichier.write(str(tylo) + " " + str(tyhi) + " ylo yhi \n"); <br>
+								fichier.write(str(tzlo) + " " + str(tzhi) + " zlo zhi \n"); <br>
+								fichier.write("\n"); <br>
+								fichier.write("Masses \n \n") <br>
+								fichier.write("1 " + str(mH) + "\n"); <br>
+								fichier.write("2 " + str(mO) + "\n"); <br>
+								fichier.write("\n"); <br>
+							</div> 
+							<p align="justify">atom location (note: be careful with the indentations in python),<p>
+							<div class="ContainerCode">
+								x=txlo+dOO/2;<br>
+								y=tylo+dOO/2;<br>
+								z=tzlo+dOO/2;<br>
+								while x <= txhi-dOO/2:<br>
+								&emsp; &emsp; while y <= tyhi-dOO/2:<br>
+								&emsp; &emsp; &emsp; &emsp; while z <= tzhi-dOO/2:<br>
+								&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; cptMolecule+=1;<br>
+								&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; fichier.write(str(cptAtom+1)+" "+str(cptMolecule)+" 2 "+str(qO)+" "+str(x)+" "+str(y)+" "+str(z) + "\n");cptAtom+=1;<br>
+								&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; fichier.write(str(cptAtom+1)+" "+str(cptMolecule)+" 1 "+str(qH)+" "+str(r+x)+" "+str(y)+" "+str(z) + "\n");cptAtom+=1;<br>
+								&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; fichier.write(str(cptAtom+1)+" "+str(cptMolecule)+" 1 "+str(qH)+" "+str(r*sin(alpha)+x)+ " "+str(r*sin(alpha)+y)+" "+ str(z)+"\n");cptAtom+=1;<br>
+								&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; z=z+dOO;<br>
+								&emsp; &emsp; &emsp; &emsp; y=y+dOO;<br>
+								&emsp; &emsp; &emsp; &emsp; z=tzlo+dOO/2;<br>
+								&emsp; &emsp; x=x+dOO;<br>
+								&emsp; &emsp; y=tylo+dOO/2;<br>
+								fichier.write("\n");<br>
+							</div>
+							<p align="justify">bond informations,<p>
+							<div class="ContainerCode">
+							fichier.write("Bonds \n \n") <br>	
+							while cptBond < 2*cptAtom/3: <br>		
+							&emsp; &emsp;	fichier.write(str(cptBond+1)+" 1 "+str(cptBond/2*3+1)+" "+str(cptBond/2*3+2)+"\n"); <br>	
+							&emsp; &emsp;	fichier.write(str(cptBond+2)+" 1 "+str(cptBond/2*3+1)+" "+str(cptBond/2*3+3)+"\n"); <br>	
+							&emsp; &emsp;	cptBond+=2;<br>	
+							fichier.write("\n");
+							</div>
+							<p align="justify">and finally angle informations.<p>
+							<div class="ContainerCode">
+							fichier.write("Angles \n \n")  <br>
+							while cptAngle < cptAtom/3: <br>
+							&emsp; &emsp;	fichier.write(str(cptAngle+1)+" 1 "+str(cptAngle*3+2)+" "+str(cptAngle*3+1)+" "+str(cptAngle*3+3)+"\n");  <br>
+							&emsp; &emsp;	cptAngle+=1;
+							</div>
+							<p align="justify">Finally, I generate the data file from temporary file.<p>
+							<div class="ContainerCode">
+								fichier.close() <br>
+								source = open("temp", "r") <br>
+								txt = source.read() <br>
+								source.close() <br>
+								import os <br>
+								os.remove("temp") <br>
+								fichier = open("data.lammps", "w") <br>
+								fichier.write("# Data file LAMMPS"+ "\n"+ "\n") <br>
+								fichier.write(str(cptAtom)+" "+"atoms"+"\n"); <br>
+								fichier.write(str(cptBond)+" "+"bonds"+"\n"); <br>
+								fichier.write(str(cptAngle)+" "+"angles"+"\n"); <br>
+								fichier.write("\n"); <br>
+								fichier.write(str(typat)+" "+"atom types"+"\n"); <br>
+								fichier.write(str(typbo)+" "+"bond types"+"\n"); <br>
+								fichier.write(str(typan)+" "+"angle types"+"\n"); <br>
+								fichier.write("\n"); <br>
+								fichier.write(str(txt)); <br>
+								fichier.close() <br>
+							</div>
+							<br>
+							You can download directly both python file (<a TARGET="_BLANK" href="tuto1MD/systemgeneration.py">systemgeneration.py</a>) and generated data file (<a TARGET="_BLANK" href="tuto1MD/data.lammps">data.lammps</a>).
 						</div>
 					</div>	
 					<div class="Container1 BackWhite MarginBottom">
