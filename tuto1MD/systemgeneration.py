@@ -30,6 +30,7 @@ fichier.write("1 " + str(mH) + "\n");
 fichier.write("2 " + str(mO) + "\n"); 
 fichier.write("\n"); 
 
+fichier.write("Atoms \n \n") 
 x=txlo+dOO/2;
 y=tylo+dOO/2;
 z=tzlo+dOO/2;
