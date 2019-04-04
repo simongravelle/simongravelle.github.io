@@ -124,6 +124,7 @@
 							</div> 
 							<p align="justify">atom location (note: be careful with the indentations in python),<p>
 							<div class="ContainerCode">
+								fichier.write("Atoms \n \n") <br>
 								x=txlo+dOO/2;<br>
 								y=tylo+dOO/2;<br>
 								z=tzlo+dOO/2;<br>
@@ -180,6 +181,39 @@
 							</div>
 							<br>
 							You can download directly both python file (<a TARGET="_BLANK" href="tuto1MD/systemgeneration.py">systemgeneration.py</a>) and generated data file (<a TARGET="_BLANK" href="tuto1MD/data.lammps">data.lammps</a>).
+
+							<br><br>
+
+							<p class="Large"><b>Step 2 &mdash; reach the equilibrium </b></p>
+							<p align="justify">Now that we have generated a file with the initial positions of the atoms, we need to equilibrate the water at ambient temperature (300 K) and ambient pressure (1 atm). Let us open another empty document, name it "in0", and save it in the same folder as the "data.lammps" file.</p>
+							<div class="ContainerCode">
+								<span class="comment"># LAMMPS input file</span><br>
+							</div>
+							<p align="justify">First we need to specify which units we want to use. In our case, "real" is a 								convenient choice. With this choice of units, the distances are in angstrom in agreement with the 								data file previously generated, see <a TARGET="_BLANK" href="https://lammps.sandia.gov/doc/units.html">this page for more details</a>.</p>
+							<div class="ContainerCode">
+								units           real <br>
+							</div>
+							<p align="justify">We also set all boundaries as periodic,</p>
+							<div class="ContainerCode">
+								boundary        p p p <br>
+							</div>
+							<p align="justify">and use the "full" atom style, as it allows to use bonds, angles, 								dihedrals, impropers and charges.</p>
+							<div class="ContainerCode">
+								atom_style      full <br>
+							</div>	
+							<p align="justify">Then, we define the bonds and angles as "harmonic".</p>
+							<div class="ContainerCode">
+								bond_style      harmonic <br>
+								angle_style     harmonic <br>
+							</div>	
+							<p align="justify">Finally, we specify that the interactions between water molecules are a combination of a Lennard-Jones potential, and Coulombic interactions. Note that since we use the TIP4P water model, which is a bit special because the charge of the oxygen is located at a massless point M, which is different than the position of the oxygen atom, we use the following pair style (see the  <a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Water_model"> wikipedia page of water models</a>).</p>
+							<div class="ContainerCode">
+								pair_style	lj/cut/tip4p/long 2 1 1 1 0.1546 10.0 <br>
+							</div>	
+							<p align="justify">The pair style command indicates that, respectively, the oxygen is the atom type "2", the hydrogen the atom type "1", the bond O-H is the type "1", the angle "H-O-H" is the type "1", distance from O atom to massless charge M is 0.1546 angstrom, and that both LJ and coulombic interactions have a cutoff equal to 10.0 angstroms. Finally, as the long range Coulombic interaction are solved in the reciprocal space, we choose a long range solver. </p>
+							<div class="ContainerCode">
+								kspace_style	pppm/tip4p 1.0e-4 <br>
+							</div>
 						</div>
 					</div>	
 					<div class="Container1 BackWhite MarginBottom">
