@@ -223,6 +223,69 @@
 							<div class="ContainerCode">
 								kspace_style	pppm/tip4p 1.0e-4 <br>
 							</div>
+							<p align="justify">Now we load the previously generated data file, </p>
+							<div class="ContainerCode">
+								read_data data.lammps
+							</div>
+							<p align="justify">define the bond and angle value,</p>
+							<div class="ContainerCode">
+								bond_coeff 1 0.0 0.9572
+								angle_coeff 1 0.0 104.52
+							</div>
+							<p align="justify">give the rules for the neighbor detection,</p>
+							<div class="ContainerCode">
+								neighbor 1.0 bin
+								neigh_modify delay 1
+							</div>
+							<p align="justify">and for the LJ interaction (only oxygen-oxygen are different from 0).</p>
+							<div class="ContainerCode">
+								pair_coeff * * 0 0
+								pair_coeff 2 2 0.1852 3.1589
+							</div>
+							<p align="justify">We give an initial temperature to the water,</p>
+							<div class="ContainerCode">
+								velocity all create ${T} 6522333 rot yes dist gaussian
+							</div>
+							<p align="justify">and contrain the water using the shake algorithm.</p>
+							<div class="ContainerCode">
+								fix shak all shake 1.0e-4 200 0 b 1 a 1 
+							</div>
+							<p align="justify">We maintain the temperature at 300K and the pressure at 1 atm using a fix npt, which regulates the box volume in order to adjust the pressure,</p>
+							<div class="ContainerCode">
+								fix mynpt all npt temp ${T} ${T} 100 iso ${P} ${P} 1000.0
+							</div>
+							<p align="justify">and record the evolution of the box volume and water concentration as a function of time.</p>
+							<div class="ContainerCode">
+								fix at1 all ave/time 100 1 100 v_V file volume.dat
+								fix at2 all ave/time 100 1 100 v_C file concentration.dat
+							</div>
+							<p align="justify">Finally we choose the frequency of terminal plotting information and create a dump file in order to, later, plot the molecule trajectories,</p>
+							<div class="ContainerCode">
+								thermo 100
+								dump dmp1 all atom 1000 dump.npt.lammpstrj
+							</div>
+							<p align="justify">and run the simulation for a duration of 10 000 timestep, with a timestep of 2 fs which is conventional for TIP4P/2005.</p>
+							<div class="ContainerCode">
+								timestep ${dt}
+								run 10000
+							</div>
+							<p align="justify">When the simulation is done, we save the final state in order to restart a futur simulation from this configuration.</p>
+							<div class="ContainerCode">
+								write_restart restart.npt.equil
+							</div>
+							<p align="justify">The following figure show the evolution with time of both box volume and concentration during equilibration phase. The concentration reaches a value that is expected for liquid water (~ 55 mol/L). The figure is made using the open source code Xmgrace.</p>
+							<img src="./tuto1MD/results.npt.png" style="width:50%" alt="Picture">
+
+
+							<br><br>
+
+							<p class="Large"><b>Step 3 &mdash; water viscosity measurement </b></p>
+							<p align="justify">The presented measurement is indicative only, and care must be taken, in particular "The computation of diffusion coefficients from moleculardynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or methodto  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hy-drodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
+							</p>
+
+
+
+							<p align="justify"> I find a viscosity equal 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
 						</div>
 					</div>	
 					<div class="Container1 BackWhite MarginBottom">
@@ -235,22 +298,3 @@
 		</div>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
