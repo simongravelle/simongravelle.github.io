@@ -237,17 +237,17 @@
 							</div>
 							<p align="justify">define the bond and angle value,</p>
 							<div class="ContainerCode">
-								bond_coeff 1 0.0 0.9572
+								bond_coeff 1 0.0 0.9572 <br>
 								angle_coeff 1 0.0 104.52
 							</div>
 							<p align="justify">give the rules for the neighbor detection,</p>
 							<div class="ContainerCode">
-								neighbor 1.0 bin
+								neighbor 1.0 bin <br>
 								neigh_modify delay 1
 							</div>
 							<p align="justify">and for the LJ interaction (only oxygen-oxygen are different from 0).</p>
 							<div class="ContainerCode">
-								pair_coeff * * 0 0
+								pair_coeff * * 0 0 <br>
 								pair_coeff 2 2 0.1852 3.1589
 							</div>
 							<p align="justify">We give an initial temperature to the water,</p>
@@ -264,17 +264,17 @@
 							</div>
 							<p align="justify">and record the evolution of the box volume and water concentration as a function of time.</p>
 							<div class="ContainerCode">
-								fix at1 all ave/time 100 1 100 v_V file volume.dat
+								fix at1 all ave/time 100 1 100 v_V file volume.dat <br>
 								fix at2 all ave/time 100 1 100 v_C file concentration.dat
 							</div>
 							<p align="justify">Finally we choose the frequency of terminal plotting information and create a dump file in order to, later, plot the molecule trajectories,</p>
 							<div class="ContainerCode">
-								thermo 100
+								thermo 100 <br>
 								dump dmp1 all atom 1000 dump.npt.lammpstrj
 							</div>
 							<p align="justify">and run the simulation for a duration of 10 000 timestep, with a timestep of 2 fs which is conventional for TIP4P/2005.</p>
 							<div class="ContainerCode">
-								timestep ${dt}
+								timestep ${dt} <br>
 								run 10000
 							</div>
 							<p align="justify">When the simulation is done, we save the final state in order to restart a futur simulation from this configuration.</p>
