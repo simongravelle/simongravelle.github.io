@@ -198,6 +198,14 @@
 							<div class="ContainerCode">
 								<span class="comment"># LAMMPS input file</span><br>
 							</div>
+							<p align="justify">Let us define variables, for the desired temperature, pressure and timestep. In addition, let us define variables for the measurement of the box volume and water density.</p>
+							<div class="ContainerCode">
+								variable    T equal 300 <span class="comment"># kelvin </span> <br>
+								variable    P equal 1 <span class="comment"># atmosphere </span> <br>
+								variable    dt equal 2.0 <span class="comment"># fs </span> <br>
+								variable    V equal vol <span class="comment"># angstrom3 </span> <br>
+								variable    C equal count(all)/vol/3*1e30/6.022e23 <span class="comment"># mole per m3 </span>
+							</div>
 							<p align="justify">First we need to specify which units we want to use. In our case, "real" is a 								convenient choice. With this choice of units, the distances are in angstrom in agreement with the 								data file previously generated, see <a TARGET="_BLANK" href="https://lammps.sandia.gov/doc/units.html">this page for more details</a>.</p>
 							<div class="ContainerCode">
 								units           real <br>
