@@ -214,7 +214,7 @@
 							<div class="ContainerCode">
 								boundary        p p p <br>
 							</div>
-							<p align="justify">and use the "full" atom style, as it allows to use bonds, angles, 								dihedrals, impropers and charges.</p>
+							<p align="justify">and use the "full" atom style, as it allows to use bonds, angles, dihedrals, impropers and charges.</p>
 							<div class="ContainerCode">
 								atom_style      full <br>
 							</div>	
@@ -289,7 +289,7 @@
 
 							<p class="Large"><b>Step 3 &mdash; water viscosity measurement </b></p>
 							<p align="justify">
-								The presented measurement is indicative only, and care must be taken, in particular "The computation of diffusion coefficients from moleculardynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or methodto  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hy-drodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
+								The presented measurement is indicative only, and care must be taken, in particular "The computation of diffusion coefficients from molecular dynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or methodto  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hy-drodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
 							</p>
 							<p align="justify">Let us open another empty document, name it "in1", and save it in the same folder as the "restart.npt.equil" file.
 								The first lines are identical to the previous document,
@@ -327,11 +327,12 @@
 								variable unitconvert equal ${atm2Pa}*${atm2Pa}*${fs2s}*${A2m}*${A2m}*${A2m} <br>
 								variable scale equal ${unitconvert}/(${kB}*$T)*$V*${Nevery}*${dt} <br>
 							</div>
-							The molecule are thermostated using "nvt" thermostat (canonical ensemble) with a reasonable damping (100 fs), controlling the temperature of the molecule at fixed volume,
+							The molecule are thermostated using "nvt" thermostat (canonical ensemble - mechanical system in thermal equilibrium with a heat bath at a fixed temperature) with a reasonable damping (100 fs), controlling the temperature of the molecule at fixed volume.
 							<div class="ContainerCode">
 								fix mynvt all nvt ${T} ${T} 100
 							</div>
-							and use "Nfreq" for terminal plotting (it must be the same frequency as the fix correlate!).
+							Note that other choices for the thermalisation would be acceptable, such as for example a berendsten thermostat (which rescale the molecule velocity) combined with a "fix nve".
+							We use "Nfreq" for terminal plotting as it must be the same frequency as the "fix ave/correlate".
 							<div class="ContainerCode">
 								thermo ${Nfreq}
 							</div>
@@ -344,13 +345,13 @@
 								variable pyz equal pyz <br>
 							</div>
 							<p align="justify">
-							from which we calculate the following correlation function
+								from which we calculate the following correlation function
 							</p>
 							<div class="ContainerCode">
 								fix acor all ave/correlate ${Nevery} ${Nrepeat} ${Nfreq} v_pxy v_pxz v_pyz type auto file correlate.dat ave running
 							</div>
 							<p align="justify">
-							and finally extract the value of the viscosity in SI units
+								and finally extract the value of the viscosity in SI units
 							</p>
 							<div class="ContainerCode">	
 								variable v11 equal trap(f_acor[3])*${scale} <br>
@@ -361,7 +362,7 @@
 								variable eta equal 1000*(v_v11+v_v22+v_v33)/3.0 <br>
 								print "viscosity: ${eta} [mPa.s]" <br>
 							</div>
-						<p align="justify">When running this code, I find a viscosity very close to the 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
+						<p align="justify">When running this code, I find a viscosity very close to the 0.855 mPa.s, which is expected for the TIP4P/2005 water model. Other methods can be used to measure the viscosity of a fluid, for example using a shear flow, but the present measurement is elegant because it works at the equilibrium, i.e. in absence of external forcing. </p>
 						</div>
 					</div>	
 					<div class="Container1 BackWhite MarginBottom">
