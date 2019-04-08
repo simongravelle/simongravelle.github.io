@@ -295,16 +295,16 @@
 								The first lines are identical to the previous document,
 							</p>
 							<div class="ContainerCode">
-								variable    T equal 300
-								variable    V equal vol
-								variable    dt equal 2.0
-								units real
-								boundary p p p
-								atom_style full 
-								bond_style harmonic
-								angle_style harmonic
-								pair_style lj/cut/tip4p/long 2 1 1 1 0.1546 10.0
-								kspace_style pppm/tip4p 1.0e-4
+								variable T equal 300 <br>
+								variable V equal vol <br>
+								variable dt equal 2.0 <br>
+								units real <br>
+								boundary p p p <br>
+								atom_style full  <br>
+								bond_style harmonic <br>
+								angle_style harmonic <br>
+								pair_style lj/cut/tip4p/long 2 1 1 1 0.1546 10.0 <br>
+								kspace_style pppm/tip4p 1.0e-4 <br>
 							</div>
 							<p align="justify">
 								but instead of opening the "data.lammps" file, we open the restart file, and reset the simulation time at t=0.
@@ -313,6 +313,22 @@
 								read_restart restart.npt.equil <br>
 								reset_timestep	0
 							</div>
+							Then, we define new variables that will be usefull for the calculation of the viscosity. The method is inspired from <a href=https://lammps.sandia.gov/doc/Howto_viscosity.html">this page</a>.
+							<div class="ContainerCode">
+								variable Nevery equal 10 <br>
+								variable Nrepeat equal 100 <br>
+								variable Nfreq equal ${Nrepeat}*${Nevery} <br>
+								variable kB equal 1.38065e-23 <br>
+								variable atm2Pa equal 101325.0 <br>
+								variable A2m equal 1.0e-10 <br>
+								variable fs2s equal 1.0e-15 <br>
+								variable unitconvert equal ${atm2Pa}*${atm2Pa}*${fs2s}*${A2m}*${A2m}*${A2m} <br>
+								variable scale equal ${unitconvert}/(${kB}*$T)*$V*${Nevery}*${dt} <br>
+							</div>
+
+							
+							
+							
 
 							<p align="justify"> I find a viscosity equal 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
 						</div>
