@@ -327,16 +327,16 @@
 								variable unitconvert equal ${atm2Pa}*${atm2Pa}*${fs2s}*${A2m}*${A2m}*${A2m} <br>
 								variable scale equal ${unitconvert}/(${kB}*$T)*$V*${Nevery}*${dt} <br>
 							</div>
-							We use this time a "nvt" thermostat, controlling the temperature at fixed volume,
+							The molecule are thermostated using "nvt" thermostat (canonical ensemble) with a reasonable damping (100 fs), controlling the temperature of the molecule at fixed volume,
 							<div class="ContainerCode">
-								fix mynvt all nvt 300.0 300.0 100.0
+								fix mynvt all nvt ${T} ${T} 100
 							</div>
 							and use "Nfreq" for terminal plotting (it must be the same frequency as the fix correlate!).
 							<div class="ContainerCode">
 								thermo ${Nfreq}
 							</div>
 							<p align="justify">
-								In addition, we need to evaluate the xy, xz and yz component of the pressure tensor,
+								In addition, we need to evaluate the xy, xz and yz components of the pressure tensor,
 							</p>
 							<div class="ContainerCode">
 								variable pxy equal pxy <br>
@@ -361,7 +361,7 @@
 								variable eta equal 1000*(v_v11+v_v22+v_v33)/3.0 <br>
 								print "viscosity: ${eta} [mPa.s]" <br>
 							</div>
-						<p align="justify"> I find a viscosity equal to 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
+						<p align="justify">When running this code, I find a viscosity very close to the 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
 						</div>
 					</div>	
 					<div class="Container1 BackWhite MarginBottom">
