@@ -327,12 +327,41 @@
 								variable unitconvert equal ${atm2Pa}*${atm2Pa}*${fs2s}*${A2m}*${A2m}*${A2m} <br>
 								variable scale equal ${unitconvert}/(${kB}*$T)*$V*${Nevery}*${dt} <br>
 							</div>
-
-							
-							
-							
-
-							<p align="justify"> I find a viscosity equal 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
+							We use this time a "nvt" thermostat, controlling the temperature at fixed volume,
+							<div class="ContainerCode">
+								fix mynvt all nvt 300.0 300.0 100.0
+							</div>
+							and use "Nfreq" for terminal plotting (it must be the same frequency as the fix correlate!).
+							<div class="ContainerCode">
+								thermo ${Nfreq}
+							</div>
+							<p align="justify">
+								In addition, we need to evaluate the xy, xz and yz component of the pressure tensor,
+							</p>
+							<div class="ContainerCode">
+								variable pxy equal pxy <br>
+								variable pxz equal pxz <br>
+								variable pyz equal pyz <br>
+							</div>
+							<p align="justify">
+							from which we calculate the following correlation function
+							</p>
+							<div class="ContainerCode">
+								fix acor all ave/correlate ${Nevery} ${Nrepeat} ${Nfreq} v_pxy v_pxz v_pyz type auto file correlate.dat ave running
+							</div>
+							<p align="justify">
+							and finally extract the value of the viscosity in SI units
+							</p>
+							<div class="ContainerCode">	
+								variable v11 equal trap(f_acor[3])*${scale} <br>
+								variable v22 equal trap(f_acor[4])*${scale} <br>
+								variable v33 equal trap(f_acor[5])*${scale} <br>
+								thermo_style custom step temp press v_pxy v_pxz v_pyz v_v11 v_v22 v_v33 <br>
+								run 100000 <br>
+								variable eta equal 1000*(v_v11+v_v22+v_v33)/3.0 <br>
+								print "viscosity: ${eta} [mPa.s]" <br>
+							</div>
+						<p align="justify"> I find a viscosity equal 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
 						</div>
 					</div>	
 					<div class="Container1 BackWhite MarginBottom">
