@@ -288,10 +288,31 @@
 							<br><br>
 
 							<p class="Large"><b>Step 3 &mdash; water viscosity measurement </b></p>
-							<p align="justify">The presented measurement is indicative only, and care must be taken, in particular "The computation of diffusion coefficients from moleculardynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or methodto  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hy-drodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
+							<p align="justify">
+								The presented measurement is indicative only, and care must be taken, in particular "The computation of diffusion coefficients from moleculardynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or methodto  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hy-drodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
 							</p>
-
-
+							<p align="justify">Let us open another empty document, name it "in1", and save it in the same folder as the "restart.npt.equil" file.
+								The first lines are identical to the previous document,
+							</p>
+							<div class="ContainerCode">
+								variable    T equal 300
+								variable    V equal vol
+								variable    dt equal 2.0
+								units real
+								boundary p p p
+								atom_style full 
+								bond_style harmonic
+								angle_style harmonic
+								pair_style lj/cut/tip4p/long 2 1 1 1 0.1546 10.0
+								kspace_style pppm/tip4p 1.0e-4
+							</div>
+							<p align="justify">
+								but instead of opening the "data.lammps" file, we open the restart file, and reset the simulation time at t=0.
+							</p>
+							<div class="ContainerCode">
+								read_restart restart.npt.equil <br>
+								reset_timestep	0
+							</div>
 
 							<p align="justify"> I find a viscosity equal 0.855 mPa.s, which is expected for the TIP4P/2005 water model. </p>
 						</div>
