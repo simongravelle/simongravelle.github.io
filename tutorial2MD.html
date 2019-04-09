@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tutorial MD</title>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36911186-4"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-36911186-4');
+		</script>
+	</head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./wcss.css">
+	<body>
+		<div class="Content TopMargin" style="max-width:1400px;">
+			<div class="RowPadding">
+				<div class="w3-third">
+					<div class="BackWhite TextGrey">
+						<div class="Container1">
+							<a href="./index.html"><p class="Large"><b>Simon Gravelle</b></p></a>
+							<p>
+								<a TARGET="_BLANK" href="https://www.sems.qmul.ac.uk/staff/s.gravelle">Postdoctoral researcher <br>
+								University Queen Mary <br>
+								London, UK</a>
+							</p>
+							<p>
+								simon.gravelle at live.fr <br>
+								s.gravelle at qmul.ac.uk
+							</p>
+
+							<a href="./index.html"><img src="./Images/simon_gravelle_UAI.jpg" style="width:100%" alt="Picture"></a>
+
+							<p class="Large2"><b>Interests</b></p>
+							<p>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Biomimetics">Biomimetics </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Nanofluidics">Nanofluidics </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Thermodynamics">Thermodynamics </a><br>
+								Cytoskeleton dynamics <br>
+								Fluid-solid interaction <br>
+								Flow through porous media <br>
+							</p>
+							
+							<p class="Large2"><b>Expertise</b></p>
+							<p>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Molecular_dynamics">Molecular dynamics </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Finite_element_method">Finite elements method </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Grand canonical Monte Carlo </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Umbrella_sampling">Umbrella sampling </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Fluorescence_correlation_spectroscopy">F. C. Spectroscopy</a>
+							</p>
+							
+							<p class="Large2"><b>Career</b></p>
+							<p>
+							since 2019 - Postdoc n°2 <br>
+							<a TARGET="_BLANK" href="https://www.qmul.ac.uk/">QMUL, London, UK</a> <br> <br>
+							2016-2019 - Postdoc n°1 <br>
+							<a TARGET="_BLANK" href="https://www.uai.cl/campus-uai/campus-vina-del-mar/"> UAI, Viña del Mar, Chile</a> <br>
+							<a TARGET="_BLANK" href="https://www.conicyt.cl/fondecyt/category/concursos/postdoctorado/"> Scholarship Fondecyt Postdoc</a> <br> <br>
+							2012-2015 - PhD thesis <br>
+							<a TARGET="_BLANK" href="https://www.univ-lyon1.fr/"> UCB, Lyon, France </a>
+							</p>
+							
+							<p class="Large2"><b>Resume (<a TARGET="_BLANK" href="SimonGravelle_resume.pdf">download pdf</a>)</b></p>
+							<p>
+								<a TARGET="_BLANK" href="https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=en">
+								8 publi (including PNAS, PRL) <br>
+								more than 250 citations <br>
+								h-factor=6</a>
+							</p>
+
+						</div>
+					</div>
+	    			</div>
+				<div class="Twothird">
+					<div class="Container1 BackWhite MarginBottom">
+						<div class="clearfix Container7">
+							<a href="./index.html"><p class="Large"><b>Back to the index</b></p></a>
+						</div>
+					</div>
+					<div class="Container1 BackWhite MarginBottom">
+						<div class="clearfix Container5">
+							<p class="Large"><b>Step-by-step tutorial &mdash; molecular dynamics, capillary filling of a carbon nanotube (CNT)</b></p>
+
+							<p align="justify">In order to follow this step-by-step tutorial, you need to download <a TARGET="_BLANK" href="https://lammps.sandia.gov/">LAMMPS</a>, which is an open source classical molecular dynamics code. You also need a text editor, a molecular visualisation program, such as <a TARGET="_BLANK" href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a>, and a data plotting program, such as <a TARGET="_BLANK" href="http://exciting-code.org/xmgrace-quickstart">Xmgrace</a>. Finally, I use Python to generate the initial configuration.
+							</p>
+							<br>
+							<p class="Large"><b>Step 1 &mdash; data file generation</b></p>
+
+							<p align="justify">Here is a python code that generates a system with a carbon nanotube, a small reservoir of water and graphene walls.</p>
+
+							<div class="ContainerCode">
+								from math import * <br>
+								typat=3; <span class="comment"># 2 types of atom in total (hydrogen and oxygen)</span> <br>
+								typbo=1; <span class="comment"># 1 type of bond (O-H)</span> <br>
+								typan=1; <span class="comment"># 1 type of angle (H-O-H)</span> <br>
+								mH=1.00794; <span class="comment"># hydrogen mass in grams per mole</span> <br>
+								mO=15.9994; <span class="comment"># oxygen mass in grams per mole</span> <br>
+								mC = 12.01; <span class="comment"># carbon mass in grams per mole</span> <br>
+								alpha=104.5*pi/180; <span class="comment"># O-H-O angle (TIP4P/2005) in radian</span> <br>
+								r=0.9584; <span class="comment"># O-H bond distance (TIP4P/2005) in angstrom</span> <br>
+								qO=-1.1128; <span class="comment"># oxygen charge (TIP4P/2005) in multiple of electron charge</span> <br>
+								qH=0.5564; <span class="comment"># hydrogen charge (TIP4P/2005) in multiple of electron charge</span> <br>
+								dOO=3.1589; <span class="comment"># typical O-O distance in angstrom</span> <br>
+								dCC=1.418; <span class="comment"># distance C-C</span> <br>
+								beta=30*pi/180; <span class="comment"># graphene angle</span> <br>
+								Rtube=12*(2*dCC*cos(beta))/(2*pi); <span class="comment"># radius nanotube</span> <br>
+								Ltube=24*(2*(dCC*sin(beta)+dCC)); <span class="comment"># length nanotube</span> <br>
+								Rres=dOO*16; <span class="comment"># size reservoir along z</span> <br>
+								<br>
+								txlo=-12*(dCC*cos(beta)); txhi=-txlo; <br>
+								tylo=-6*(dCC*sin(beta)+dCC); tyhi=-tylo; <br>
+								tzlo=-20-Rres-Ltube/2; tzhi=-tzlo; <br>
+ 								<br>
+								cptAtom=0; <span class="comment"># for atom counting</span> <br>
+								cptCar=0; <span class="comment"># for carbon counting</span> <br>
+								cptBond=0; <span class="comment"># for bond counting</span> <br>
+								cptAngle=0; <span class="comment"># for angle counting</span> <br>
+								cptMolecule=0; <span class="comment"># for molecule counting</span> <br>
+								<br>
+								fichier = open("temp", "w") <br>
+								fichier.write(str(txlo) + " " + str(txhi) + " xlo xhi \n"); <br>
+								fichier.write(str(tylo) + " " + str(tyhi) + " ylo yhi \n"); <br>
+								fichier.write(str(tzlo) + " " + str(tzhi) + " zlo zhi \n"); <br>
+								fichier.write("\n"); <br>
+								fichier.write("Masses \n \n") <br>
+								fichier.write("1 " + str(mH) + "\n"); <br>
+								fichier.write("2 " + str(mO) + "\n"); <br>
+								fichier.write("3 " + str(mC) + "\n"); <br>
+								fichier.write("\n"); <br>
+								<br>
+								fichier.write("Atoms \n \n") <br>
+								<br>
+								<span class="comment"># creation carbon membrane</span> <br> <br>
+								membrane_locations=[-Ltube/2-Rres, -Ltube/2, Ltube/2, Ltube/2+Rres]; <br>
+								for z in membrane_locations: <br>
+								&emsp; &emsp; x=txlo; <br>
+								&emsp; &emsp; y=tylo; <br>
+								&emsp; &emsp; while y &lt; tyhi: <br>
+								&emsp; &emsp;&emsp; &emsp;while x &lt; txhi: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;if x &lt; txhi and y &lt; tyhi: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar)+" 0 "+"3"+" 0 "+str(x)+" "+str(y)+" "+str(z)+" "+"\n");<br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;if x &lt; txhi and y+dCC &lt; tyhi: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar)+" 0 "+"3"+" 0 "+str(x)+" "+str(y+dCC)+" "+str(z)+" "+"\n");<br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;if x+dCC*cos(beta) &lt; txhi and y+dCC*sin(beta)+dCC &lt; tyhi:<br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar)+" 0 "+"3"+" 0 "+str(x+dCC*cos(beta))+" "+str(y+dCC*sin(beta)+dCC)+" "+str(z)+" "+"\n"); <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;if x+dCC*cos(beta) &lt; txhi and y+dCC*sin(beta)+2*dCC&lt;tyhi: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar)+" 0 "+"3"+" 0 "+str(x+dCC*cos(beta))+" "+str(y+dCC*sin(beta)+2*dCC)+" "+str(z)+" "+"\n"); <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;x=x+2*dCC*cos(beta); <br>
+								&emsp; &emsp;&emsp; &emsp;x=txlo; <br>
+								&emsp; &emsp;&emsp; &emsp;y=y+2*dCC*sin(beta)+2*dCC; <br>
+								<br>
+								<span class="comment"># creation carbon nanotube</span> <br> <br>
+								nbr=(2*pi*Rtube)/(2*dCC*cos(beta)); <br>
+								z=-Ltube/2; <br>
+								while z&lt;Ltube/2: <br>
+								&emsp; &emsp;betaF=0; <br>
+								&emsp; &emsp;while betaF < 360: <br>
+								&emsp; &emsp;&emsp; &emsp;beta2=betaF+dCC*cos(beta)*180/(Rtube*pi); <br>
+								&emsp; &emsp;&emsp; &emsp;x=Rtube*cos(pi*beta2/180); <br>
+								&emsp; &emsp;&emsp; &emsp;y=Rtube*sin(pi*beta2/180); <br>
+								&emsp; &emsp;&emsp; &emsp;if z&lt;=Ltube/2: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar) + " 0 " + "3" + " 0 "+ str(x) + " " + str(y) + " " + str(z) + "\n");  <br>
+								&emsp; &emsp;&emsp; &emsp;if z+dCC<=Ltube/2: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar) + " 0 " + "3 " + " 0 "+ str(x) + " " + str(y) + " " + str(z+dCC) + "\n"); <br>
+								&emsp; &emsp;&emsp; &emsp;x=Rtube*cos(pi*betaF/180); <br>
+								&emsp; &emsp;&emsp; &emsp;y=Rtube*sin(pi*betaF/180); <br>
+								&emsp; &emsp;&emsp; &emsp;if z+dCC*sin(beta)+dCC<=Ltube/2: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar) + " 0 " + "3 " + " 0 "+ str(x) + " " + str(y) + " " + str(z+dCC*sin(beta)+dCC) + "\n"); <br>
+								&emsp; &emsp;&emsp; &emsp;if z+dCC*sin(beta)+2*dCC&lt;=Ltube/2:<br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom += 1; cptCar += 1;<br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptCar) + " 0 " + "3 " + " 0 "+ str(x) + " " + str(y) + " " + str(z+dCC*sin(beta)+2*dCC) + "\n");<br> 
+
+								&emsp; &emsp;&emsp; &emsp;betaF=betaF+360/nbr; <br>
+								&emsp; &emsp;z=z+2*dCC*(1+sin(beta));<br>
+								<br>
+								<span class="comment"># water reservoir</span> <br> <br>
+								x=txlo+dOO/2; <br>
+								y=tylo+dOO/2; <br>
+								z=-Ltube/2-Rres+dOO; <br>
+								while x &lt;= txhi-dOO/2: <br>
+								&emsp; &emsp;while y &lt;= tyhi-dOO/2: <br>
+								&emsp; &emsp;&emsp; &emsp;while z &lt;= -Ltube/2-dOO: <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptMolecule+=1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom+=1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptAtom)+" "+str(cptMolecule)+" 2 "+str(qO)+" "+str(x)+" "+str(y)+" "+str(z) + "\n"); <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom+=1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptAtom)+" "+str(cptMolecule)+" 1 "+str(qH)+" "+str(r+x)+" "+str(y)+" "+str(z) + "\n"); <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;cptAtom+=1; <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;fichier.write(str(cptAtom)+" "+str(cptMolecule)+" 1 "+str(qH)+" "+str(r*sin(alpha)+x)+ " "+str(r*sin(alpha)+y)+" "+ str(z)+"\n"); <br>
+								&emsp; &emsp;&emsp; &emsp;&emsp; &emsp;z=z+dOO; <br>
+								&emsp; &emsp;&emsp; &emsp;y=y+dOO; <br>
+								&emsp; &emsp;&emsp; &emsp;z=-Ltube/2-Rres+dOO; <br>
+								&emsp; &emsp;x=x+dOO;<br>
+								&emsp; &emsp;y=tylo+dOO/2;<br>
+								fichier.write("\n"); <br>
+								<br>
+								fichier.write("Bonds \n \n") <br>
+								while cptBond &lt; 2*(cptAtom-cptCar)/3: <br>
+								&emsp; &emsp;fichier.write(str(cptBond+1)+" 1 "+str(cptCar+cptBond/2*3+1)+" "+str(cptCar+cptBond/2*3+2)+"\n"); <br>
+								&emsp; &emsp;fichier.write(str(cptBond+2)+" 1 "+str(cptCar+cptBond/2*3+1)+" "+str(cptCar+cptBond/2*3+3)+"\n"); <br>
+								&emsp; &emsp;cptBond+=2;<br>
+								fichier.write("\n");<br>
+
+								fichier.write("Angles \n \n") <br>
+								while cptAngle &lt; (cptAtom-cptCar)/3: <br>
+								&emsp; &emsp;fichier.write(str(cptAngle+1)+" 1 "+str(cptCar+cptAngle*3+2)+" "+str(cptCar+cptAngle*3+1)+" "+str(cptCar+cptAngle*3+3)+"\n"); <br>
+								&emsp; &emsp;cptAngle+=1;<br>
+
+								fichier.close() <br>
+								source = open("temp", "r") <br>
+								txt = source.read() <br>
+								source.close() <br>
+								import os <br>
+								os.remove("temp") <br>
+								fichier = open("data.lammps", "w")<br> 
+								fichier.write("<span class="comment"># Data file LAMMPS</span>"+ "\n"+ "\n") <br>
+								fichier.write(str(cptAtom)+" "+"atoms"+"\n"); <br>
+								fichier.write(str(cptBond)+" "+"bonds"+"\n"); <br>
+								fichier.write(str(cptAngle)+" "+"angles"+"\n"); <br>
+								fichier.write("\n"); <br>
+								fichier.write(str(typat)+" "+"atom types"+"\n"); <br>
+								fichier.write(str(typbo)+" "+"bond types"+"\n"); <br>
+								fichier.write(str(typan)+" "+"angle types"+"\n"); <br>
+								fichier.write("\n"); <br>
+								fichier.write(str(txt)); <br>
+								fichier.close() <br>
+
+							</div>
+							
+
+							<br><br>
+
+							<p class="Large"><b>Step 2 &mdash; LAMMPS code </b></p> <br>
+							
+							<div class="ContainerCode">
+								<span class="comment"># LAMMPS input file</span> <br>
+								units           real <br>
+								boundary        p p p <br>
+								atom_style      full <br>
+								bond_style      harmonic <br>
+								angle_style     harmonic <br>
+								pair_style	lj/cut/tip4p/long 2 1 1 1 0.1546 10.0 10.0 <br>
+								kspace_style	pppm/tip4p 1.0e-4 <br> <br>
+
+								read_data	data.lammps <br> <br>
+
+								pair_coeff      * * 0.0 0.0 <br>
+								pair_coeff      2 2 0.1852 3.1589 <br>
+								pair_coeff 	2 3 0.114 3.28 <br>
+								bond_coeff      1 0.0 0.9572 <br>
+								angle_coeff     1 0.0 104.52 <br> <br>
+
+								region 		membrane block INF INF INF INF -51.1 51.1 <br>
+								region 		mesure block INF INF INF INF -51.1 INF <br>
+								region 		therm block INF INF INF INF INF -56 <br>
+								region		cyl cylinder z 0 0 4.69 -51.1 51.1 <br> <br>
+
+								group		wat type 1 2 <br>
+								group		car type 3 <br>
+								group		temp region therm <br>
+								group		pist intersect car temp <br>
+								group		plg region cyl <br>
+								group           wth dynamic wat region therm every 100 <br> <br>
+
+								neighbor        2.0 bin <br>
+								neigh_modify    delay 0 <br>
+								neigh_modify    exclude group car car <br><br>
+
+								fix 		mynv1 wat nve <br>
+								fix		mynv2 pist nve <br> <br>
+
+								fix             shw wat shake 1.0e-4 200 0 b 1 a 1 <br>
+
+								velocity 	wat create 300 226630 <br>
+
+								dump 		dmp all atom 1000 dump.1.lammpstrj <br>
+								dump_modify	dmp flush yes <br>
+
+								fix             myber wth temp/berendsen 300 300 100 <br>
+
+								variable	nbc equal count(pist)  <br>
+								variable	atm equal (1.45837e-5)*lx*ly/${nbc} <br>
+								fix    		af1 pist aveforce NULL NULL ${atm} <br>
+								fix 		sf1 pist setforce 0.0 0.0 NULL <br>
+
+								thermo		100 <br>
+								timestep 	2.0 <br>
+								run 		10000 <br>
+								reset_timestep	0 <br> <br>
+
+								delete_atoms 	group plg <br>
+
+								undump		dmp <br>
+								dump 		dmp all atom 100 dump.2.lammpstrj <br>
+								dump_modify	dmp flush yes <br>
+
+								compute 	myTemp wat temp <br>
+								fix		ftp all ave/time 100 1 100 c_myTemp file tempwater.dat <br>
+
+								variable	nm equal count(wat,mesure) <br>
+								fix		fnm all ave/time 100 1 100 v_nm file countwater.dat <br>
+
+								run		500000 <br>
+							</div>
+
+							<p align="justify">The following figure shows the initial state of the simulation as well as the state at the end of the equilibrium phase.</p>
+							<img src="./tuto2MD/md_water_CNT.dat.tga.png" style="width:100%" alt="Picture">
+							
+					</div>	
+					<div class="Container1 BackWhite MarginBottom">
+						<div class="clearfix Container7">
+							<a href="./index.html"><p class="Large"><b>Back to the index</b></p></a>
+						</div>
+					</div>			
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
