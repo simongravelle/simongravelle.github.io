@@ -218,7 +218,7 @@
 							<div class="ContainerCode">
 								atom_style      full <br>
 							</div>	
-							<p align="justify">Then, we define the bonds and angles as "harmonic".</p>
+							<p align="justify">Then, we define the bonds and angles as "harmonic" as we need to define an "angle style".</p>
 							<div class="ContainerCode">
 								bond_style      harmonic <br>
 								angle_style     harmonic <br>
@@ -235,7 +235,7 @@
 							<div class="ContainerCode">
 								read_data data.lammps
 							</div>
-							<p align="justify">define the bond and angle value,</p>
+							<p align="justify">define the bond and angle respective values (using K=0),</p>
 							<div class="ContainerCode">
 								bond_coeff 1 0.0 0.9572 <br>
 								angle_coeff 1 0.0 104.52
@@ -245,7 +245,7 @@
 								neighbor 1.0 bin <br>
 								neigh_modify delay 1
 							</div>
-							<p align="justify">and for the LJ interaction (only oxygen-oxygen are different from 0).</p>
+							<p align="justify">and for the LJ interaction (only oxygen-oxygen are different from 0), which means that hydrogen atoms interact only through coulomb interactions.</p>
 							<div class="ContainerCode">
 								pair_coeff * * 0 0 <br>
 								pair_coeff 2 2 0.1852 3.1589
@@ -254,7 +254,7 @@
 							<div class="ContainerCode">
 								velocity all create ${T} 6522333 rot yes dist gaussian
 							</div>
-							<p align="justify">and contrain the water using the shake algorithm.</p>
+							<p align="justify">and contrain the water using the shake algorithm: each timestep the specified bonds and angles are reset to their equilibrium lengths and angular values.</p>
 							<div class="ContainerCode">
 								fix shak all shake 1.0e-4 200 0 b 1 a 1 
 							</div>
@@ -262,12 +262,12 @@
 							<div class="ContainerCode">
 								fix mynpt all npt temp ${T} ${T} 100 iso ${P} ${P} 1000.0
 							</div>
-							<p align="justify">and record the evolution of the box volume and water concentration as a function of time.</p>
+							<p align="justify">and we record the evolution of the box volume and water concentration as a function of time.</p>
 							<div class="ContainerCode">
 								fix at1 all ave/time 100 1 100 v_V file volume.dat <br>
 								fix at2 all ave/time 100 1 100 v_C file concentration.dat
 							</div>
-							<p align="justify">Finally we choose the frequency of terminal plotting information and create a dump file in order to, later, plot the molecule trajectories,</p>
+							<p align="justify">Finally, we choose the frequency of terminal plotting information and create a dump file in order to, later, plot the molecules trajectories,</p>
 							<div class="ContainerCode">
 								thermo 100 <br>
 								dump dmp1 all atom 1000 dump.npt.lammpstrj
@@ -281,7 +281,7 @@
 							<div class="ContainerCode">
 								write_restart restart.npt.equil
 							</div>
-							<p align="justify">The following figure show the evolution with time of both box volume and concentration during equilibration phase. The concentration reaches a value that is expected for liquid water (~ 55 mol/L). The figure is made using the open source code Xmgrace.</p>
+							<p align="justify">The following figure shows a snapshot of the system (left) as well as the evolution with time of both box volume and concentration during equilibration phase (right). The concentration reaches a value that is expected for liquid water (~ 55 mol/L). The snapshot is made using VMD and the graph using Xmgrace.</p>
 							<img src="./tuto1MD/snapshotVMD_npt.png" style="width:100%" alt="Picture">
 
 
@@ -289,10 +289,10 @@
 
 							<p class="Large"><b>Step 3 &mdash; water viscosity measurement </b></p>
 							<p align="justify">
-								The presented measurement is indicative only, and care must be taken, in particular "The computation of diffusion coefficients from molecular dynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or methodto  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hy-drodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
+								The presented measurement is indicative only, and care must be taken, in particular because "the computation of diffusion coefficients from molecular dynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or method to  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hydrodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
 							</p>
 							<p align="justify">Let us open another empty document, name it "in1", and save it in the same folder as the "restart.npt.equil" file.
-								The first lines are identical to the previous document,
+								The first lines are the same as previously,
 							</p>
 							<div class="ContainerCode">
 								variable T equal 300 <br>
@@ -327,11 +327,11 @@
 								variable unitconvert equal ${atm2Pa}*${atm2Pa}*${fs2s}*${A2m}*${A2m}*${A2m} <br>
 								variable scale equal ${unitconvert}/(${kB}*$T)*$V*${Nevery}*${dt} <br>
 							</div>
-							The molecule are thermostated using "nvt" thermostat (canonical ensemble - mechanical system in thermal equilibrium with a heat bath at a fixed temperature) with a reasonable damping (100 fs), controlling the temperature of the molecule at fixed volume.
+							The molecules are thermostated using "nvt" thermostat (canonical ensemble - mechanical system in thermal equilibrium with a heat bath at a fixed temperature) with a reasonable damping (100 fs), controlling the temperature of the molecules at fixed volume.
 							<div class="ContainerCode">
 								fix mynvt all nvt ${T} ${T} 100
 							</div>
-							Note that other choices for the thermalisation would be acceptable, such as for example a berendsten thermostat (which rescale the molecule velocity) combined with a "fix nve".
+							Note that other choices for the thermalisation would be acceptable, such as for example a Berendsten thermostat (which rescale the molecules velocities) combined with a "fix nve".
 							We use "Nfreq" for terminal plotting as it must be the same frequency as the "fix ave/correlate".
 							<div class="ContainerCode">
 								thermo ${Nfreq}
