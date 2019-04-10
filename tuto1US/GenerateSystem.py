@@ -12,7 +12,7 @@ qH=0.5564; # hydrogen charge (TIP4P/2005) in multiple of electron charge
 dOO=3.1589; # typical O-O distance in angstrom
 dCC=1.418; # distance C-C
 beta=30*pi/180; # graphene angle
-Rtube=12*(2*dCC*cos(beta))/(2*pi); # radius nanotube
+Rtube=9*(2*dCC*cos(beta))/(2*pi); # radius nanotube
 print(Rtube)
 Ltube=8*(2*(dCC*sin(beta)+dCC)); # length nanotube
 Rres=dOO*10; # size reservoir along z
