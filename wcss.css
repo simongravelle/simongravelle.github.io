@@ -34,12 +34,12 @@ a{text-decoration:none; color:#142336}
 .BackWhite{color:#000!important;background-color:#fff!important}
 
 .TextGrey{color:#142336!important}
-.Container1{background-color: #ACC7D7; padding:0.005em 10px} /* ACC7D7 8AC5C3 */
-.Container2{background-color: #ACC7D7; padding:5px 5px}
-
-.Container5{background-color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
-.Container6{background-color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
-.Container7{background-color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px}
+.Container1{background-color: #4B7D96; padding:0.005em 10px;} /* ACC7D7 8AC5C3 */
+.Container2{background-color: #4B7D96; padding:5px 5px}
+.Container3{background-color: #E6E6E6; padding:0.005em 10px}
+.Container5{background-color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px; margin-right:-10px}
+.Container6{background-color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px; margin-right:-10px}
+.Container7{background-color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px; margin-right:-10px}
 
 .ContainerCode{font-family:ubuntu mono; background-color: #341C4D; color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:5px; margin-left:5px}
 
