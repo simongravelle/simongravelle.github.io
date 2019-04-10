@@ -238,7 +238,12 @@
 
 							<br><br>
 
-							<p class="Large"><b>Step 2 &mdash; LAMMPS code </b></p> <br>
+							<p class="Large"><b>Step 2 &mdash; LAMMPS script </b></p> <br>
+							
+							<p align="justify">
+								The following LAMMPS input script contain a first equilibrium phase. Then, the "plugg" carbon atoms are removed, opening the CNT, and the number of water molecules filling the tube are recorded over time.
+								A moving graphene wall is used to impose the atmospheric pressure to the water reservoir, and also to prevent the evaporation of water molecule. Only the water molecules located far from the tube entrance are thermalised. 
+							</p>
 							
 							<div class="ContainerCode">
 								<span class="comment"># LAMMPS input file</span> <br>
@@ -313,6 +318,7 @@
 
 							<p align="justify">The following figure shows the initial state of the simulation as well as the state at the end of the equilibrium phase.</p>
 							<img src="./tuto2MD/md_water_CNT.dat.tga.png" style="width:100%" alt="Picture">
+							A video showing the capillary filling made using this code is available <a TARGET="_BLANK" href="https://www.youtube.com/watch?v=hrOh_J6x5Iw&t=8s">here</a>. 
 							
 					</div>	
 					<div class="Container1 BackWhite MarginBottom">
