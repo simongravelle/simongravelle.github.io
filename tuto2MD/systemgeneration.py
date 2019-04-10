@@ -1,5 +1,5 @@
 from math import *
-typat=3; # 2 types of atom in total (hydrogen and oxygen)
+typat=3; # 3 types of atom in total (hydrogen, oxygen and carbon)
 typbo=1; # 1 type of bond (O-H)
 typan=1; # 1 type of angle (H-O-H)
 mH=1.00794; # hydrogen mass in grams per mole
