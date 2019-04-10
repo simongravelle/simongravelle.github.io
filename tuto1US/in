@@ -1,0 +1,75 @@
+# LAMMPS input file
+units real
+boundary p p p
+atom_style full
+bond_style harmonic
+angle_style harmonic
+pair_style lj/cut/tip4p/long 2 1 1 1 0.1546 10.0 10.0
+kspace_style pppm/tip4p 1.0e-4
+
+read_data data.lammps
+
+pair_coeff * * 0.0 0.0
+pair_coeff 2 2 0.1852 3.1589
+pair_coeff 2 3 0.114 3.28
+bond_coeff 1 0.0 0.9572
+angle_coeff 1 0.0 104.52
+
+region membrane block INF INF INF INF -17 17
+region cyl cylinder z 0 0 3.518 -17.1 17.1
+region left block INF INF INF INF INF -18
+region right block INF INF INF INF 18 INF
+
+group wat type 1 2
+group car type 3
+group plg region cyl
+group left region left
+group right region right
+group pstl intersect car left
+group pstr intersect car right 
+
+velocity wat create 300 226630
+
+delete_atoms group plg
+#replicate 3 3 1
+
+variable nbc equal count(pstl)
+variable atm equal (1.45837e-5)*lx*ly/${nbc}
+variable matm equal -1.0*${atm}
+fix af1 pstl aveforce NULL NULL ${atm}
+fix sf1 pstl setforce 0.0 0.0 NULL 
+fix af2 pstr aveforce NULL NULL ${matm}
+fix sf2 pstr setforce 0.0 0.0 NULL 
+
+neighbor 2.0 bin
+neigh_modify delay 0
+neigh_modify exclude group car car
+
+fix nvw wat nve
+fix nvpl pstl nve
+fix nvpr pstr nve
+
+fix shw wat shake 1.0e-4 200 0 b 1 a 1
+
+dump dmp all atom 1000 dump.1.lammpstrj
+dump_modify dmp flush yes
+
+compute myTemp wat temp
+fix myber wat temp/berendsen 300 300 100
+#fix myber wat nvt temp 300 300 100
+#fix myber wat npt temp 300 300 100 z 1000 1 1000
+fix_modify myber temp myTemp
+#variable nbc equal count(pist)
+#variable atm equal (1.45837e-5)*lx*ly/${nbc}
+#fix af1 pist aveforce NULL NULL ${atm}
+#fix sf1 pist setforce 0.0 0.0 NULL
+thermo 100
+timestep 2.0
+
+variable myLz equal lz
+fix flz all ave/time 100 1 100 v_myLz file Lz.dat
+
+fix ftp all ave/time 100 1 100 c_myTemp file tempwater.dat
+variable nm equal count(wat,membrane)
+fix fnm all ave/time 100 1 100 v_nm file countwater.dat
+run 500000 
