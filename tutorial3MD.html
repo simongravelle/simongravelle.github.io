@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Tutorial MD</title>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36911186-4"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-36911186-4');
+		</script>
+	</head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./wcss.css">
+	<body>
+		<div class="Content TopMargin" style="max-width:1400px;">
+			<div class="RowPadding">
+				<div class="w3-third">
+					<div class="BackWhite TextGrey">
+						<div class="Container1">
+							<a href="./index.html"><p class="Large"><b>Simon Gravelle</b></p></a>
+							<p>
+								<a TARGET="_BLANK" href="https://www.sems.qmul.ac.uk/staff/s.gravelle">Postdoctoral researcher <br>
+								University Queen Mary <br>
+								London, UK</a>
+							</p>
+							<p>
+								simon.gravelle at live.fr <br>
+								s.gravelle at qmul.ac.uk
+							</p>
+
+							<a href="./index.html"><img src="./Images/simon_gravelle_UAI.jpg" style="width:100%" alt="Picture"></a>
+
+							<p class="Large2"><b>Interests</b></p>
+							<p>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Biomimetics">Biomimetics </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Nanofluidics">Nanofluidics </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Thermodynamics">Thermodynamics </a><br>
+								Cytoskeleton dynamics <br>
+								Fluid-solid interaction <br>
+								Flow through porous media <br>
+							</p>
+							
+							<p class="Large2"><b>Expertise</b></p>
+							<p>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Molecular_dynamics">Molecular dynamics </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Finite_element_method">Finite elements method </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Monte_Carlo_method">Grand canonical Monte Carlo </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Umbrella_sampling">Umbrella sampling </a><br>
+								<a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Fluorescence_correlation_spectroscopy">F. C. Spectroscopy</a>
+							</p>
+							
+							<p class="Large2"><b>Career</b></p>
+							<p>
+							since 2019 - Postdoc n°2 <br>
+							<a TARGET="_BLANK" href="https://www.qmul.ac.uk/">QMUL, London, UK</a> <br> <br>
+							2016-2019 - Postdoc n°1 <br>
+							<a TARGET="_BLANK" href="https://www.uai.cl/campus-uai/campus-vina-del-mar/"> UAI, Viña del Mar, Chile</a> <br>
+							<a TARGET="_BLANK" href="https://www.conicyt.cl/fondecyt/category/concursos/postdoctorado/"> Scholarship Fondecyt Postdoc</a> <br> <br>
+							2012-2015 - PhD thesis <br>
+							<a TARGET="_BLANK" href="https://www.univ-lyon1.fr/"> UCB, Lyon, France </a>
+							</p>
+							
+							<p class="Large2"><b>Resume (<a TARGET="_BLANK" href="SimonGravelle_resume.pdf">download pdf</a>)</b></p>
+							<p>
+								<a TARGET="_BLANK" href="https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=en">
+								8 publi (including PNAS, PRL) <br>
+								more than 250 citations <br>
+								h-factor=6</a>
+							</p>
+
+						</div>
+					</div>
+	    			</div>
+				<div class="Twothird">
+					<div class="Container1 BackWhite MarginBottom">
+						<div class="clearfix Container7">
+							<a href="./index.html"><p class="Large"><b>Back to the index</b></p></a>
+						</div>
+					</div>
+					<div class="Container1 BackWhite MarginBottom">
+						<div class="clearfix Container5">
+							<p class="Large"><b>Equilibrium hydrodynamic slip length measurement (how-to)</b></p>
+
+							<p align="justify">In order to execute these scripts, you need to download <a TARGET="_BLANK" href="https://lammps.sandia.gov/">LAMMPS</a>, which is an open source classical molecular dynamics code. You also need a text editor, and a molecular visualisation program, such as <a TARGET="_BLANK" href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a>. Finally, I use Python to generate the initial configuration.
+							</p>
+							<br>
+							<p class="Large"><b>Step 1 &mdash; data file generation</b></p>
+
+							<p align="justify">You can download both python file (<a TARGET="_BLANK" href="tuto3MD/systemgeneration.py">systemgeneration.py</a>) and generated data file (<a TARGET="_BLANK" href="tuto3MD/data.lammps">data.lammps</a>).</p>
+
+							<br>
+							<p class="Large"><b>Step 2 &mdash; reach equilibrium</b></p>
+
+							<p align="justify">The first step is to equilibrate the system, by running the following script  (<a TARGET="_BLANK" href="tuto3MD/in.eq">in.eq</a>). The script generates a dump as well as a restart file. The dump file can be used using VMD.</p>
+
+							
+							<br>
+							<p class="Large"><b>Step 3 &mdash; measure the slip length</b></p>							
+
+							<p align="justify">The the following script  (<a TARGET="_BLANK" href="tuto3MD/in.run">in.run</a>) performs a measurement of the slip length and print its value in nanometer. The following lines calculate time correlations of both X-Y forces exerted by water on the top graphene.</p>
+	
+							
+							<div class="ContainerCode">
+
+								variable 	Nevery equal 10 <br>
+								variable 	Nrepeat equal 100 <br>
+								variable 	Nfreq equal ${Nrepeat}*${Nevery} <br>
+								variable	fxt equal fcm(gr1,x) <br>
+								variable	fyt equal fcm(gr1,y) <br>
+								fix acor all ave/correlate ${Nevery} ${Nrepeat} ${Nfreq} v_fxt v_fyt type auto file correlate.dat ave running 
+							</div>
+
+							<p align="justify">Then, correlated values are integrated and the numerical factor "scale" converts data in meter in agreement with the Green-Kubo formulation.</p>
+
+							<div class="ContainerCode">
+								variable 	v11 equal trap(f_acor[3])*${scale}<br>
+								variable 	v22 equal trap(f_acor[4])*${scale}<br>
+								timestep 	${dt} <br>
+								run 		100000 <br>
+								variable 	b equal 1e9*(v_v11+v_v22)/2.0 <br>
+								print 		"slip length: ${b} [nm]" 
+							</div>
+
+							<br><br>
+							Here is a video made from the "dump.run.lammpstrj" file generated with this script :
+							<br>
+							<iframe width="560" height="315" src="https://youtu.be/g7Y6PGM-qp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+					</div>	
+					<div class="Container1 BackWhite MarginBottom">
+						<div class="clearfix Container7">
+							<a href="./index.html"><p class="Large"><b>Back to the index</b></p></a>
+						</div>
+					</div>			
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
