@@ -206,7 +206,7 @@
 								variable    V equal vol <span class="comment"># angstrom3 </span> <br>
 								variable    C equal count(all)/vol/3*1e30/6.022e23 <span class="comment"># mole per m3 </span>
 							</div>
-							<p align="justify">First we need to specify which units we want to use. In our case, "real" is a 								convenient choice. With this choice of units, the distances are in angstrom in agreement with the 								data file previously generated, see <a TARGET="_BLANK" href="https://lammps.sandia.gov/doc/units.html">this page for more details</a>.</p>
+							<p align="justify">First we need to specify which units we want to use. In our case, "real" is a 								convenient choice. With this choice of units, the distances are in angstrom in agreement with the 								data file previously generated, see <a TARGET="_BLANK" href="https://lammps.sandia.gov/doc/units.html"><span style="color: #000000">this page for more details</span></a>.</p>
 							<div class="ContainerCode">
 								units           real <br>
 							</div>
@@ -223,7 +223,7 @@
 								bond_style      harmonic <br>
 								angle_style     harmonic <br>
 							</div>	
-							<p align="justify">Finally, we specify that the interactions between water molecules are a combination of a Lennard-Jones potential, and Coulombic interactions. Note that since we use the TIP4P water model, which is a bit special because the charge of the oxygen is located at a massless point M, which is different than the position of the oxygen atom, we use the following pair style (see the  <a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Water_model"> wikipedia page of water models</a>).</p>
+							<p align="justify">Finally, we specify that the interactions between water molecules are a combination of a Lennard-Jones potential, and Coulombic interactions. Note that since we use the TIP4P water model, which is a bit special because the charge of the oxygen is located at a massless point M, which is different than the position of the oxygen atom, we use the following pair style (see the  <a TARGET="_BLANK" href="https://en.wikipedia.org/wiki/Water_model"> <span style="color: #000000">wikipedia page of water models</span></a>).</p>
 							<div class="ContainerCode">
 								pair_style	lj/cut/tip4p/long 2 1 1 1 0.1546 10.0 <br>
 							</div>	
@@ -289,7 +289,7 @@
 
 							<p class="Large"><b>Step 3 &mdash; water viscosity measurement </b></p>
 							<p align="justify">
-								The presented measurement is indicative only, and care must be taken, in particular because "the computation of diffusion coefficients from molecular dynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or method to  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hydrodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097">[Tazi2012]</a>.
+								The presented measurement is indicative only, and care must be taken, in particular because "the computation of diffusion coefficients from molecular dynamics simulation must be done carefully, as the result maydepend on the simulation parameters (cut-off radius or method to  compute  electrostatic  interactions),  but  also  exhibits  asystematic size-dependence arising from the screening of hydrodynamic flows under periodic boundary conditions" <a TARGET="_BLANK" href="https://www.ncbi.nlm.nih.gov/pubmed/22739097"><span style="color: #000000">[Tazi2012]</span></a>.
 							</p>
 							<p align="justify">Let us open another empty document, name it "in1", and save it in the same folder as the "restart.npt.equil" file.
 								The first lines are the same as previously,
@@ -314,7 +314,7 @@
 								reset_timestep	0
 							</div>
 							<p align="justify">
-							Then, we define new variables that will be usefull for the calculation of the viscosity. The method is inspired from <a TARGET="_BLANK" href="https://lammps.sandia.gov/doc/Howto_viscosity.html">this page</a>.
+							Then, we define new variables that will be usefull for the calculation of the viscosity. The method is inspired from <a TARGET="_BLANK" href="https://lammps.sandia.gov/doc/Howto_viscosity.html"><span style="color: #000000">this page</span></a>.
 							</p>
 							<div class="ContainerCode">
 								variable Nevery equal 10 <br>
