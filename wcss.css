@@ -51,9 +51,9 @@ a{text-decoration:none; color: #dbdde0}
 
 .DisplayBottomLeft{position:absolute;left:0;bottom:0}
 .TextBlack{color:#000!important}
-.Large{font-size:24px!important; margin-top:10px; margin-bottom:-5px;}
+.Large{font-size:24px!important; margin-top:10px; margin-bottom:-5px; color:#000000}
 .Large2{font-size:20px!important; margin-top:10px; margin-bottom:-10px;}
-
+.Large3{font-size:24px!important; margin-top:10px; margin-bottom:-5px; color:#ffffff}
 
 .Twothird{float:left;width:100%}
 .Twothird{width:80%}
