@@ -82,23 +82,23 @@
 						<div class="clearfix Container5">
 							<p class="Large"><b>Equilibrium hydrodynamic slip length measurement (how-to)</b></p>
 
-							<p align="justify">In order to execute these scripts, you need to download <a TARGET="_BLANK" href="https://lammps.sandia.gov/">LAMMPS</a>, which is an open source classical molecular dynamics code. You also need a text editor, and a molecular visualisation program, such as <a TARGET="_BLANK" href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a>. Finally, I use Python to generate the initial configuration.
+							<p align="justify">In order to execute these scripts, you need to download <a TARGET="_BLANK" href="https://lammps.sandia.gov/"><span style="color: #000000">LAMMPS</span></a>, which is an open source classical molecular dynamics code. You also need a text editor, and a molecular visualisation program, such as <a TARGET="_BLANK" href="https://www.ks.uiuc.edu/Research/vmd/"><span style="color: #000000">VMD</span></a>. Finally, I use Python to generate the initial configuration.
 							</p>
 							<br>
 							<p class="Large"><b>Step 1 &mdash; data file generation</b></p>
 
-							<p align="justify">You can download both python file (<a TARGET="_BLANK" href="tuto3MD/systemgeneration.py">systemgeneration.py</a>) and generated data file (<a TARGET="_BLANK" href="tuto3MD/data.lammps">data.lammps</a>).</p>
+							<p align="justify">You can download both python file (<a TARGET="_BLANK" href="tuto3MD/systemgeneration.py"><span style="color: #000000">systemgeneration.py</span></a>) and generated data file (<a TARGET="_BLANK" href="tuto3MD/data.lammps"><span style="color: #000000">data.lammps</span></a>).</p>
 
 							<br>
 							<p class="Large"><b>Step 2 &mdash; reach equilibrium</b></p>
 
-							<p align="justify">The first step is to equilibrate the system, by running the following script  (<a TARGET="_BLANK" href="tuto3MD/in.eq">in.eq</a>). The script generates a dump as well as a restart file. The dump file can be used using VMD.</p>
+							<p align="justify">The first step is to equilibrate the system, by running the following script  (<a TARGET="_BLANK" href="tuto3MD/in.eq"><span style="color: #000000">in.eq</span></a>). The script generates a dump as well as a restart file. The dump file can be used using VMD.</p>
 
 							
 							<br>
 							<p class="Large"><b>Step 3 &mdash; measure the slip length</b></p>							
 
-							<p align="justify">The the following script  (<a TARGET="_BLANK" href="tuto3MD/in.run">in.run</a>) performs a measurement of the slip length and print its value in nanometer. The following lines calculate time correlations of both X-Y forces exerted by water on the top graphene.</p>
+							<p align="justify">The the following script  (<a TARGET="_BLANK" href="tuto3MD/in.run"><span style="color: #000000">in.run</span></a>) performs a measurement of the slip length and print its value in nanometer. The following lines calculate time correlations of both X-Y forces exerted by water on the top graphene.</p>
 	
 							
 							<div class="ContainerCode">
