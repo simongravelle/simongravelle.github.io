@@ -7,7 +7,7 @@ body{font-family:Calibri; font-size:18px; background-color:#E6E6E6;}
 .hr1{border:0;border-top:1px solid #62748D;margin:12px 0 5px 0}
 .hr2{border:0;border-top:1px solid #62748D;margin:5px 0 5px 0}
 
-a{text-decoration:none; color:#142336}
+a{text-decoration:none; color: #dbdde0}
 
 .w3-third{float:left;width:100%}
 
@@ -34,7 +34,7 @@ a{text-decoration:none; color:#142336}
 .BackWhite{color:#000!important;background-color:#fff!important}
 
 .TextGrey{color:#142336!important}
-.Container1{background-color: #A7B3A5; padding:0.005em 10px;} /* ACC7D7 8AC5C3 */
+.Container1{background-color: #282a2e; padding:0.005em 10px; color: #dbdde0} /* ACC7D7 8AC5C3 */
 .Container2{background-color: #A7B3A5; padding:5px 5px}
 .Container3{background-color: #E6E6E6; padding:0.005em 10px}
 .Container5{background-color: #ffffff; padding:15px 15px; margin-top:0px; margin-bottom:7px; margin-left:-10px; margin-right:-10px}
