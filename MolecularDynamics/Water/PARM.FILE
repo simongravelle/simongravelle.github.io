@@ -1,0 +1,8 @@
+##############################################################################
+
+pair_coeff 	1 1 0.1852 3.1589	# oxygen TIP4P water
+pair_coeff 	2 2 0.0 0.0		# hydrogene TIP4P water
+
+bond_coeff 	1 0.0 0.9572		# 1  TIP4P water
+
+angle_coeff 	1 0.0 104.52		# 1 TIP4P water
