@@ -1,1 +1,1 @@
-please visit simongravelle.github.io for images
+please visit https://simongravelle.github.io/ for images
