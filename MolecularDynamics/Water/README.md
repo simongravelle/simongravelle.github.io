@@ -2,7 +2,7 @@ from the terminal, execute the python file to generate the data file (or downloa
 > python GenerateSystem.py
 
 then, run the lammps script (the command depends on your lammps installation)
-> lammps -in in
+> lammps -in in_lammps
 
 when the simulation is done, you can plot atom position from the dump file, using VMD for example 
 > vmd dump.water.lammpstrj
