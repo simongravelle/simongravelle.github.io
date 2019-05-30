@@ -1,0 +1,28 @@
+# single graphene sheet
+variable	mylx equal lx
+variable	myly equal ly
+variable	mylz equal lz
+
+# the unit style metal is required by the "CH.airebo" file
+units 		metal
+# the system is periodic along all three dimentions
+boundary 	p p p
+# atomic style is sufficient (no need for charge for example)
+atom_style	atomic
+# load the data file generated using the python script
+read_data 	data.lammps
+# we choose the airebo pair style with a cut off of 2.5 sigma (~8.5A), with LJ and with torsion contributions
+pair_style  	airebo 2.5 1 1
+# then we call the force field and specify what are the atoms (here all atoms are carbon) note: if some atoms are not to be described by the airebo, for example is you got a fluid in your simulation, use "NULL" instead of "C"
+pair_coeff 	* * ./CH.airebo C C C C C C
+# choose a frequency for terminal and dump plotting and data extraction (here the data are the box dimensions)
+thermo		100
+dump 		dp2 all atom 100 dump.graphite.lammpstrj
+fix		at1 all ave/time 10 10 100 v_mylx v_myly v_mylz file dimensions.dat 
+# give an initial temprature to the atoms
+velocity 	all create 300.0 4928459 dist gaussian
+# a npt maintains the temperature and pressure of the system
+fix 		11 all npt temp 300.0 300.0 0.1 aniso 1 1 0.1
+# finally a timestep of 5e-4 ps is reasonable for airebo
+timestep	0.0005
+run 		10000
