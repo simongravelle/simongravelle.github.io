@@ -3,11 +3,11 @@
 @import 'libs/mixins';
 @import 'libs/vendor';
 @import 'libs/breakpoints';
-@import 'font-awesome.min.css';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic');
+@import 'libs/html-grid';
+@import 'fontawesome-all.min.css';
 
 /*
-	Multiverse by HTML5 UP
+	Hyperspace by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
@@ -15,24 +15,13 @@
 // Breakpoints.
 
 	@include breakpoints((
-		xlarge:  ( 1281px,  1680px ),
-		large:   ( 981px,   1280px ),
-		medium:  ( 737px,   980px  ),
-		small:   ( 481px,   736px  ),
-		xsmall:  ( null,    480px  )
+		xlarge:   ( 1281px,  1680px ),
+		large:    ( 981px,   1280px ),
+		medium:   ( 737px,   980px  ),
+		small:    ( 481px,   736px  ),
+		xsmall:   ( 361px,   480px  ),
+		xxsmall:  ( null,    360px  )
 	));
-
-// Spinner.
-
-	@include keyframes(spinner) {
-		0% {
-			@include vendor('transform', 'rotate(0deg)');
-		}
-
-		100% {
-			@include vendor('transform', 'rotate(359deg)');
-		}
-	}
 
 // Base.
 
@@ -42,19 +31,28 @@
 
 // Component.
 
+	@import 'components/row';
+	@import 'components/box';
 	@import 'components/button';
+	@import 'components/features';
 	@import 'components/form';
 	@import 'components/icon';
+	@import 'components/image';
 	@import 'components/list';
 	@import 'components/actions';
+	@import 'components/contact';
 	@import 'components/icons';
+	@import 'components/menu';
+	@import 'components/section';
+	@import 'components/split';
+	@import 'components/spotlights';
 	@import 'components/table';
-	@import 'components/panel';
-	@import 'components/poptrox-popup';
+	@import 'components/wrapper';
 
 // Layout.
 
-	@import 'layout/wrapper';
 	@import 'layout/header';
-	@import 'layout/main';
+	@import 'layout/wrapper';
 	@import 'layout/footer';
+	@import 'layout/sidebar';
+	@import 'layout/intro';
