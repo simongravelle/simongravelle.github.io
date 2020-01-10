@@ -24,15 +24,15 @@
      id="defs2">
     <linearGradient
        inkscape:collect="always"
-       id="linearGradient2418">
+       id="linearGradient2395">
       <stop
-         style="stop-color:#8e0df2;stop-opacity:1;"
+         style="stop-color:#690dcc;stop-opacity:1"
          offset="0"
-         id="stop2414" />
+         id="stop2390" />
       <stop
-         style="stop-color:#8e0df2;stop-opacity:0;"
+         style="stop-color:#b300b0;stop-opacity:1"
          offset="1"
-         id="stop2416" />
+         id="stop2393" />
     </linearGradient>
     <linearGradient
        inkscape:collect="always"
@@ -2947,12 +2947,12 @@
     </clipPath>
     <linearGradient
        inkscape:collect="always"
-       xlink:href="#linearGradient2418"
-       id="linearGradient2420"
-       x1="92.194946"
-       y1="0.10865036"
-       x2="198.02965"
-       y2="-107.81769"
+       xlink:href="#linearGradient2395"
+       id="linearGradient2397"
+       x1="83.069969"
+       y1="-18.141283"
+       x2="201.17619"
+       y2="-115.36938"
        gradientUnits="userSpaceOnUse" />
   </defs>
   <sodipodi:namedview
@@ -2963,15 +2963,15 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.8408706"
-     inkscape:cx="177.45924"
+     inkscape:cx="563.14827"
      inkscape:cy="275.02648"
      inkscape:document-units="mm"
      inkscape:current-layer="g18197"
      showgrid="false"
      inkscape:window-width="1394"
      inkscape:window-height="792"
-     inkscape:window-x="503"
-     inkscape:window-y="74"
+     inkscape:window-x="837"
+     inkscape:window-y="90"
      inkscape:window-maximized="0"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -3059,7 +3059,7 @@
                         <g
                            id="g18197">
                           <rect
-                             style="opacity:1;fill:url(#linearGradient2420);fill-opacity:1;stroke:#ff0900;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+                             style="opacity:1;fill:url(#linearGradient2397);fill-opacity:1;stroke:#ff0900;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
                              id="rect561"
                              width="138.55872"
                              height="138.55872"
