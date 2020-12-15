@@ -199,13 +199,16 @@ blockquote {
   padding: 0.5em 0 0.5em 2em; }
 
 code {
-  background: rgba(230, 235, 237, 0.25);
+  background: #4A4B54; /*rgba(230, 235, 237, 0.25);*/
+  color: #ffffff;
   border-radius: 0.375em;
-  border: solid 1px rgba(210, 215, 217, 0.75);
+  /*border: solid 1px rgba(210, 215, 217, 0.75);*/
   font-family: "Courier New", monospace;
   font-size: 0.9em;
-  margin: 0 0.25em;
-  padding: 0.25em 0.65em; }
+  margin: 0.5em 0em;
+  padding: 0.4em 0.65em;
+  display: block;
+  }
 
 pre {
   -webkit-overflow-scrolling: touch;
