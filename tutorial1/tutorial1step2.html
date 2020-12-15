@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Personal webpage of Simon Gravelle</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+								<header id="header">
+									<a href="../index.html" class="logo"><strong>Personal webpage</strong> of Simon Gravelle</a>
+									<ul class="icons">
+									<li><a href="https://twitter.com/GravelleSimon" target="_blank" class="removelinkdefault"><strong class="fab fa-twitter"></strong></a></li>
+									<li><a href="https://github.com/simongravelle" target="_blank" class="removelinkdefault"><strong class="fab fa-github"></strong></a></li>
+									<li><a href="https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=fr" target="_blank" class="removelinkdefault"><strong class="fa fa-graduation-cap"></strong></a></li>
+									<li><a href="https://orcid.org/0000-0003-2149-6706" target="_blank" class="removelinkdefault"><strong>iD</strong></a></li>
+									<li><a href="https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw?view_as=subscriber" target="_blank" class="removelinkdefault"><strong class="fab fa-youtube"></strong></a></li>
+									</ul>
+								</header>
+								<section>
+									<header class="major">
+										<h2>Step 2: generation of the system</h2>
+									</header>									
+									
+									<p>
+										<strong>
+										
+										<h2></h2>
+										
+										
+										First, create a new folder that will contain all the files. Open a blank page, save it in the folder as 'input.01.lammps'.
+										Note that the '.lammps' extension has no importance. Copy the following lines into input.01.lammps.
+	
+<code>
+<pre>
+# LAMMPS input script
+
+boundary	p p p
+units		real
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style	pppm/tip4p 1.0e-4
+</pre>
+</code>
+										
+										The first line starting with a '#' is a comment. 
+										All the other lines are commands that will be recognised by LAMMPS. 
+										
+										<br><br>
+										
+										The 'boundary' command specifies the style of the boundaries. Here 'p p p' imposes the periodic boundary condition on x, y, and z respectively. The 'units' command specifies the style of units. With the style 'real', mass are in grams per mole, distance in Ångstroms, time in femtoseconds, energy in Kcal/mole. You can consult <a href="https://lammps.sandia.gov/doc/units.html" target="_blank" class="removelinkdefault"><strong>the LAMMPS documentation</strong></a> for details. The 'atom_style' command defines the style of the atoms. With the 'full' keyword, each atom is a dot with a mass, a charge, and can be linked by bonds, angles, dihedrals and impropers to form molecules. The 'bond_style' and 'angle_style' commands define what style of bond and angle to use in the simulation, and the 'harmonic' keyword imposes the potential to use. In the present simulation, a rigid model will be used for the water molecules, therefore the bond and angle styles are not relevant, but LAMMPS requires them to be specified. 
+										
+										<br><br>
+										
+										The 'pair_style' set the formula used by LAMMPS to compute the interactions between atoms. With the 'lj/cut/tip4p/long' keyword, atoms interact through both a Lennard-Jones (LJ) potential and through Coulombic interaction. This style is specific to four points water model, and automatically account for the additional massless site. The six numbers are, respectively, the atom type for the oxygen O of the tip4p water, the atom type for the hydrogen H of the tip4p water, the OH bond type, the HOH angle type, the distance from O atom to massless charge, and the cutoff. Note that the cutoff applies to both LJ and Coulombic interactions, but in a different way. For LJ 'cut' interactions, atoms interact with each other only if they are separated by a distance smaller than the cutoff. For Coulombic 'long', interaction between atoms closer than the cutoff are computed directly, and interaction between atoms outside that cutoff are computed in reciprocal space. Finally the kspace defines the long-range solver for Coulombic interactions. The pppm style refers to particle-particle particle-mesh. 
+										
+										<br><br>
+										
+										Now that the parameters of the simulation have been specified, let us create the box. Copy the following lines into input.01.lammps, below the 'kspace_style' command. The order is important, LAMMPS reads input file from top to bottom.
+										
+										<br>
+										
+<code>
+<pre>
+lattice		diamond 3.57
+region		box block -5 5 -5 5 -13 13
+create_box	6 box & 
+		bond/types 1 &
+		angle/types 1 &
+		extra/bond/per/atom 2 &
+		extra/angle/per/atom 1 &
+		extra/special/per/atom 2
+</pre>
+</code>									The 'lattice' command defines the unit cell. Here 'diamond' with a scale factor of 3.57 has been chosen for the futur positioning of the carbon atoms in a diamond cubic lattice. The 'region' command defines a geometric region of space. 'box' is the name I've chosen for the region, it will be used to refer to the region later. With the 'block' keyword, the region is a rectangular parallelepiped, and requires the 6 box boundaries as input parameters: xlo, xhi, ylo, yhi, zlo, and zhi. For instance, by choosing 'xlo=-5' and 'xhi=5', and because we have previously chosen a lattice with scale factor of 3.57, the region 'box' extends from -17.86 to 17.86 Ångström (units of lengths are in Ångstrom because we have chosen the unit style 'real'). Finally, the 'create_box' command creates a simulation box based on the region 'box'. The number '6' indicates that there will be 6 types of atoms in the simulation: oxygen and hydrogen atoms of the water, Na, Cl, and the carbon atoms of the top and bottom walls respectively. Note that the carbon atoms of the top and bottom walls will be identical (same mass, same pairwise interaction, etc.), and the assignment of two different numbers is for practical reason only. 
+
+										<br><br>
+										
+										The create box command extends over 6 lines thanks to the '&' character. The second and third lines are used to specify that the simulation with contain 1 type of bond and 1 type of angle (for the water molecule). The parameters of these bond and angle constraint will be given later. The three last lines are for memory allocation.
+
+										<br><br>
+										
+										We need to define the parameters of the simulation: the mass of the 6 atoms (O, H, Na, Cl, C, C), the pairwise interaction parameters (here the parameters for the Lennard-Jones potential), and the bond and angle parameters. Let us create a new file and call it PARM.lammps. Copy the following line into input.01.lammps.
+<code>
+<pre>
+include		PARM.lammps
+</pre>
+</code>										
+										and the following lines into PARM.lammps.
+<code>
+<pre>
+mass 		1 15.9994
+mass 		2 1.008
+mass		3 28.990
+mass		4 35.453
+mass		5 12.011
+mass		6 12.011
+
+pair_coeff 	1 1 0.185199 3.1589
+pair_coeff 	2 2 0.0 0.0
+pair_coeff	3 3 0.04690 2.4299
+pair_coeff	4 4 0.1500 4.04470
+pair_coeff	5 5 0.07 3.55
+pair_coeff	6 6 0.07 3.55
+
+bond_coeff 	1 0 0.9572
+
+angle_coeff 	1 0 104.52
+</pre>
+</code>
+The parameters for water (mass 1, mass2, pair_coeff 1 1, pair coeff 2 2, bond_coeff 1 and angle_coeff 1) are given by the TIP4P/2005 force field, the parameters for Na and Cl (mass 3, mass 4, pair_coeff 3 3, pair_coeff 4 4) are given by the CHARMM-27 force field, and the parameters for the carbon atoms (mass 5, mass 6, pair_coeff 5 5, pair coeff 6 6) are given by the AMBER force field. Each 'mass' command assigns a mass in grams/mole to an atom type. Each 'pair_coeff' assigns respectively the depth of the potential in Kcal/mole, and the distance at which the particle-particle potential energy in Ångstrom. We have only assigned pairwise interaction between atoms of identical type. By default, LAMMPS calculates the pair coefficients for the interactions between atoms of type i and j by using the geometrical rule. Other rules can be set with the 'pair_modify' command, but for the sake of simplicity, we are going to keep the default option here. 
+
+<br><br>
+
+The bond coefficients (here for the O-H bond of the water molecule) set respectively the energy of the harmonic potential and the equilibrium distance in Ångstrom. The value is '0' for the energy, because we are going to use a rigid model for the water molecule. The shape of the molecule will be preserved by the shake algorithm (see later). Similarly, the angle coefficient (here for the H-O-H angle of the water molecule) set the energy of the harmonic potential (also 0) and the equilibrium angle in degree. 
+
+<br><br>
+We can now add the atoms. First, we create two sub-regions corresponding respectively to the two solid walls, and add atoms of type 5 and 6 respectively.
+<code>
+<pre>
+region		rbotwall block -5 5 -5 5 -12 -10
+region		rtopwall block -5 5 -5 5 10 12
+
+create_atoms 	5 region rtopwall
+create_atoms 	6 region rbotwall										
+</pre>
+</code>
+In order to add the water molecules, we first need to download the file <a href="H2O.txt" target="_blank" class="removelinkdefault">H2O.txt</a>. It contains all the necessary information about the water molecule, such as positions, bonds, and angle. Then, add the following lines to input.01.lammps:
+<code>
+<pre>
+region		rliquid block -5 5 -5 5 -9 9
+lattice		sc 4.0
+molecule 	h2omol H2O.txt
+create_atoms 	0 region rliquid mol h2omol 482793
+</pre>
+</code>
+With the last four lines, a region used to deposit the water is created on the last defined lattice, which is 'lattice diamond 3.57'. Then, on the next line, we define a new simple cubic lattice in order to position the water molecules on it, with a distance of 4 Ångstroms between each water molecule. Note that 4 Ångstroms is larger than the typical equilibrium distance between water molecules in a liquid, but this will allow us to insert ions more safely. Then, the 'molecule' command open the 'H2O.txt' file, and name the associated molecule 'h2omol'. Finally, molecules are created on the sc lattice by the 'create_atoms' command. The first parameter is '0' because we use the atom id from the 'H2O.txt' file. '482793' is a seed that is required by LAMMPS, it can be any positive integer. Finally, let us deposit 20 ions (10 Na, 10 Cl) in between the water molecules by adding these two lines to input.01.lammps:
+<code>
+<pre>
+fix		mydep1 all deposit 10 3 1 56513 region rliquid near 0.3
+fix		mydep2 all deposit 10 4 1 58613 region rliquid near 0.3
+</pre>
+</code>
+Each 'fix deposit' will add an ion at a random position within the 'rliquid' region every timestep. So we can just make a very short simulation of 10 timesteps and export the generated configuration. Note that 'mydep1' and 'mydep2' are the name I choose to give to the fix. Add the following line to input.01.lammps:
+<code>
+<pre>
+dump 		mydmp all image 10 dump.*.jpg type type
+run		10
+set 		type 3 charge 1.0
+set 		type 4 charge -1.0
+write_data	data.01.lammps
+</pre>
+</code>
+The 'run 10' indicates that the simulation must run for 10 timesteps. The value of the timestep (1 fs by default) does not matter yet because the atoms are not moving. We also need to specify the charge of the newly added ion, which is done using the 'set' commands. The write 'data_file' will create a file named 'data.01.lammps' containing all the information required to start the simulation using another input script. The 'dump' command with the 'image' image option will generate images of the system. 
+<br><br>
+The first input script is ready to be executed (from the terminal, execute 'lmp -in input.01.lammps', or './lmp_serial -in input.01.lammps'). In the terminal windows, you should see something like that:
+<code>
+<pre>
+LAMMPS (20 Nov 2019)
+Lattice spacing in x,y,z = 3.57 3.57 3.57
+Created orthogonal box = (-17.85 -17.85 -46.41) to (17.85 17.85 46.41)
+  1 by 1 by 1 MPI processor grid
+Created 1800 atoms
+  create_atoms CPU = 0.00362534 secs
+Created 1800 atoms
+  create_atoms CPU = 0.000742934 secs
+Lattice spacing in x,y,z = 4 4 4
+Read molecule h2omol:
+  3 atoms with max type 2
+  2 bonds with max type 1
+  1 angles with max type 1
+  0 dihedrals with max type 0
+  0 impropers with max type 0
+Created 4131 atoms
+  create_atoms CPU = 0.0022682 secs
+
+(...)
+
+Total wall time: 0:00:02
+</pre>
+</code>
+From the information printed in the terminal, it is clear that LAMMPS is reading the input file from top to bottom. If the simulation is successfully, a file named 'data01.lammps' should be in the folder. If you open it, you will see that it contains all the information about the atoms positioning and constraint. You should also see the following snapshot of the system:
+<br>
+<a href="#" class="image"><img src="./dump.10.jpg" alt="" /></a>
+										</strong>
+									</p>
+									
+									<ul class="pagination">
+										<li><a href="tutorial1step1.html" class="button">Prev</a></li>
+										<li><a href="tutorial1step1.html" class="page">1</a></li>
+										<li><a href="tutorial1step2.html" class="page active">2</a></li>
+										<li><a href="tutorial1step3.html" class="page">3</a></li>
+										<li><a href="tutorial1step4.html" class="page">4</a></li>
+										<li><a href="tutorial1step3.html" class="button">Next</a></li>
+									</ul>
+									
+										
+								</section>
+						</div>
+					</div>
+					<div id="sidebar">
+						<div class="inner">
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../index.html">Main page</a></li>
+										<li><a href="../molecularsimulationtutorials.html">All tutorials</a></li>
+										<li><a href="tutorial1step1.html">Step 1</a></li>
+										<li><a href="tutorial1step2.html">Step 2</a></li>
+										<li><a href="tutorial1step3.html">Step 3</a></li>
+										<li><a href="tutorial1step4.html">Step 4</a></li>
+									</ul>
+								</nav>
+						</div>
+					</div>
+			</div>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
+
+<!-- if you waant to make my day, you can send me feedback and help me improve this tutorial. -->
