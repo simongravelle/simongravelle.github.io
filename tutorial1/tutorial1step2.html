@@ -24,16 +24,8 @@
 									<header class="major">
 										<h2>Step 2: generation of the system</h2>
 									</header>									
-									
-									<p>
-										<strong>
-										
-										<h2></h2>
-										
-										
-										First, create a new folder that will contain all the files. Open a blank page, save it in the folder as 'input.01.lammps'.
-										Note that the '.lammps' extension has no importance. Copy the following lines into input.01.lammps.
-	
+									<strong>
+									First, create a new folder that will contain all the files. Open a blank page, save it in the folder as 'input.01.lammps'. Note that the '.lammps' extension has no importance. Copy the following lines into input.01.lammps.	
 <code>
 <pre>
 # LAMMPS input script
@@ -76,7 +68,7 @@ create_box	6 box &
 		extra/angle/per/atom 1 &
 		extra/special/per/atom 2
 </pre>
-</code>									The 'lattice' command defines the unit cell. Here 'diamond' with a scale factor of 3.57 has been chosen for the futur positioning of the carbon atoms in a diamond cubic lattice. The 'region' command defines a geometric region of space. 'box' is the name I've chosen for the region, it will be used to refer to the region later. With the 'block' keyword, the region is a rectangular parallelepiped, and requires the 6 box boundaries as input parameters: xlo, xhi, ylo, yhi, zlo, and zhi. For instance, by choosing 'xlo=-5' and 'xhi=5', and because we have previously chosen a lattice with scale factor of 3.57, the region 'box' extends from -17.86 to 17.86 Ångström (units of lengths are in Ångstrom because we have chosen the unit style 'real'). Finally, the 'create_box' command creates a simulation box based on the region 'box'. The number '6' indicates that there will be 6 types of atoms in the simulation: oxygen and hydrogen atoms of the water, Na, Cl, and the carbon atoms of the top and bottom walls respectively. Note that the carbon atoms of the top and bottom walls will be identical (same mass, same pairwise interaction, etc.), and the assignment of two different numbers is for practical reason only. 
+</code>									The 'lattice' command defines the unit cell. Here 'diamond' with a scale factor of 3.57 has been chosen for the future positioning of the carbon atoms in a diamond cubic lattice. The 'region' command defines a geometric region of space. 'box' is the name I've chosen for the region, it will be used to refer to the region later. With the 'block' keyword, the region is a rectangular parallelepiped, and requires the 6 box boundaries as input parameters: xlo, xhi, ylo, yhi, zlo, and zhi. For instance, by choosing 'xlo=-5' and 'xhi=5', and because we have previously chosen a lattice with scale factor of 3.57, the region 'box' extends from -17.86 to 17.86 Ångström (units of lengths are in Ångstrom because we have chosen the unit style 'real'). Finally, the 'create_box' command creates a simulation box based on the region 'box'. The number '6' indicates that there will be 6 types of atoms in the simulation: oxygen and hydrogen atoms of the water, Na, Cl, and the carbon atoms of the top and bottom walls respectively. Note that the carbon atoms of the top and bottom walls will be identical (same mass, same pairwise interaction, etc.), and the assignment of two different numbers is for practical reason only. 
 
 										<br><br>
 										
@@ -187,8 +179,7 @@ From the information printed in the terminal, it is clear that LAMMPS is reading
 <br>
 <a href="#" class="image"><img src="./dump.10.jpg" alt="" /></a>
 										</strong>
-									</p>
-									
+	
 									<ul class="pagination">
 										<li><a href="tutorial1step1.html" class="button">Prev</a></li>
 										<li><a href="tutorial1step1.html" class="page">1</a></li>
@@ -209,8 +200,8 @@ From the information printed in the terminal, it is clear that LAMMPS is reading
 										<h2>Menu</h2>
 									</header>
 									<ul>
-										<li><a href="../index.html">Main page</a></li>
-										<li><a href="../molecularsimulationtutorials.html">All tutorials</a></li>
+										<li><a href="../index.html">Homepage</a></li>
+										<li><a href="../molecularsimulationtutorials.html">Molecular simulation tutorials</a></li>
 										<li><a href="tutorial1step1.html">Step 1</a></li>
 										<li><a href="tutorial1step2.html">Step 2</a></li>
 										<li><a href="tutorial1step3.html">Step 3</a></li>
