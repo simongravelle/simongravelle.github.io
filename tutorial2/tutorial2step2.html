@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Personal webpage of Simon Gravelle</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36911186-4"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-36911186-4');
+		</script>
+	</head>
+	<body class="is-preload">
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+								<header id="header">
+									<a href="../index.html" class="logo"><strong>Personal webpage</strong> of Simon Gravelle</a>
+									<ul class="icons">
+									<li><a href="https://twitter.com/GravelleSimon" target="_blank" class="removelinkdefault"><strong class="fab fa-twitter"></strong></a></li>
+									<li><a href="https://github.com/simongravelle" target="_blank" class="removelinkdefault"><strong class="fab fa-github"></strong></a></li>
+									<li><a href="https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=fr" target="_blank" class="removelinkdefault"><strong class="fa fa-graduation-cap"></strong></a></li>
+									<li><a href="https://orcid.org/0000-0003-2149-6706" target="_blank" class="removelinkdefault"><strong>iD</strong></a></li>
+									<li><a href="https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw?view_as=subscriber" target="_blank" class="removelinkdefault"><strong class="fab fa-youtube"></strong></a></li>
+									</ul>
+								</header>
+								<section>
+									<header class="major">
+										<h2>Step 2: LAMMPS input script</h2>
+									</header>									
+									<strong>
+									Create a new text file and name it input.lammps. Copy the following lines:
+<code>
+<pre>
+# LAMMPS input script
+
+variable	T equal 300
+
+units		real
+atom_style	full
+boundary	p p p
+pair_style	lj/cut 14
+
+bond_style	harmonic
+angle_style	harmonic
+dihedral_style	opls
+improper_style	harmonic
+
+special_bonds	lj 0.0 0.0 0.5
+
+read_data	data.lammps
+</pre>
+</code>
+									There are a few differences with tutorial 1. First, the pair style is lj/cut, which means the atoms closer that 14 Angstroms from each others interact through a Lennard-Jones potential. There is no coulombic interaction. The bond, angle, dihedral, and improper style specify the potential. The three numbers of the special bonds command are weighting factors for the Lennard-Jones interaction between atoms connected by bond (respectively directly bounded, separated by two bonds, etc.). Then the read data command open the data.lammps file, which contains the information about the box size, atoms positions, etc. Then we are going to create a force field. Create a new text file and name it PARM.lammps. Copy the following lines:
+<code>
+<pre>
+pair_coeff 	1 1 0.066047 3.4
+bond_coeff 	1 469 1.4
+angle_coeff 	1 63 120
+dihedral_coeff	1 0 7.25 0 0
+improper_coeff	1 5 180
+</pre>
+</code>
+The pair_coeff indicates the Lennard-jones parameter for the only type of atom of the simulation, carbon. The bond_coeff (respectively angle_coeff, dihedral_coeff, improper_coeff) indicates the energy and equilibrium distance of the only type of bond (respectively angle, dihedral, improper) in the simulation. The file PARM.file can be included in the simulation by adding the following line to input.lammps:
+<code>
+<pre>
+include	PARM.lammps					
+</pre>
+</code>
+In order to impose a deformation to the sheet, let us isolate the atoms at the bottom edge, the atoms at the top edge, and the other atoms (in the middle) and put them in separate groups:
+<code>
+<pre>
+group		gcar type 1
+variable	xmax equal bound(gcar,xmax)-0.5
+variable	xmin equal bound(gcar,xmin)+0.5
+region		rtop block ${xmax} INF INF INF INF INF
+region		rbot block INF ${xmin} INF INF INF INF
+region		rmid block ${xmin} ${xmax} INF INF INF INF
+group		gtop region rtop
+group		gbot region rbot
+group		gmid region rmid
+</pre>
+</code>
+The gcar group contains all the atoms. The three regions correspond respectively to the edges and the middle, thanks to the bound variables that locate the extreme most coordinates along x. Then groups corresponding to atoms located in each regions respectively are defined. We now choose the thermalisation of the system and the dynamics. Add the following lines to input.lammps.
+<code>
+<pre>
+velocity	gmid create ${T} 48455 mom yes rot yes
+fix		mynve all nve
+compute	Tmid gmid temp
+fix		myber all temp/berendsen ${T} ${T} 100
+fix_modify	myber temp Tmid
+</pre>
+</code>
+The velocity create command gives initial velocities to the atoms of the group gmid, assuring an initial temperature of 300K for these atoms. NVE integration is applied to all atoms, and a Berendsen thermostat is applied to the atom of the group gmid only. The reason we are not thermalising the atoms of the edge is because their motion will be restrained by the following commands:
+<code>
+<pre>
+fix 		mysf1 gtop setforce 0 NULL 0
+fix 		mysf2 gbot setforce 0 NULL 0
+velocity	gtop set 0 NULL 0
+velocity	gbot set 0 NULL 0
+</pre>
+</code>
+The setforce commands cancel the force applied on the atoms of both edges during the whole simulation along x and z, and the velocity commands cancel the initial velocities along x and z. Therefore, the atoms of the edge will remain immobile during the simulation (if no other command is applied to them). Let us extract the distance between the two edges as well as the force applied on the edges (the values are extracted before being cancelled by the setforce command). Let us also create a dump file.
+<code>
+<pre>
+variable	L equal xcm(gtop,x)-xcm(gbot,x)
+fix 		at1 all ave/time 10 100 1000 v_L file length.dat
+fix 		at2 all ave/time 10 100 1000 f_mysf1[1] f_mysf2[1] file force.dat
+dump 		mydmp all atom 1000 dump.lammpstrj
+</pre>
+</code>
+Let us run a small equilibration step.
+<code>
+<pre>
+thermo		100
+thermo_modify 	temp Tmid
+timestep	1.0
+run		5000
+</pre>
+</code>
+Then, we perform a loop. At each step of the loop, the edge are slightly displaced, and the simulation runs for a short time. 
+<code>
+<pre>
+variable 	var loop 10
+label 		loop
+displace_atoms	gtop move 0.1 0 0
+displace_atoms	gbot move -0.1 0 0
+run		1000
+next		var
+jump 		input.lammps loop
+</pre></code>
+
+
+									</strong>
+									<ul class="pagination">
+										<li><a href="tutorial2step1.html" class="button">Prev</a></li>
+										<li><a href="tutorial2step1.html" class="page">1</a></li>
+										<li><a href="tutorial2step2.html" class="page active">2</a></li>
+										<li><a href="tutorial2step3.html" class="button disabled">Next</a></li>
+									</ul>
+									
+										
+								</section>
+						</div>
+					</div>
+					<div id="sidebar">
+						<div class="inner">
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="../index.html">Homepage</a></li>
+										<li><a href="../publications.html">List of publications</a></li>
+										<li><a href="../curriculum.html">Curriculum</a></li>
+									</ul>
+								</nav>
+								<section>
+									<header class="major">
+										<h2><a href="../molecularsimulationtutorials.html" class="removelinkdefault">Simulation tutorial</h2></a>
+									</header>
+									<header class="major">
+										<h2><a href="https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw" target="_blank class="removelinkdefault">Youtube channel</h2></a>
+									</header>
+									<header class="major">
+										<h2><a href="https://github.com/simongravelle/LAMMPS/tree/main/WaterInCNT" target="_blank" class="removelinkdefault">Open-source codes</h2></a>
+									</header>	
+									<div class="mini-posts">
+										<article>
+												<a href="https://github.com/simongravelle/LAMMPS/tree/main/WaterInCNT" class="image"><img src="images/waterinCNT.gif" alt="" /></a>
+											<p><a href="https://github.com/simongravelle/LAMMPS/tree/main/WaterInCNT" target="_blank" class="removelinkdefault">Monte Carlo grand canonique and molecular dynamics simulations with LAMMPS: water molecule in an effectively infinite flexible carbon nanotube.</a></p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="https://github.com/simongravelle/LAMMPS" class="removelinkdefault" target="_blank"><strong>Find All my codes on Github</strong></a></li>
+									</ul>
+								</section>
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>Feel free to contact me if you have any questions about my work. </p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope">s.gravelle at qmul.ac.uk</li>
+										<!--<li class="icon solid fa-phone">(000) 000-0000</li>-->
+										<li class="icon solid fa-home">Queen Mary University of London <br> Mile End Rd <br> Bethnal Green <br>London E1 4NS</li>
+									</ul>
+								</section>
+								<footer id="footer">
+									<p class="copyright">Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+			</div>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
+
+<!-- if you waant to make my day, you can send me feedback and help me improve this tutorial. -->
