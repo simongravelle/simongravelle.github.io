@@ -93,7 +93,7 @@ The gcar group contains all the atoms. The three regions correspond respectively
 velocity	gmid create ${T} 48455 mom yes rot yes
 fix		mynve all nve
 compute	Tmid gmid temp
-fix		myber all temp/berendsen ${T} ${T} 100
+fix		myber gmid temp/berendsen ${T} ${T} 100
 fix_modify	myber temp Tmid
 </pre>
 </code>
