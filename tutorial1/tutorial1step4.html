@@ -32,7 +32,7 @@
 								</header>
 								<section>
 									<header class="major">
-										<h2>Step 4: equilibration</h2>
+										<h2>Step 4 : equilibration</h2>
 									</header>									
 	
 										<strong>
@@ -42,6 +42,7 @@
 										
 <code>
 <pre>
+
 # LAMMPS input script
 
 boundary	p p p
@@ -88,7 +89,7 @@ write_data	data.03.lammps
 </pre>
 </code>			
 
-										The two main diffences with the previous step are the timestep and the thermostating. Now the desired temperature is 300 K, and the fluid is expected to behave as a liquid. In addition, the timestep is now equal to 1 fs, a value that is classic for these force field. The result of the simulation is the following:
+										The two main diffences with the previous step are the timestep (1fs instead of 0.1fs) and the thermostating. With a temperature of 300 K, the fluid is expected to behave as a liquid. A timestep of 1 fs is classic for these force field. Never use a larger timestep except if you have a good reason to do so. The result of the simulation is the following:
 										
 										<br><br>
 										
@@ -101,7 +102,7 @@ write_data	data.03.lammps
 										
 										<br><br>
 										
-										The fluid quickly forms a dense liquid. The final state of the simulation will be used as the starting point for more interesting simulations.	It may take a few hours to run the full simulation. Alternatively, you can download the final <a href="data.03.lammps" target="_blank" class="removelinkdefault">'data.03.lammps' file here</a>.
+										The fluid quickly forms a dense liquid. The final state of the simulation can be used as the starting point for more interesting simulations. It may take a few hours to run the full simulation. Alternatively, you can download the final <a href="data.03.lammps" target="_blank" class="removelinkdefault">'data.03.lammps' file here</a>.
 									<br><br>
 										</strong>
 										
@@ -131,7 +132,7 @@ write_data	data.03.lammps
 								</nav>
 								<section>
 									<header class="major">
-										<h2><a href="../molecularsimulationtutorials.html" class="removelinkdefault">Simulation tutorial</h2></a>
+										<h2><a href="../molecularsimulationtutorials.html" class="removelinkdefault">Tutorials</h2></a>
 									</header>
 									<header class="major">
 										<h2><a href="https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw" target="_blank class="removelinkdefault">Youtube channel</h2></a>

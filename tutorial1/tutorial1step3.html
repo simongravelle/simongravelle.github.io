@@ -32,15 +32,17 @@
 								</header>
 								<section>
 									<header class="major">
-										<h2>Step 3: energy minimisation</h2>
+										<h2>Step 3 : energy minimisation</h2>
 									</header>									
 									
 										<strong>
 
 										
-										It is clear from the way the system has been created that the atoms are not at equilibrium distance from each others. Particularly, the atoms of salt added using the 'fix deposit' command are very close to the water molecules. If we were to start a 'normal' molecular dynamics simulation now, the atoms would exert huge forces on each others and the simulation would most probably fail. Therefore we need to find a way to move the atom and place them in a more favourable position before starting the simulation. This step is called 'energy minimisation', and is often necessary. To do so, let us open a new blank sheet in the same folder, and rename it input.02.lammps. The first lines will be very similar to the previous case:
+										It is clear from the way the system has been created that the atoms are not at equilibrium distance from each others. 
+										 Particularly, the atoms of salt added using the 'fix deposit' command are very close to the water molecules. If we were to start a 'normal' molecular dynamics simulation now, the atoms would exert huge forces on each others and the simulation would most probably fail. Therefore we need to find a way to move the atom and place them in a more favourable position before starting the simulation. This step is called 'energy minimisation', and is often necessary. To do so, let us open a new blank sheet in the same folder, and rename it input.02.lammps. The first lines will be very similar to the previous input file:
 <code>
 <pre>
+
 # LAMMPS input script
 
 boundary	p p p
@@ -54,9 +56,10 @@ read_data	data.01.lammps
 include		PARM.lammps
 </pre>
 </code>
-The only difference with input.01.lammps is that we open the previously created file 'data.01.lammps' which contains the definition of the simulation box and the positions of the atoms. Next, we are going to create some groups with the different atom types :
+The only difference with input.01.lammps is that, instead of creating a box and atoms, we open and read the previously created file 'data.01.lammps' which contains the definition of the simulation box and the positions of the atoms. Next, we are going to create some groups with the different atom types :
 <code>
 <pre>
+
 group		gH2O type 1 2
 group		gNa type 3
 group		gCl type 4
@@ -65,9 +68,10 @@ group		gtopwall type 5
 group		gbotwall type 6
 </pre>
 </code>
-This will allow us to apply different dynamics to the liquid and to the walls. First, let us force the carbon walls to remain rigid during the simulation. 
+Creating groups allows us to apply different dynamics to the liquid and to the walls. First, let us force the carbon walls to remain rigid during the simulation. 
 <code>
 <pre>
+
 fix		mysf1 gtopwall setforce 0 0 NULL
 fix		mysf2 gbotwall setforce 0 0 NULL
 fix		myaf1 gtopwall aveforce NULL NULL 0
@@ -83,6 +87,7 @@ The first fix 'setforce' applies to the group 'gtopwall', which contains all of 
 Now we will include the most important commands for the minimisation:
 <code>
 <pre>
+
 fix		mynve all nve
 compute		tliq gliquid temp
 fix		myber gliquid temp/berendsen 1 1 1
@@ -96,13 +101,15 @@ The fix 'nve', which we apply to all atoms, performs constant NVE integration to
 If we were to run the simulation as it is, it would fail, because nothing maintains the shape of the water molecules with time (the bond and angle energies are equal to 0). Therefore we need to use the shake algorithm in order to apply bond and angle constraints to the water molecules. In addition, we will also add a fix 'recenter' in order to maintain the system centred in the middle of the box in the z direction. This fix recenter has no influence on the dynamics. 
 <code>
 <pre>
+
 fix		myshk gH2O shake 1.0e-4 200 0 b 1 a 1
 fix		myrct all recenter NULL NULL INIT
 </pre>
 </code>
-In order to visualise the evolution of the system during the minimisation, let us print the evolution of the total energy. To do so we need to create a variable named 'vetot' and make it equal to 'etotal', which is an internal thermodynamic keyword of lammps corresponding to the total energy (kinetic + potential). The variable is printed in a data file by the fix 'ave/time' every 100 timesteps. Let us also extract the positions of the atoms in a dump file that can be opened with VMD. 
+In order to visualise the evolution of the system during the minimisation, let us print the evolution of the total energy. To do so we need to create a variable named 'vetot' and make it equal to 'etotal', which is an internal thermodynamic keyword of lammps corresponding to the total energy (kinetic + potential). Let us print the variable in a data file using a fix 'ave/time' every 100 timesteps (with the choice of parameters '100 1 100', the variable vetot will be read every 100 timesteps, and printed every 100 timeteps without any time averaging). Let us also extract the positions of the atoms in a dump file that can be opened with VMD. 
 <code>
 <pre>
+
 variable	vetot equal etotal
 fix		myavt all ave/time 100 1 100 v_vetot file data.02_etotal.dat
 dump 		mydmp all atom 100 dump.02.lammpstrj
@@ -111,6 +118,7 @@ dump 		mydmp all atom 100 dump.02.lammpstrj
 Finally, let us choose a very small timestep (because we anticipate that the atoms are initially too close to each others) and run for 1000 timesteps (with the command thermo 100, thermodynamic info are printed in the terminal every 100 timesteps).
 <code>
 <pre>
+
 timestep	0.1
 thermo		100
 run		5000
@@ -150,6 +158,8 @@ write_data	data.02.lammps
 									</span>
 									
 									<br><br>
+									Note: you can play with VMD using Graphics -> Representation Graphics -> Color if you want to improve the visualisation. 
+									<br><br>
 									
 									</strong>
 									
@@ -179,7 +189,7 @@ write_data	data.02.lammps
 								</nav>
 								<section>
 									<header class="major">
-										<h2><a href="../molecularsimulationtutorials.html" class="removelinkdefault">Simulation tutorial</h2></a>
+										<h2><a href="../molecularsimulationtutorials.html" class="removelinkdefault">Tutorials</h2></a>
 									</header>
 									<header class="major">
 										<h2><a href="https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw" target="_blank class="removelinkdefault">Youtube channel</h2></a>

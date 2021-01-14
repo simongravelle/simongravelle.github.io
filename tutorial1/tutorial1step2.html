@@ -32,12 +32,13 @@
 								</header>
 								<section>
 									<header class="major">
-										<h2>Step 2: generation of the system</h2>
+										<h2>Step 2 : generation of the system</h2>
 									</header>									
 									<strong>
-									First, create a new folder that will contain all the files. Open a blank page, save it in the folder as 'input.01.lammps'. Note that the '.lammps' extension has no importance. Copy the following lines into input.01.lammps.	
+									Create a new folder that will contain all the files. Open a blank page using the text editor, and save it in the new folder using the name 'input.01.lammps'. Note that the '.lammps' extension has no importance. Copy the following lines into input.01.lammps.	
 <code>
 <pre>
+
 # LAMMPS input script
 
 boundary	p p p
@@ -69,6 +70,7 @@ kspace_style	pppm/tip4p 1.0e-4
 										
 <code>
 <pre>
+
 lattice		diamond 3.57
 region		box block -5 5 -5 5 -13 13
 create_box	6 box & 
@@ -86,15 +88,17 @@ create_box	6 box &
 
 										<br><br>
 										
-										We need to define the parameters of the simulation: the mass of the 6 atoms (O, H, Na, Cl, C, C), the pairwise interaction parameters (here the parameters for the Lennard-Jones potential), and the bond and angle parameters. Let us create a new file and call it PARM.lammps. Copy the following line into input.01.lammps.
+										We need to define the parameters of the simulation: the mass of the 6 atoms (O, H, Na, Cl, C, C), the pairwise interaction parameters (here the parameters for the Lennard-Jones potential), and the bond and angle parameters. Copy the following line into input.01.lammps:
 <code>
 <pre>
+
 include		PARM.lammps
 </pre>
 </code>										
-										and the following lines into PARM.lammps.
+										Create a new text file, call it 'PARM.lammps', and copy it in the same folder where 'input.01.lammps' is. Copy the following lines into PARM.lammps.
 <code>
 <pre>
+
 mass 		1 15.9994
 mass 		2 1.008
 mass		3 28.990
@@ -114,16 +118,17 @@ bond_coeff 	1 0 0.9572
 angle_coeff 	1 0 104.52
 </pre>
 </code>
-The parameters for water (mass 1, mass2, pair_coeff 1 1, pair coeff 2 2, bond_coeff 1 and angle_coeff 1) are given by the TIP4P/2005 force field, the parameters for Na and Cl (mass 3, mass 4, pair_coeff 3 3, pair_coeff 4 4) are given by the CHARMM-27 force field, and the parameters for the carbon atoms (mass 5, mass 6, pair_coeff 5 5, pair coeff 6 6) are given by the AMBER force field. Each 'mass' command assigns a mass in grams/mole to an atom type. Each 'pair_coeff' assigns respectively the depth of the potential in Kcal/mole, and the distance at which the particle-particle potential energy in Ångstrom. We have only assigned pairwise interaction between atoms of identical type. By default, LAMMPS calculates the pair coefficients for the interactions between atoms of type i and j by using the geometrical rule. Other rules can be set with the 'pair_modify' command, but for the sake of simplicity, we are going to keep the default option here. 
+The parameters for water (mass 1, mass 2, pair_coeff 1 1, pair coeff 2 2, bond_coeff 1 and angle_coeff 1) are given by the TIP4P/2005 force field, the parameters for Na and Cl (mass 3, mass 4, pair_coeff 3 3, pair_coeff 4 4) are given by the CHARMM-27 force field, and the parameters for the carbon atoms (mass 5, mass 6, pair_coeff 5 5, pair coeff 6 6) are given by the AMBER force field. Each 'mass' command assigns a mass in grams/mole to an atom type. Each 'pair_coeff' assigns respectively the depth of the potential in Kcal/mole, and the distance at which the particle-particle potential energy in Ångstrom. We have only assigned pairwise interaction between atoms of identical type. By default, LAMMPS calculates the pair coefficients for the interactions between atoms of type i and j by using the geometrical rule. Other rules can be set with the 'pair_modify' command, but for the sake of simplicity, we are going to keep the default option here. 
 
 <br><br>
 
 The bond coefficients (here for the O-H bond of the water molecule) set respectively the energy of the harmonic potential and the equilibrium distance in Ångstrom. The value is '0' for the energy, because we are going to use a rigid model for the water molecule. The shape of the molecule will be preserved by the shake algorithm (see later). Similarly, the angle coefficient (here for the H-O-H angle of the water molecule) set the energy of the harmonic potential (also 0) and the equilibrium angle in degree. 
 
 <br><br>
-We can now add the atoms. First, we create two sub-regions corresponding respectively to the two solid walls, and add atoms of type 5 and 6 respectively.
+We can now add the atoms to the system. First, we create two sub-regions corresponding respectively to the two solid walls. Then we create the atoms of type 5 and 6 within both regions respectively.
 <code>
 <pre>
+
 region		rbotwall block -5 5 -5 5 -12 -10
 region		rtopwall block -5 5 -5 5 10 12
 
@@ -134,6 +139,7 @@ create_atoms 	6 region rbotwall
 In order to add the water molecules, we first need to download the file <a href="H2O.txt" target="_blank" class="removelinkdefault">H2O.txt</a>. It contains all the necessary information about the water molecule, such as positions, bonds, and angle. Then, add the following lines to input.01.lammps:
 <code>
 <pre>
+
 region		rliquid block -5 5 -5 5 -9 9
 lattice		sc 4.0
 molecule 	h2omol H2O.txt
@@ -143,6 +149,7 @@ create_atoms 	0 region rliquid mol h2omol 482793
 With the last four lines, a region used to deposit the water is created on the last defined lattice, which is 'lattice diamond 3.57'. Then, on the next line, we define a new simple cubic lattice in order to position the water molecules on it, with a distance of 4 Ångstroms between each water molecule. Note that 4 Ångstroms is larger than the typical equilibrium distance between water molecules in a liquid, but this will allow us to insert ions more safely. Then, the 'molecule' command open the 'H2O.txt' file, and name the associated molecule 'h2omol'. Finally, molecules are created on the sc lattice by the 'create_atoms' command. The first parameter is '0' because we use the atom id from the 'H2O.txt' file. '482793' is a seed that is required by LAMMPS, it can be any positive integer. Finally, let us deposit 20 ions (10 Na, 10 Cl) in between the water molecules by adding these two lines to input.01.lammps:
 <code>
 <pre>
+
 fix		mydep1 all deposit 10 3 1 56513 region rliquid near 0.3
 fix		mydep2 all deposit 10 4 1 58613 region rliquid near 0.3
 </pre>
@@ -150,6 +157,7 @@ fix		mydep2 all deposit 10 4 1 58613 region rliquid near 0.3
 Each 'fix deposit' will add an ion at a random position within the 'rliquid' region every timestep. So we can just make a very short simulation of 10 timesteps and export the generated configuration. Note that 'mydep1' and 'mydep2' are the name I choose to give to the fix. Add the following line to input.01.lammps:
 <code>
 <pre>
+
 dump 		mydmp all image 10 dump.*.jpg type type
 run		10
 set 		type 3 charge 1.0
@@ -159,9 +167,10 @@ write_data	data.01.lammps
 </code>
 The 'run 10' indicates that the simulation must run for 10 timesteps. The value of the timestep (1 fs by default) does not matter yet because the atoms are not moving. We also need to specify the charge of the newly added ion, which is done using the 'set' commands. The write 'data_file' will create a file named 'data.01.lammps' containing all the information required to start the simulation using another input script. The 'dump' command with the 'image' image option will generate images of the system. 
 <br><br>
-The first input script is ready to be executed (from the terminal, execute 'lmp -in input.01.lammps', or './lmp_serial -in input.01.lammps'). In the terminal windows, you should see something like that:
+The first input script is ready to be executed (from the terminal, execute 'lmp -in input.01.lammps', or './lmp_serial -in input.01.lammps' depending on how LAMMPS was installed, refer to the LAMMPS documentation). In the terminal windows, you should see something like that:
 <code>
 <pre>
+
 LAMMPS (20 Nov 2019)
 Lattice spacing in x,y,z = 3.57 3.57 3.57
 Created orthogonal box = (-17.85 -17.85 -46.41) to (17.85 17.85 46.41)
@@ -185,9 +194,11 @@ Created 4131 atoms
 Total wall time: 0:00:02
 </pre>
 </code>
-From the information printed in the terminal, it is clear that LAMMPS is reading the input file from top to bottom. If the simulation is successfully, a file named 'data01.lammps' should be in the folder. If you open it, you will see that it contains all the information about the atoms positioning and constraint. You should also see the following snapshot of the system:
+From the information printed in the terminal, it is clear that LAMMPS is reading the input file from top to bottom. If the simulation is successfully, a file named 'data01.lammps' should be in the folder. If you open it, you will see that it contains all the information about the atoms positioning and constraint. In the folder, you should also have the following snapshot of the system as created by the dump image command:
+<br>
 <br>
 <a href="#" class="image"><img src="./dump.10.jpg" alt="" /></a>
+<br><br>
 										</strong>
 	
 									<ul class="pagination">
@@ -217,7 +228,7 @@ From the information printed in the terminal, it is clear that LAMMPS is reading
 								</nav>
 								<section>
 									<header class="major">
-										<h2><a href="../molecularsimulationtutorials.html" class="removelinkdefault">Simulation tutorial</h2></a>
+										<h2><a href="../molecularsimulationtutorials.html" class="removelinkdefault">Tutorials</h2></a>
 									</header>
 									<header class="major">
 										<h2><a href="https://www.youtube.com/channel/UCLmK_9wpyLVpcP7BPgN6BIw" target="_blank class="removelinkdefault">Youtube channel</h2></a>
