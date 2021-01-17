@@ -32,55 +32,164 @@
 								</header>
 								<section>
 									<header class="major">
-										<h1>Tutorial 1 : Nanoconfined electrolyte</h1>
-										
-										<br><br>
-										
-										<strong>In this tutorial, we are going to use molecular dynamics and simulate an electrolyte confined between two rigid carbon walls. This tutorial is meant as an introduction to molecular dynamics, and no previous experience of molecular dynamics is required. At the end of the tutorial, the following system will be created:</strong>
-										<br><br>
-										
-										<iframe width="560" height="315" src="https://www.youtube.com/embed/76_ZKVTu-z8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-										
-										<br><br><br><br>
-										
-										
-										<h2>Step 1 : softwares</h2>
+										<h2>Step 5 : measurements</h2>
 									</header>									
-									
-									<strong>
-									
-									The first step is to install a molecular dynamics code. For this tutorial, we are going to use LAMMPS, acronym for Large-scale Atomic/Molecular Massively Parallel Simulator. Note that there are other good open source options, such as Gromacs or AMBER, but in my opinion LAMMPS offers more flexibility and is a good choice for learning molecular dynamics. 
+	
+										<strong>
+										Once the system is equilibrated, interesting measurements can be performed. There are two kinds of measurements that are typically performed in molecular dynamics: equilibrium and out-of-equilibrium measurements. Let us see one example of each.
 										
 										<br><br>
 										
-										Download the last version <a href="https://lammps.sandia.gov/download.html" target="_blank" 										class="removelinkdefault">from the LAMMPS website</a>, and follow the instruction. 
+										<h2>Equilibrium measurement</h2>
 										
-										<br><br>
+										Equilibrium measurements consist in extracting data from an unperturbed system. Starting from the previous equilibrated system, one could simply extract the force applied by the fluid on the walls. To do so, we can use the ave/time command that we already used to extract the energy in Step 3, and extract the force along x and y that is given by the fixes "setforce" :
+<code>
+<pre>
+
+# LAMMPS input script
+
+boundary	p p p
+units		real
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style	pppm/tip4p 1.0e-4
+
+read_data	data.03.lammps
+include		PARM.lammps
+
+group		gH2O type 1 2
+group		gNa type 3
+group		gCl type 4
+group		gliquid type 1 2 3 4
+group		gtopwall type 5
+group		gbotwall type 6
+
+fix		mysf1 gtopwall setforce 0 0 NULL
+fix		mysf2 gbotwall setforce 0 0 NULL
+fix		myaf1 gtopwall aveforce NULL NULL 0
+fix		myaf2 gbotwall aveforce NULL NULL 0
+neigh_modify 	exclude group gtopwall gtopwall
+neigh_modify 	exclude group gbotwall gbotwall
+
+fix		mynve all nve
+compute		tliq gliquid temp
+fix		myber gliquid temp/berendsen 300 300 100
+fix_modify	myber temp tliq
+
+fix		myshk gH2O shake 1.0e-4 200 0 b 1 a 1
+fix		myrct all recenter NULL NULL INIT
+
+fix		myavt1 all ave/time 10 1 10 f_mysf1[1] f_mysf2[1] file data.04_forceX.dat
+fix		myavt2 all ave/time 10 1 10 f_mysf1[2] f_mysf2[2] file data.04_forceY.dat
+
+dump 		mydmp all atom 1000 dump.04.lammpstrj
+
+timestep	1.0
+thermo		5000
+thermo_modify 	temp tliq
+run		50000
+</pre>
+</code>		 
+		
+This way, the forces along X applied by the fluid on the top wall (f_mysf1[1]) and bottom wall (f_mysf2[1]) are extrated and printed in data.04_forceX.dat every 10 timesteps. From the temporal correlation of the force versus time signal, you can extract the friction coefficient, from which it is possible to deduce the hydrodynamic slip length. 
+</strong>
+<br><br>
 										
-										We also need 
-										<ul>
-											<li> a	basic text editing software. I personally use 
-										<a href="https://help.gnome.org/users/gedit/stable/" target="_blank" class="removelinkdefault">gedit</a>, 
-										but any text editor will do,</li>
-											<li> a visualisation software, here I will use
-											<a href="https://www.ks.uiuc.edu/Research/vmd/" target="_blank" class="removelinkdefault">VMD</a> (note that you will have to register in order to download VMD. If you don't want to, you can also use Ovito),</li>
-											<li> and a plotting tool, here I will use
-											<a href="http://exciting-code.org/xmgrace-quickstart" target="_blank" class="removelinkdefault">Xmgrace</a>.</li>
-										</ul>
+<h2>Out-of-equilibrium measurement</h2>
+<strong>
+<br><br>
+Out-of-equilibirum measurements consist in applying a force the system, and measuring how the system react to the forcing. With the present system, we can for example apply a force (parallel to the walls) to the fluid. The fluid will acceletate and reach a constant average velocity in the direction of the force. 
+
+<code>
+<pre>
+
+# LAMMPS input script
+
+boundary	p p p
+units		real
+atom_style	full
+bond_style	harmonic
+angle_style	harmonic
+pair_style	lj/cut/tip4p/long 1 2 1 1 0.1546 12.0
+kspace_style	pppm/tip4p 1.0e-4
+
+read_data	data.03.lammps
+include		PARM.lammps
+
+group		gH2O type 1 2
+group		gNa type 3
+group		gCl type 4
+group		gliquid type 1 2 3 4
+group		gtopwall type 5
+group		gbotwall type 6
+
+fix		mysf1 gtopwall setforce 0 0 NULL
+fix		mysf2 gbotwall setforce 0 0 NULL
+fix		myaf1 gtopwall aveforce NULL NULL 0
+fix		myaf2 gbotwall aveforce NULL NULL 0
+neigh_modify 	exclude group gtopwall gtopwall
+neigh_modify 	exclude group gbotwall gbotwall
+
+fix		mynve all nve
+compute		tliq gliquid temp
+fix		myber gliquid temp/berendsen 300 300 100
+fix_modify	myber temp tliq
+
+fix 		myadf gliquid addforce 1e-5 0.0 0.0
+
+fix		myshk gH2O shake 1.0e-4 200 0 b 1 a 1
+fix		myrct all recenter NULL NULL INIT
+
+variable	velx equal vcm(gH2O,x)
+fix		myavt all ave/time 10 100 1000 v_velx file data.04_velLiqX.dat
+fix		myavt1 all ave/time 10 100 1000 f_mysf1[1] f_mysf2[1] file data.04_forceX.dat
+
+dump 		mydmp all atom 1000 dump.04.lammpstrj
+
+timestep	1.0
+thermo		5000
+thermo_modify 	temp tliq
+run		50000
+</pre>
+</code>
+
+The addforce command adds a force to the fluide (ions + water molecules) in the x direction. From the average value of the force applied by the fluid on the wall in the direction of the flow, the friction coefficient can be calculated. Note that the system needs time to reach a "new equilibrium" in presence of the force. If you plot the fluid velocity as a function of the time (from data.04_velLiqX.dat), you should see the velocity slowly converging toward its equilibrium value.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
 										
-										We are all set, we can start writing the script.
+</strong>
 										
-										</strong>
-										</p>
-									</p>	
+																			
 									<ul class="pagination">
-										<li><span class="button disabled">Prev</span></li>
-										<li><a href="tutorial1step1.html" class="page active">1</a></li>
+										<li><a href="tutorial1step4.html" class="button">Prev</a></li>
+										<li><a href="tutorial1step1.html" class="page">1</a></li>
 										<li><a href="tutorial1step2.html" class="page">2</a></li>
 										<li><a href="tutorial1step3.html" class="page">3</a></li>
 										<li><a href="tutorial1step4.html" class="page">4</a></li>
-										<li><a href="tutorial1step5.html" class="page">5</a></li>
-										<li><a href="tutorial1step2.html" class="button">Next</a></li>
+										<li><a href="tutorial1step5.html" class="page active">5</a></li>
+										<li><span class="button disabled">Next</span></li>
 									</ul>
 								</section>
 						</div>
@@ -143,3 +252,5 @@
 
 	</body>
 </html>
+
+<!-- if you waant to make my day, you can send me feedback and help me improve this tutorial. -->
