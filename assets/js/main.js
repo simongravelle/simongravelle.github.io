@@ -1,260 +1,115 @@
 /*
-	Editorial by HTML5 UP
+	Strata by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
 (function($) {
 
-	var	$window = $(window),
-		$head = $('head'),
-		$body = $('body');
+	var $window = $(window),
+		$body = $('body'),
+		$header = $('#header'),
+		$footer = $('#footer'),
+		$main = $('#main'),
+		settings = {
+
+			// Parallax background effect?
+				parallax: true,
+
+			// Parallax factor (lower = more intense, higher = less intense).
+				parallaxFactor: 20
+
+		};
 
 	// Breakpoints.
 		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ '361px',   '480px'  ],
-			xxsmall:  [ null,      '360px'  ],
-			'xlarge-to-max':    '(min-width: 1681px)',
-			'small-to-xlarge':  '(min-width: 481px) and (max-width: 1680px)'
+			xlarge:  [ '1281px',  '1800px' ],
+			large:   [ '981px',   '1280px' ],
+			medium:  [ '737px',   '980px'  ],
+			small:   [ '481px',   '736px'  ],
+			xsmall:  [ null,      '480px'  ],
 		});
 
-	// Stops animations/transitions until the page has ...
+	// Play initial animations on page load.
+		$window.on('load', function() {
+			window.setTimeout(function() {
+				$body.removeClass('is-preload');
+			}, 100);
+		});
 
-		// ... loaded.
-			$window.on('load', function() {
+	// Touch?
+		if (browser.mobile) {
+
+			// Turn on touch mode.
+				$body.addClass('is-touch');
+
+			// Height fix (mostly for iOS).
 				window.setTimeout(function() {
-					$body.removeClass('is-preload');
-				}, 100);
-			});
+					$window.scrollTop($window.scrollTop() + 1);
+				}, 0);
 
-		// ... stopped resizing.
-			var resizeTimeout;
+		}
 
-			$window.on('resize', function() {
+	// Footer.
+		breakpoints.on('<=medium', function() {
+			$footer.insertAfter($main);
+		});
 
-				// Mark as resizing.
-					$body.addClass('is-resizing');
+		breakpoints.on('>medium', function() {
+			$footer.appendTo($header);
+		});
 
-				// Unmark after delay.
-					clearTimeout(resizeTimeout);
+	// Header.
 
-					resizeTimeout = setTimeout(function() {
-						$body.removeClass('is-resizing');
-					}, 100);
+		// Parallax background.
 
-			});
+			// Disable parallax on IE (smooth scrolling is jerky), and on mobile platforms (= better performance).
+				if (browser.name == 'ie'
+				||	browser.mobile)
+					settings.parallax = false;
 
-	// Fixes.
+			if (settings.parallax) {
 
-		// Object fit images.
-			if (!browser.canUse('object-fit')
-			||	browser.name == 'safari')
-				$('.image.object').each(function() {
+				breakpoints.on('<=medium', function() {
 
-					var $this = $(this),
-						$img = $this.children('img');
-
-					// Hide original image.
-						$img.css('opacity', '0');
-
-					// Set background.
-						$this
-							.css('background-image', 'url("' + $img.attr('src') + '")')
-							.css('background-size', $img.css('object-fit') ? $img.css('object-fit') : 'cover')
-							.css('background-position', $img.css('object-position') ? $img.css('object-position') : 'center');
+					$window.off('scroll.strata_parallax');
+					$header.css('background-position', '');
 
 				});
 
-	// Sidebar.
-		var $sidebar = $('#sidebar'),
-			$sidebar_inner = $sidebar.children('.inner');
+				breakpoints.on('>medium', function() {
 
-		// Inactive by default on <= large.
-			breakpoints.on('<=large', function() {
-				$sidebar.addClass('inactive');
-			});
+					$header.css('background-position', 'left 0px');
 
-			breakpoints.on('>large', function() {
-				$sidebar.removeClass('inactive');
-			});
-
-		// Hack: Workaround for Chrome/Android scrollbar position bug.
-			if (browser.os == 'android'
-			&&	browser.name == 'chrome')
-				$('<style>#sidebar .inner::-webkit-scrollbar { display: none; }</style>')
-					.appendTo($head);
-
-		// Toggle.
-			$('<a href="#sidebar" class="toggle">Toggle</a>')
-				.appendTo($sidebar)
-				.on('click', function(event) {
-
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
-
-					// Toggle.
-						$sidebar.toggleClass('inactive');
+					$window.on('scroll.strata_parallax', function() {
+						$header.css('background-position', 'left ' + (-1 * (parseInt($window.scrollTop()) / settings.parallaxFactor)) + 'px');
+					});
 
 				});
 
-		// Events.
-
-			// Link clicks.
-				$sidebar.on('click', 'a', function(event) {
-
-					// >large? Bail.
-						if (breakpoints.active('>large'))
-							return;
-
-					// Vars.
-						var $a = $(this),
-							href = $a.attr('href'),
-							target = $a.attr('target');
-
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
-
-					// Check URL.
-						if (!href || href == '#' || href == '')
-							return;
-
-					// Hide sidebar.
-						$sidebar.addClass('inactive');
-
-					// Redirect to href.
-						setTimeout(function() {
-
-							if (target == '_blank')
-								window.open(href);
-							else
-								window.location.href = href;
-
-						}, 500);
-
+				$window.on('load', function() {
+					$window.triggerHandler('scroll');
 				});
 
-			// Prevent certain events inside the panel from bubbling.
-				$sidebar.on('click touchend touchstart touchmove', function(event) {
+			}
 
-					// >large? Bail.
-						if (breakpoints.active('>large'))
-							return;
+	// Main Sections: Two.
 
-					// Prevent propagation.
-						event.stopPropagation();
+		// Lightbox gallery.
+			$window.on('load', function() {
 
-				});
-
-			// Hide panel on body click/tap.
-				$body.on('click touchend', function(event) {
-
-					// >large? Bail.
-						if (breakpoints.active('>large'))
-							return;
-
-					// Deactivate.
-						$sidebar.addClass('inactive');
-
-				});
-
-		// Scroll lock.
-		// Note: If you do anything to change the height of the sidebar's content, be sure to
-		// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.
-
-			$window.on('load.sidebar-lock', function() {
-
-				var sh, wh, st;
-
-				// Reset scroll position to 0 if it's 1.
-					if ($window.scrollTop() == 1)
-						$window.scrollTop(0);
-
-				$window
-					.on('scroll.sidebar-lock', function() {
-
-						var x, y;
-
-						// <=large? Bail.
-							if (breakpoints.active('<=large')) {
-
-								$sidebar_inner
-									.data('locked', 0)
-									.css('position', '')
-									.css('top', '');
-
-								return;
-
-							}
-
-						// Calculate positions.
-							x = Math.max(sh - wh, 0);
-							y = Math.max(0, $window.scrollTop() - x);
-
-						// Lock/unlock.
-							if ($sidebar_inner.data('locked') == 1) {
-
-								if (y <= 0)
-									$sidebar_inner
-										.data('locked', 0)
-										.css('position', '')
-										.css('top', '');
-								else
-									$sidebar_inner
-										.css('top', -1 * x);
-
-							}
-							else {
-
-								if (y > 0)
-									$sidebar_inner
-										.data('locked', 1)
-										.css('position', 'fixed')
-										.css('top', -1 * x);
-
-							}
-
-					})
-					.on('resize.sidebar-lock', function() {
-
-						// Calculate heights.
-							wh = $window.height();
-							sh = $sidebar_inner.outerHeight() + 30;
-
-						// Trigger scroll.
-							$window.trigger('scroll.sidebar-lock');
-
-					})
-					.trigger('resize.sidebar-lock');
-
-				});
-
-	// Menu.
-		var $menu = $('#menu'),
-			$menu_openers = $menu.children('ul').find('.opener');
-
-		// Openers.
-			$menu_openers.each(function() {
-
-				var $this = $(this);
-
-				$this.on('click', function(event) {
-
-					// Prevent default.
-						event.preventDefault();
-
-					// Toggle.
-						$menu_openers.not($this).removeClass('active');
-						$this.toggleClass('active');
-
-					// Trigger resize (sidebar lock).
-						$window.triggerHandler('resize.sidebar-lock');
-
+				$('#two').poptrox({
+					caption: function($a) { return $a.next('h3').text(); },
+					overlayColor: '#2c2c2c',
+					overlayOpacity: 0.85,
+					popupCloserText: '',
+					popupLoaderText: '',
+					selector: '.work-item a.image',
+					usePopupCaption: true,
+					usePopupDefaultStyling: false,
+					usePopupEasyClose: false,
+					usePopupNav: true,
+					windowMargin: (breakpoints.active('<=small') ? 0 : 50)
 				});
 
 			});
