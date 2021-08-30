@@ -2372,7 +2372,7 @@ input, select, textarea {
 	}
 
 		table tbody tr {
-			border: solid 1px #efefef;
+			border: solid 5px #ffffff;
 			border-left: 0;
 			border-right: 0;
 		}
