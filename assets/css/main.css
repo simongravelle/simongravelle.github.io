@@ -25,6 +25,13 @@ section, summary, time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;}
 
+:root{
+    --nanofluidics-color: #8DA4FF;
+    --cell-color: #FFDA8D;
+    --porous-color: #8DFFBB;
+    --colloid-color: #FF8D8D;
+}
+
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;}
@@ -2382,7 +2389,7 @@ input, select, textarea {
 			}
 
 		table td {
-			padding: 0.75em 0.75em;
+			padding: 0em 0.75em;
 		}
 
 		table th {
