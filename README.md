@@ -1,4 +1,4 @@
-# Welcome #
+# Welcome
 
 This is the script of my [personal page](https://simongravelle.github.io/)
 
