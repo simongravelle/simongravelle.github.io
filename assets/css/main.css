@@ -2597,7 +2597,7 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background-color: #1f1815;
+		background-color: #ffffff;
 		background-attachment: scroll,								scroll;
 		/*background-image: url("images/overlay.png"), url("../../images/bg.jpg"); */
 		background-position: top left,							top left;
@@ -2630,11 +2630,11 @@ input, select, textarea {
 		}
 
 		#header strong, #header b {
-			color: #ffffff;
+			color: #000000;
 		}
 
 		#header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #ffffff;
+			color: #000000;
 		}
 
 		#header h1 {
@@ -2656,11 +2656,11 @@ input, select, textarea {
 	}
 
 		#footer .icons a {
-			color: rgba(255, 255, 255, 0.4);
+			color: rgba(0, 0, 0, 0.4);
 		}
 
 	#footer .copyright {
-		color: rgba(255, 255, 255, 0.4);
+		color: rgba(0, 0, 0, 0.4);
 		font-size: 0.8em;
 		list-style: none;
 		margin: 1em 0 0 0;
