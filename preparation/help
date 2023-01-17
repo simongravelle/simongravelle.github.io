@@ -1,0 +1,7 @@
+git remote add upstream https://gitlab.com/maicos-devel/maicos.git
+
+git checkout main
+git fetch upstream
+git pull upstream main
+
+git push origin main
