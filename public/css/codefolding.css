@@ -1,0 +1,49 @@
+
+
+/* Each code block button */
+.code-folding-btn { 
+  margin-right: 10px;
+  margin-bottom: 10px; 
+  width: 11%;
+  padding: 6px;
+  float: left;
+  font-size: .75rem;
+  font-weight: 400;
+  background: #E9B578;
+  border: 0;
+}
+
+.code-folding-btn:hover { 
+  font-size: .75rem;
+  font-weight: 600;
+}
+
+.r-code-collapse {
+  border: none;
+}
+
+
+/* Main show/hide button */
+#code-folding-buttons {
+  float: right;
+  background: #E9B578;
+  border: 0;
+  color: black;
+}
+
+.btn.btn-sm, .btn-group-sm > .btn {
+  padding: 5px 0.4rem;
+  color: black;
+  background: #E9B578;
+  border: 0;
+  box-shadow: 0 0 3px gray;
+}
+
+#code-folding-buttons .dropdown-menu {
+    min-width: 80px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 16px;
+    color:black;
+}
+
