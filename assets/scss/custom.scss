@@ -1,0 +1,285 @@
+/* Custom css - inspired by nickballousite */
+
+@keyframes slide-from-right {
+  0% {
+    transform: translateX(150%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-from-far-right {
+  0% {
+    transform: translateX(1000%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slide-from-left {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*
+.btn-download::before {
+  font-family: fontAwesome;
+  content: "\f019\00a0";
+} 
+*/ 
+
+.background-img {
+    pointer-events: none;
+    cursor: default;
+}
+
+
+
+.article-container {
+  max-width: 850px;
+  padding: 0 20px 0 20px;
+  margin: 0 auto 0 auto;
+  font-size: 18px;
+  text-align: justify;
+}
+
+.docs-toc {
+  text-align: left;
+}
+
+#TableOfContents li a {
+  line-height: 20px
+}
+
+.nav-link {
+  padding: 10px 0 0 0;
+  margin: 10px 0;
+}
+
+/* article styling */
+.article {
+    p a {
+    text-decoration: none;
+    padding: 1.5px;
+    border-radius: 3px;
+  }
+  
+  /* Change article title formatting without changing normal h1 headings */
+  .pt-3 h1 {
+    text-align: left;
+  }
+  
+  /* The opposite; change post h1 without changing page title formatting */
+  .article-style h1:after {
+    content:' ';
+    display:block;
+    border:.1rem solid #d0d0d0;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+    -moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, .05);
+  }
+  
+  li {
+    text-align: left;
+  }
+
+}
+
+h2, h3 {
+  margin-top: 1em;
+  margin-bottom: .4em;
+}
+
+.btn-copy-code {
+  color: black;
+  margin-bottom: 10px;
+  height: 25px;
+  width: 9%;
+  padding: 6px;
+  font-size: .75rem;
+  font-weight: 400;
+  background: #e978da;
+  border: 0;
+}
+
+.btn-copy-code::before {
+  font-family: fontAwesome;
+  content: "\f0c5\00a0";
+}
+
+/* buttons */
+.btn-toolbar .btn.active  {
+  -webkit-box-shadow: 3px 3px 0 0 white !important;
+          box-shadow: 3px 3px 0 0 white !important;
+}
+
+.btn-links .btn {
+  padding: .3rem;
+}
+
+.btn-links .btn:hover {
+  padding: .3rem;
+  color: $sta-primary-dark;
+  border-color: $sta-primary-dark;
+}
+
+/* link styling */
+.card-text p a, .powered-by a {
+  text-decoration: none;
+}
+
+
+/* awards and experience cards */
+.card.experience.course.card-title {
+  font-size: 1rem;
+}
+
+.card-subtitle.my-0.article-metadata,
+.card .text-muted.exp-meta {
+  font-size: .8rem;
+  letter-spacing: 0 !important;
+}
+
+.course .card-body .card-text,
+.experience .card-body .card-text {
+  padding: .8rem 0.5rem .8rem 0 !important;
+}
+
+/* scrolling animation */
+.mouse {
+  width: 150px;
+  
+}
+
+.mouse-icon {
+   width: 25px;
+   height: 33px;
+   border: 3px solid white;
+   border-radius: 15px;
+   cursor: pointer;
+   display: inline-block;
+   text-align: center;
+}
+
+.mouse-wheel {
+  height: 6px;
+  margin: 3px auto 0;
+  display: block;
+  width: 3px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-animation: 1.6s ease infinite wheel-up-down;
+  -moz-animation: 1.6s ease infinite wheel-up-down;
+  animation: 1.6s ease infinite wheel-up-down;
+}
+
+//add images to experience cards
+.flex-w-experience-image-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flex-w-experience-text {
+  display: flex;
+  flex-direction: column;
+}
+.experience-image {
+  max-width: 60px;
+  margin-right: 10px;
+}
+
+@-webkit-keyframes wheel-up-down {
+	0% {
+	    margin-top: 2px;
+	    opacity: 0;
+	}
+	30% {
+	    opacity: 1;
+	}
+	100% {
+	    margin-top: 10px;
+	    opacity: 0;
+	}
+}
+@-moz-keyframes wheel-up-down {
+	0% {
+	    margin-top: 2px;
+	    opacity: 0;
+	}
+	30% {
+	    opacity: 1;
+	}
+	100% {
+	    margin-top: 10px;
+	    opacity: 0;
+	}
+}
+@keyframes wheel-up-down {
+	0% {
+	    margin-top: 2px;
+	    opacity: 0;
+	}
+	30% {
+	    opacity: 1;
+	}
+	100% {
+	    margin-top: 10px;
+	    opacity: 0;
+	}
+}
+
+//custom css for awards
+#accomplishments {
+  .margin-top {
+    margin-top: 20px;
+  }
+  .vertical-center {
+    justify-content: center;
+  }
+  .card-title {
+    font-size: 1.4rem;
+  }
+  .card-subtitle {
+    font-size: 1.2rem;
+  }
+  .card {
+
+    .init-hidden {
+        p {
+          max-height: 0;
+          transition: max-height 1s ease-out;
+          overflow: hidden;
+          margin-bottom: 0 !important;
+        }
+        
+        &.card-text {
+          padding: 0 !important;
+        }
+      }
+    
+    &:hover {
+    .init-hidden p {
+      max-height: 1000px;
+      transition: max-height 1s ease-in;
+    }
+  }
+}
+}

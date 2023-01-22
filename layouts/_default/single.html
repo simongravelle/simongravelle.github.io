@@ -1,0 +1,38 @@
+{{- define "main" -}}
+
+<div class="container-fluid docs">
+  <div class="row">
+
+    <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block empty">
+    </div>
+
+    <div class="col-2 col-xl-2 col-lg-2 d-none d-lg-block docs-toc">
+      {{ partial "functions/get_hook" (dict "hook" "toc-start" "context" .) }}
+
+      <ul class="nav toc-top">
+        <li><a href="#" id="back_to_top" class="docs-toc-title">{{ i18n "on_this_page" }}</a></li>
+      </ul>
+
+      {{ .TableOfContents }}
+
+
+      {{ partial "functions/get_hook" (dict "hook" "toc-end" "context" .) }}
+    </div>
+
+    <main class="col-xl-8 col-lg-8 docs-content" role="main">
+        <article class="article">
+        {{ partial "page_header" . }}
+        <div class="article-container">
+          <div class="article-style" align="justify">
+            {{ .Content }}
+          </div>
+          {{ partial "page_footer" . }}
+        </div>
+        </article>
+    </main>
+  </div>
+</div>
+
+
+
+{{- end -}}

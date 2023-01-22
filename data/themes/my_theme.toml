@@ -1,0 +1,37 @@
+# Theme metadata
+name = "my_theme"
+
+[light]
+  # Primary
+  # primary = "#bf874b"
+
+  # Menu
+  # menu_primary = "#000066"
+  # menu_text = "#fff"
+  # menu_text_active = "#bf874b"
+  # menu_title = "#bf874b"
+
+  # Home sections
+  # home_section_odd = "fff"
+  # home_section_even = "#F8F5F2"
+  
+  # link = "#ad5d07"
+  # link_hover = "#000066"
+
+[dark]
+  # Primary
+  # primary = "#F3B26D"
+  # text = "#8342a8"
+  # link_decoration = "underline"
+  
+  # menu_primary = "#0E182E"
+  # menu_text_active = "#F3B26D"
+  
+  # background = "#1C2945"
+  
+  # Home sections
+  # home_section_odd = "#1C2945"
+  # home_section_even = "#0E182E"
+
+  # link = "#F3B26D"
+  # link_hover = "#377DE8"

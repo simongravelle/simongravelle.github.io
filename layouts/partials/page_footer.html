@@ -1,0 +1,29 @@
+{{ if not .Site.Params.disable_codefolding }}
+<script src="{{ "js/jquery-3.6.2.min.js" | relURL }}"></script>
+<script src="{{ "js/transition.js" | relURL }}"></script>
+<script src="{{ "js/collapse.js" | relURL }}"></script>
+<script src="{{ "js/dropdown.js" | relURL }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+{{ end }}
+
+<script src="{{ "js/codefolding.js" | relURL }}"></script>
+<link rel="stylesheet" href="{{ "css/codefolding.css" | relURL }}" />
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === {{ if isset .Params "codefolding_show" }}{{ .Params.codefolding_show }}{{ else }}{{ default ("hide") .Site.Params.codefolding_show }}{{ end }});
+});
+</script>
+
+{{ partial "page_edit" . }}
+{{ partial "tags" . }}
+{{ partial "components/page_sharer" . }}
+{{ partial "page_author" . }}
+{{ partial "comments" . }}
+
+{{ if .Params.pager }}
+<div class="article-widget">
+  {{ partial "components/pager" . }}
+</div>
+{{ end }}
+
+{{ partial "page_related" . }}

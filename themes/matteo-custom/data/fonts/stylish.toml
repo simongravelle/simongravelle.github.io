@@ -1,0 +1,11 @@
+# Font style metadata
+name = "Stylish"
+
+# Optional Google font URL
+google_fonts = "family=Source+Sans+Pro:wght@200;300;400;700"
+
+# Font families
+heading_font = "Source Sans Pro"
+body_font = "Source Sans Pro"
+nav_font = "Source Sans Pro"
+mono_font = "Source Sans Pro"
