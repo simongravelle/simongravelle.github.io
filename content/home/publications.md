@@ -1,6 +1,4 @@
 ---
-# An instance of the Pages widget.
-# Documentation: https://wowchemy.com/docs/page-builder/
 widget: pages
 
 # This file represents a page section.
@@ -9,7 +7,7 @@ headless: true
 # Order that this section appears on the page.
 weight: 60
 
-title: Publications
+title: Last publications
 # subtitle: 'See also my [Google Scholar](https://scholar.google.com/citations?user=jxApK7gAAAAJ&hl=en).'
 
 content:
@@ -33,5 +31,5 @@ content:
 design:
   # Choose a view for the listings:
   view: citation
-  columns: '2'
+  columns: '1'
 ---

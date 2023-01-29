@@ -88,9 +88,12 @@ I am a physicist in soft matter and fluids at interfaces at the [LIPhy](https://
 
 **Open source and open data**
 
-I participate to the development of [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit for analyzing molecular dynamics simulations, and I share many scripts for creating and analyzing
-simulations on [Github](https://github.com/simongravelle/), such as [NMRforMD](https://nmrformd.readthedocs.io/en/latest/).
+* [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html): Python toolkit for analyzing molecular dynamics simulations
+* [Github](https://github.com/simongravelle/): scripts for creating and analyzing molecular
+simulations
+* [NMRforMD](https://nmrformd.readthedocs.io/en/latest/): tool to calculate NMR relaxation rate from molecular simulations
 
 **Outreach**
 
-I created [LAMMPS](https://lammpstutorials.github.io) and [GROMACS](https://gromacstutorials.github.io) tutorials to help new user familiarize with molecular simulation methods, and share research-related content by [videos](https://www.youtube.com/@SimonGravelle).
+* [LAMMPS tutorials](https://lammpstutorials.github.io): for beginners and advanced LAMMPS user
+* [videos](https://www.youtube.com/@SimonGravelle): research-related content 

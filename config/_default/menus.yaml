@@ -7,13 +7,13 @@ main:
   - name: " "
     weight: 5
   - name: Home
-    url: '/'
+    url: '/index.html'
     weight: 10
- # - name: Project
- #   url: '/project/'
- #   weight: 30
+  - name: News
+    url: '/news.html'
+    weight: 30
   - name: Publications
-    url: '/publication/'
+    url: '/publication.html'
     weight: 40
 #  - name: Blog
 #    url: '/blog/'
