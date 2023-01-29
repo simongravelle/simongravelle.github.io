@@ -1,4 +1,3 @@
 baseurl = "/"
 relativeURLs = true
 uglyURLs = true
-googleAnalytics = UA-36911186-4
