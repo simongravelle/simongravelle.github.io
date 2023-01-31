@@ -11,5 +11,5 @@ links:
   - icon_pack: fas
     icon: scroll
     name: Link
-    url: 'https://doi.org/10.1063/1.5133888'
+    url: 'https://doi.org/10.1021/acs.nanolett.9b02858'
 ---

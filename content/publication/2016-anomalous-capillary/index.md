@@ -11,5 +11,5 @@ links:
   - icon_pack: fas
     icon: scroll
     name: Link
-    url: 'https://doi.org/10.1063/1.4963098'
+    url: 'https://journals.aps.org/pre/abstract/10.1103/PhysRevE.93.033123'
 ---
