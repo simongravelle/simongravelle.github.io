@@ -1,7 +1,7 @@
-# Academic [template](https://simongravelle.github.io/)
+# Academic template
 
 Simple academic template that is easy to deploy on Github page, and relatively
-easy to customise furthermore using css:
+easy to customise furthermore using css.
 
 ![image](https://user-images.githubusercontent.com/43388542/216845033-cc7b0a28-60ff-4e86-a5ce-2c93930e08e2.png)
 
