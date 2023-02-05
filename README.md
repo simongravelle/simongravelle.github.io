@@ -1,4 +1,4 @@
-# Hugo template for scientist [personal page](https://simongravelle.github.io/)
+# Academic [template](https://simongravelle.github.io/)
 
 Simple academic template that is easy to deploy on Github page, and relatively
 easy to customise furthermore using css:
