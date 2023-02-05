@@ -6,7 +6,7 @@ image:
   caption: MAICoS logo
   focal_point: Smart
 slides: example
-summary: Now with new features, better testing, and more a detailed documentation!
+summary: Use it to analyze your molecular simulations of confined fluids.
 tags:
 - MAICoS
 title: The version 0.7 of MAICoS has been released

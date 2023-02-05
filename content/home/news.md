@@ -13,6 +13,8 @@ content:
       tag: '*'
     - name: MAICoS
       tag: MAICoS
+    - name: LAMMPS
+      tag: LAMMPS
     - name: Personal
       tag: Personal
     #- name: Other
