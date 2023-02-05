@@ -1,7 +1,9 @@
 # Hugo template for my [personal page](https://simongravelle.github.io/)
 
 Simple academic template that is easy to deploy on Github page, and relatively
-easy to customise furthermore using css.
+easy to customise furthermore using css:
+
+![image](https://user-images.githubusercontent.com/43388542/216845033-cc7b0a28-60ff-4e86-a5ce-2c93930e08e2.png)
 
 Feel free to use, here is the [live](https://simongravelle.github.io/) version.
 The template is taken from [wowchemy](https://wowchemy.com/), with some custom css
