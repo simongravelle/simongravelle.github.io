@@ -90,5 +90,6 @@ simulations
 
 **Outreach**
 
-* [LAMMPS tutorials](https://lammpstutorials.github.io): for beginners and advanced LAMMPS user
+* [LAMMPS tutorials](https://lammpstutorials.github.io): for beginners and advanced LAMMPS users
+* [GROMACS tutorials](https://gromacstutorials.github.io): for beginners and advanced GROMACS users
 * [videos](https://www.youtube.com/@SimonGravelle): research-related content 
