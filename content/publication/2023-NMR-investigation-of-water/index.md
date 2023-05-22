@@ -18,10 +18,10 @@ links:
     url: 'https://github.com/simongravelle/gravelle2023langmuir'
   - icon_pack: ai
     icon: open-data
-    name: Open data
+    name: Open data (bulk system)
     url: 'https://doi.org/10.18419/darus-3179'
   - icon_pack: ai
     icon: open-data
-    name: Open data
+    name: Open data (slit pore)
     url: 'https://doi.org/10.18419/darus-3180'
 ---
