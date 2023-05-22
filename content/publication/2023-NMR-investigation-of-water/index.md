@@ -13,6 +13,10 @@ links:
     name: Link
     url: 'https://doi.org/10.1021/acs.langmuir.3c00036'
   - icon_pack: ai
+    icon: access
+    name: access
+    url: 'https://github.com/simongravelle/gravelle2023langmuir'
+  - icon_pack: ai
     icon: open-data
     name: Open data
     url: 'https://doi.org/10.18419/darus-3179'
