@@ -39,7 +39,6 @@ education:
       institution: University of Lyon (France)
       year: 2015
 
-
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
@@ -83,13 +82,11 @@ I am a physicist in soft matter and fluids at interfaces at the [LIPhy](https://
 
 **Open source and open data**
 
-* [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html): Python toolkit for analyzing molecular dynamics simulations
-* [Github](https://github.com/simongravelle/): scripts for creating and analyzing molecular
-simulations
-* [NMRforMD](https://nmrformd.readthedocs.io/en/latest/): tool to calculate NMR relaxation rate from molecular simulations
+* [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), the Python toolkit for analyzing confined molecular simulations
+* my [Github](https://github.com/simongravelle/) for repository molecular simulation scripts and data
 
 **Outreach**
 
-* [LAMMPS tutorials](https://lammpstutorials.github.io): for beginners and advanced LAMMPS users
-* [GROMACS tutorials](https://gromacstutorials.github.io): for beginners and advanced GROMACS users
-* [videos](https://www.youtube.com/@SimonGravelle): research-related content 
+* [LAMMPS tutorials](https://lammpstutorials.github.io) for beginners and advanced LAMMPS users
+* [GROMACS tutorials](https://gromacstutorials.github.io) for beginners and advanced GROMACS users
+* [gallery of animations](https://www.youtube.com/@SimonGravelle) of molecular systems
