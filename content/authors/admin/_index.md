@@ -78,12 +78,12 @@ highlight_name: true
 
 **About me**
 
-I am a physicist in soft matter and fluids at interfaces at the [LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble (France). I just received the [MSCA](https://marie-sklodowska-curie-actions.ec.europa.eu/) grant *NanoSep* to study the demixing of fluid mixtures by hybrid nanoporous materials.
+I am a physicist in soft matter and fluids at interfaces at the [LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble (France). In 2022 I received a [MSCA](https://marie-sklodowska-curie-actions.ec.europa.eu/) grant (*NanoSep*) to study the demixing of fluid mixtures by hybrid nanoporous materials, and I will soon be working at [CNRS](https://www.cnrs.fr/).
 
 **Open source and open data**
 
-* [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), the Python toolkit for analyzing confined molecular simulations
-* my [Github](https://github.com/simongravelle/) for repository molecular simulation scripts and data
+* [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit for analyzing confined molecular simulations
+* my [Github](https://github.com/simongravelle/) repository containing molecular simulation scripts and data
 
 **Outreach**
 
