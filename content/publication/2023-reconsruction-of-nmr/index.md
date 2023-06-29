@@ -1,9 +1,9 @@
 ---
 title: "Assessing the validity of NMR relaxation rates obtained from coarse-grained simulations of PEG-water mixtures"
-date: 2023-06-01
-publishDate:  2023-06-01
+date: 2023-06-16
+publishDate:  2023-06-16
 authors: ["**Simon Gravelle**", "David Beyer", "Mariano Brito", "Alexander Schlaich", "Christian Holm"]
-publication_types: ["3"]
+publication_types: ["2"]
 abstract: "NMR relaxometry is a powerful and well-established
 experimental approach to characterize dynamic processes in soft matter systems.
 All-atom (AA) resolved simulations are typically employed to gain further
@@ -22,15 +22,18 @@ component and, on the other hand, the inexact positioning of the spin carriers.
 We show that the offset can be corrected for quantitatively
 by reconstructing a posteriori the atomistic details for the CG trajectories."
 featured: true
-publication: "*Accepted for publication in JPCB*"
+publication: "J. Phys. Chem. B 2023, 127, 25, 5601–5608"
 links:
   - icon_pack: fas
     icon: scroll
-    name: Preprint
-    url: 'https://chemrxiv.org/engage/chemrxiv/article-details/63a45812e8047a86d2f217c7'
+    name: Link
+    url: 'https://doi.org/10.1021/acs.jpcb.3c01646'
   - icon_pack: ai
     icon: open-data
     name: Open data
     url: 'https://darus.uni-stuttgart.de/dataset.xhtml?persistentId=doi%3A10.18419%2Fdarus-3313&version=DRAFT'
-
+  - icon_pack: ai
+    icon: open-data
+    name: Additional data
+    url: 'https://github.com/simongravelle/publication-data'
 ---
