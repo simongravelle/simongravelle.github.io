@@ -3,10 +3,10 @@ date: 2023-06-29
 publishDate: 2023-06-29
 external_link: ""
 image:
-  caption: MSCA logo
+  caption: CNRS logo
   focal_point: Smart
 slides: example
-summary: On the separation of fluid mixture using soft matter membrane.
+summary: On the separation of fluid mixture using soft matter membrane
 tags:
 - Personal
 title: New position at French CNRS
