@@ -8,7 +8,7 @@ image:
 slides: example
 summary: Use it to analyze your molecular simulations of confined fluids.
 tags:
-- MAICoS
+- Outreach
 title: The version 0.7 of MAICoS has been released
 #url_code: "https://gitlab.com/maicos-devel/maicos/-/tree/release-0-7"
 links:

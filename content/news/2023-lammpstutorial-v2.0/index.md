@@ -8,7 +8,7 @@ image:
 slides: example
 summary: Now with a new structure and a dark mode!
 tags:
-- LAMMPS
+- Outreach
 title: The version 2.0 of LAMMPS tutorials has been released
 links:
   - icon_pack: fas
