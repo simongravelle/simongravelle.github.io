@@ -11,14 +11,12 @@ content:
   filter_button:
     - name: All
       tag: '*'
-    - name: MAICoS
-      tag: MAICoS
-    - name: LAMMPS
-      tag: LAMMPS
+    - name: Job
+      tag: Job
     - name: Personal
       tag: Personal
-    #- name: Other
-    #  tag: Other
+    - name: Outreach
+      tag: Outreach
 design:
   columns: '2'
   # Toggle between the various page layout types.
