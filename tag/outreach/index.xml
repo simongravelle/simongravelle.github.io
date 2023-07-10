@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Outreach | Simon Gravelle</title><link>https://simongravelle.github.io/tag/outreach.html</link><atom:link href="https://simongravelle.github.io/tag/outreach/index.xml" rel="self" type="application/rss+xml"/><description>Outreach</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 05 Feb 2023 00:00:00 +0000</lastBuildDate><image><url>https://simongravelle.github.io/media/logo_hub4241536a40aba19023fe53b0ae22453_4788_300x300_fit_lanczos_3.png</url><title>Outreach</title><link>https://simongravelle.github.io/tag/outreach.html</link></image><item><title>The version 2.0 of LAMMPS tutorials has been released</title><link>https://simongravelle.github.io/news/2023-lammpstutorial-v2.0.html</link><pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2023-lammpstutorial-v2.0.html</guid><description>&lt;p>The &lt;a href="https://lammpstutorials.github.io/" target="_blank" rel="noopener">version 2.0&lt;/a> of LAMMPS tutorial has just been published, and offers:&lt;/p>
+&lt;ul>
+&lt;li>a new structure with a sphinx template&lt;/li>
+&lt;li>tutorials are now written in rst format, instead of html, which should facilitate future collaborations&lt;/li>
+&lt;li>a gorgeous dark mode (for the tutorials, not yet for the index page)&lt;/li>
+&lt;/ul>
+&lt;p>The &lt;a href="https://lammpstutorials.github.io/lammpstutorials-version1.0/" target="_blank" rel="noopener">version 1.0&lt;/a> is still visible here, but is not maintained and some commands are likely to be obsolete.&lt;/p></description></item><item><title>The version 0.7 of MAICoS has been released</title><link>https://simongravelle.github.io/news/2023-maicos-v0.7.html</link><pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2023-maicos-v0.7.html</guid><description>&lt;p>The version 0.7 of MAICoS has been released. It comes with:&lt;/p>
+&lt;ul>
+&lt;li>an improved documentation with theory and tutorials&lt;/li>
+&lt;li>a &amp;lsquo;Jitter&amp;rsquo; option to produce smooth density profiles&lt;/li>
+&lt;li>new modules for cylindrical and spherical geometries&lt;/li>
+&lt;/ul></description></item></channel></rss>
