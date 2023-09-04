@@ -16,7 +16,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: MSCA Fellow
+role: MSCA Fellow and CNRS future recruit
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -24,7 +24,7 @@ organizations:
     url: https://liphy.univ-grenoble-alpes.fr/
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a computer physicist in soft matter and fluids at interfaces, currently at the LIPhy in Grenoble (France).
+bio: I am a computer physicist in soft matter and fluids at interfaces at LIPhy in Grenoble, France.
 
 # Interests to show in About widget
 interests:
@@ -46,25 +46,23 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: '/#contact'
+    link: mailto:simon.gravelle@live.fr
+    # link: '/#contact'
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/GravelleSimon
     label: Follow me on Twitter
-    display:
-      header: true
+  - icon: mastodon
+    icon_pack: fab
+    link: https://mastodon.social/@simongravelle
   - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
     icon_pack: fas
     link: https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=fr
   - icon: github
     icon_pack: fab
     link: https://github.com/simongravelle
-  - icon: gitlab
-    icon_pack: fab
-    link: https://gitlab.com/sgravelle
-  # Link to a PDF of your resume/CV.
-  # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
-  # and uncomment the lines below.
+    display:
+      header: true
   - icon: cv
     icon_pack: ai
     link: files/cv/cv.pdf
@@ -78,12 +76,13 @@ highlight_name: true
 
 **About me**
 
-I am a physicist in soft matter and fluids at interfaces at the [LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble (France). In 2022 I received a [MSCA](https://marie-sklodowska-curie-actions.ec.europa.eu/) grant (*NanoSep*) to study the demixing of fluid mixtures by hybrid nanoporous materials, and I will soon be working at [CNRS](https://www.cnrs.fr/).
+I am a physicist in soft matter and fluids at interfaces at [LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble (France). In 2022 I received a [MSCA](https://marie-sklodowska-curie-actions.ec.europa.eu/) grant (*NanoSep*) to study the demixing of fluid mixtures by hybrid nanoporous materials, and I will soon be working at [CNRS](https://www.cnrs.fr/).
 
 **Open source and open data**
 
 * [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit for analyzing confined molecular simulations
-* my [Github](https://github.com/simongravelle/) repository containing molecular simulation scripts and data
+* [NMRforMD](https://nmrformd.readthedocs.io), a Python script for calculating hydrogen NMR relaxation rates from molecular dynamics simulations
+* [Github](https://github.com/simongravelle/) repository containing molecular simulation scripts and data
 
 **Outreach**
 

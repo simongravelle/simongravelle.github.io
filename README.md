@@ -17,7 +17,7 @@ Feel free to use the template, it is originaly
 from [wowchemy](https://wowchemy.com/), with some custom css
 adapted from [nickballousite](https://github.com/nballou) webpage.
 
-To build localy, type:
+To build locally, type:
 
 ```
 hugo server
