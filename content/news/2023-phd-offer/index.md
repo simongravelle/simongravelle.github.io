@@ -9,13 +9,15 @@ slides: example
 summary: CO2 Capture Using Nanoporous Adsorbents -- A Multiscale Numerical Approach From Molecular Aspects to the Engineering Scale
 tags:
 - Job
-title: PhD Position Available in LiPhy (Grenoble, France)
+title: PhD Position Available in LIPhy (expired)
 links:
   - icon_pack: fas
     icon: scroll
     name: LIPhy
     url: 'https://liphy.univ-grenoble-alpes.fr/'
 ---
+**Update.** The offer has now expired, and the selection process has moved to the next step.
+
 **Scope.** With the goal to reach carbon neutrality by 2050, direct air capture (DAC) of CO2 from wet flue
 gases is one brick of the carbon mitigation strategy – especially with the next generation of solid porous
 sorbents based on Metal-Organic Frameworks (MOF). While thermodynamics of the CO2 capture is well

@@ -43,6 +43,7 @@ education:
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
+# Alternatively, use `google-scholar` icon from `ai` icon pack
 social:
   - icon: envelope
     icon_pack: fas
@@ -55,7 +56,7 @@ social:
   - icon: mastodon
     icon_pack: fab
     link: https://mastodon.social/@simongravelle
-  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
+  - icon: graduation-cap
     icon_pack: fas
     link: https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=fr
   - icon: github
