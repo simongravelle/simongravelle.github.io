@@ -1,9 +1,9 @@
 ---
-active: false
+active: true
 widget: portfolio
 headless: true
-weight: 30
-title: Gallery
+weight: 35
+title: Molecular *art*
 subtitle: ''
 content:
   page_type: gallery
@@ -15,6 +15,6 @@ design:
   #   2 = Compact
   #   3 = Card
   #   5 = Showcase
-  view: 2
+  view: 3
   flip_alt_rows: false
 ---
