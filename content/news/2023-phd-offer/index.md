@@ -9,7 +9,7 @@ slides: example
 summary: CO2 Capture Using Nanoporous Adsorbents -- A Multiscale Numerical Approach From Molecular Aspects to the Engineering Scale
 tags:
 - Job
-title: PhD Position Available in LIPhy (expired)
+title: PhD Position Available in LIPhy (Filled)
 links:
   - icon_pack: fas
     icon: scroll
