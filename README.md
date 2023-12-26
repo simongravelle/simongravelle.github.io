@@ -13,7 +13,7 @@ It comes with a good looking dark mode:
 
 [![image](https://user-images.githubusercontent.com/43388542/216845058-77fe9c11-5086-494f-b83d-83d26c252a5b.png)](https://simongravelle.github.io/)
 
-Feel free to use the template, it is originaly
+Feel free to use the template, it is originally
 from [wowchemy](https://wowchemy.com/), with some custom css
 adapted from [nickballousite](https://github.com/nballou) webpage.
 
