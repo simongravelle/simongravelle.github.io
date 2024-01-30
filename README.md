@@ -19,7 +19,7 @@ easy to customize using css. You can find the [live](https://simongravelle.githu
 
 ## Credit
 
-This templatew was originally taken from
+This template was originally taken from
 from [wowchemy](https://wowchemy.com/), with some custom css
 adapted from [nickballousite](https://github.com/nballou) webpage.
 
