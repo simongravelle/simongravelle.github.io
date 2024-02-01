@@ -16,15 +16,15 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: MSCA Fellow and CNRS future recruit
+role: CNRS research scientist, MSCA Fellow
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: LIPhy, University Grenoble Alpes
+  - name: LiPhy, UGA, CNRS
     url: https://liphy.univ-grenoble-alpes.fr/
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a computer physicist in soft matter and fluids at interfaces at LIPhy in Grenoble, France.
+bio: I am a computer physicist in soft matter and fluids at interfaces at LIPhy (UGA/CNRS) in Grenoble, France.
 
 # Interests to show in About widget
 interests:
