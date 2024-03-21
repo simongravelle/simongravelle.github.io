@@ -75,13 +75,13 @@ highlight_name: true
 **About me**
 
 I am a physicist in soft matter and fluids at interfaces at [LIPhy](https://liphy.univ-grenoble-alpes.fr/)
-in Grenoble (France). In 2022 I received a [MSCA](https://marie-sklodowska-curie-actions.ec.europa.eu/)
-grant (*NanoSep*) to study the demixing of fluid mixtures by hybrid nanoporous materials, and I will
-soon be working at [CNRS](https://www.cnrs.fr/).
+in Grenoble (France). In 2022 I received an [MSCA](https://marie-sklodowska-curie-actions.ec.europa.eu/) grant (*NanoSep*)
+to study the demixing of fluid mixtures by hybrid nanoporous materials, and I am
+currently a [CNRS](https://www.cnrs.fr/) researcher.
 
 **Open source and open data**
 
-All code developed as part of my research is open source and available on public repositories, see for instance 
+All the codes developed as part of my research are shared as open source and available on public repositories, see for instance 
 [NMRforMD](https://nmrformd.readthedocs.io), a Python script for calculating hydrogen NMR relaxation rates from molecular dynamics simulations,
 or my [Github](https://github.com/simongravelle/) repository containing molecular simulation scripts and data.
 In parallel, I have been involved in the development of [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html),
@@ -89,8 +89,8 @@ a Python toolkit for analyzing confined molecular simulations.
 
 **Outreach**
 
-In parallel to my research activities, I am developing several outreach projects. The most advanced 
-among my current projects are the [LAMMPS tutorials](https://lammpstutorials.github.io). 
-I also wrote [GROMACS tutorials](https://gromacstutorials.github.io), and manage a
+In parallel to my research activities, I am developing several outreach projects, including
+the [LAMMPS tutorials](https://lammpstutorials.github.io) webpage. 
+I also wrote [GROMACS tutorials](https://gromacstutorials.github.io), a
 [gallery of animations](https://www.youtube.com/@SimonGravelle), along with creating 
 [molecular art](https://simongravelle.github.io/gallery/).
