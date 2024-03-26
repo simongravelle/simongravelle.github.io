@@ -1,12 +1,12 @@
 # Academic template
 
-Simple academic template that is easy to deploy on Github page, and relatively
+A simple academic template that is easy to deploy on Github page, and relatively
 easy to customize using css. You can find the [live](https://simongravelle.github.io/) version.
 
 ## How to modify
 
 - add your own content in the [content](content/) folder,
-- cuscom css can be written in [assets/scss/custom.scss](assets/scss/custom.scss),
+- custom css script can be written in [assets/scss/custom.scss](assets/scss/custom.scss),
 - each publication can be entered as a folder in [content/publication/](content/publication/).
 
 ## Overview
@@ -19,8 +19,7 @@ easy to customize using css. You can find the [live](https://simongravelle.githu
 
 ## Credit
 
-This template was originally taken from
-from [wowchemy](https://wowchemy.com/), with some custom css
+This template was originally taken from [wowchemy](https://wowchemy.com/), with some custom css
 adapted from [nickballousite](https://github.com/nballou) webpage.
 
 ## Build locally
