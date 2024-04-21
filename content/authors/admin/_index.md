@@ -1,6 +1,4 @@
 ---
-
-
 # Display name
 title: Simon Gravelle
 
@@ -71,26 +69,22 @@ social:
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
-
 **About me**
 
-I am a physicist in soft matter and fluids at interfaces at [LIPhy](https://liphy.univ-grenoble-alpes.fr/)
-in Grenoble (France). In 2022 I received an [MSCA](https://marie-sklodowska-curie-actions.ec.europa.eu/) grant (*NanoSep*)
-to study the demixing of fluid mixtures by hybrid nanoporous materials, and I am
-currently a [CNRS](https://www.cnrs.fr/) researcher.
+I am a [CNRS](https://www.cnrs.fr/) researcher at [LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble, France. I use molecular simulations to study fluids at interfaces and soft matter systems.
 
 **Open source and open data**
 
-All the codes developed as part of my research are shared as open source and available on public repositories, see for instance 
-[NMRforMD](https://nmrformd.readthedocs.io), a Python script for calculating hydrogen NMR relaxation rates from molecular dynamics simulations,
-or my [Github](https://github.com/simongravelle/) repository containing molecular simulation scripts and data.
-In parallel, I have been involved in the development of [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html),
-a Python toolkit for analyzing confined molecular simulations.
+I share all the codes developed as part of my research as open source, see for instance:
+
+- my [Github](https://github.com/simongravelle/) repository containing molecular simulation scripts and data,
+- [NMRforMD](https://nmrformd.readthedocs.io), a Python script for calculating hydrogen NMR relaxation rates from molecular dynamics simulations,
+
+In parallel to my open-source projects, I have been involved in the development of [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit for analyzing confined molecular simulations.
 
 **Outreach**
 
-In parallel to my research activities, I am developing several outreach projects, including
-the [LAMMPS tutorials](https://lammpstutorials.github.io) webpage. 
-I also wrote [GROMACS tutorials](https://gromacstutorials.github.io), a
-[gallery of animations](https://www.youtube.com/@SimonGravelle), along with creating 
-[molecular art](https://simongravelle.github.io/gallery/).
+In parallel to my research activities, I am developing several outreach projects, including:
+- the [LAMMPS tutorials](https://lammpstutorials.github.io) webpage and its associated [repositories](https://github.com/lammpstutorials),
+- the [GROMACS tutorials](https://gromacstutorials.github.io) page,
+- a [gallery of animations](https://www.youtube.com/@SimonGravelle) and [molecular art](https://simongravelle.github.io/gallery/).
