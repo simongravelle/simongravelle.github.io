@@ -86,5 +86,6 @@ In parallel to my open-source projects, I have been involved in the development 
 
 In parallel to my research activities, I am developing several outreach projects, including:
 - the [LAMMPS tutorials](https://lammpstutorials.github.io) webpage and its associated [repositories](https://github.com/lammpstutorials),
+- [MDCourse](https://github.com/mdcourse/mdcourse.github.io): Learn Molecular Simulations with Python,
 - the [GROMACS tutorials](https://gromacstutorials.github.io) page,
 - a [gallery of animations](https://www.youtube.com/@SimonGravelle) and [molecular art](https://simongravelle.github.io/gallery/).
