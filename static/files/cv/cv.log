@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.2.7)  7 MAR 2024 16:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.3.15)  25 APR 2024 14:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1427,9 +1427,9 @@ Package: babel 2023/05/11 v3.89 The Babel package
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2023/03/08 v3.5q French support from the babel system
 Package babel Info: Hyphen rules for 'acadian' set to \l@french
-(babel)             (\language45). Reported on input line 91.
+(babel)             (\language72). Reported on input line 91.
 Package babel Info: Hyphen rules for 'canadien' set to \l@french
-(babel)             (\language45). Reported on input line 92.
+(babel)             (\language72). Reported on input line 92.
 \FB@nonchar=\count485
 Package babel Info: Making : an active character on input line 395.
 Package babel Info: Making ; an active character on input line 396.
@@ -1700,7 +1700,11 @@ File: tikzlibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '6.0.3'
-))) (./parameters.tex
+))) (/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box144
+)
+(./parameters.tex
 \c@tcb@cnt@colorboxorganosilices=\count514
 \c@tcb@cnt@colorboxmmm=\count515
 
@@ -1731,31 +1735,31 @@ Package csquotes Info: Redefining alias 'default' -> 'french'.
  (./cv.aux)
 \openout1 = `cv.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 5.
-LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 5
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 6.
+LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 6
 .
  (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
 Package biblatex Info: Trying to load language 'french'...
 Package biblatex Info: ... file 'french.lbx' found.
 
@@ -1771,13 +1775,13 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'cv.bbl' not found.
 
 No file cv.bbl.
-Package biblatex Info: Reference section=0 on input line 5.
-Package biblatex Info: Reference segment=0 on input line 5.
+Package biblatex Info: Reference section=0 on input line 6.
+Package biblatex Info: Reference segment=0 on input line 6.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count516
 \scratchdimen=\dimen352
-\scratchbox=\box144
+\scratchbox=\box145
 \nofMPsegments=\count517
 \nofMParguments=\count518
 \everyMPshowfont=\toks55
@@ -1795,7 +1799,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 5.
+Package hyperref Info: Link coloring ON on input line 6.
 
 (./cv.out) (./cv.out)
 \@outlinefile=\write5
@@ -1824,27 +1828,27 @@ Package caption Info: french babel package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: wrapfig package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \degres on input line 5.
+LaTeX Info: Redefining \degres on input line 6.
 Package french.ldf Info: Setting StandardItemizeEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 5.
+(french.ldf)             reported on input line 6.
 Package french.ldf Info: Setting StandardEnumerateEnv=true for
 (french.ldf)             compatibility with enumitem package,
-(french.ldf)             reported on input line 5.
-LaTeX Info: Redefining \up on input line 5.
-LaTeX Info: Redefining \microtypecontext on input line 5.
-Package microtype Info: Applying patch `item' on input line 5.
-Package microtype Info: Applying patch `toc' on input line 5.
-Package microtype Info: Applying patch `eqnum' on input line 5.
-Package microtype Info: Applying patch `footnote' on input line 5.
-Package microtype Info: Applying patch `verbatim' on input line 5.
+(french.ldf)             reported on input line 6.
+LaTeX Info: Redefining \up on input line 6.
+LaTeX Info: Redefining \microtypecontext on input line 6.
+Package microtype Info: Applying patch `item' on input line 6.
+Package microtype Info: Applying patch `toc' on input line 6.
+Package microtype Info: Applying patch `eqnum' on input line 6.
+Package microtype Info: Applying patch `footnote' on input line 6.
+Package microtype Info: Applying patch `verbatim' on input line 6.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 5.
+LaTeX Info: Redefining \showhyphens on input line 6.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1854,14 +1858,14 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 \c@lstlisting=\count522
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <24.88> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 12.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 13.
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--13
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
 LaTeX Font Info:    Trying to load font information for OT1+cmbr on input line 
-17.
+18.
 (/usr/share/texlive/texmf-dist/tex/latex/cmbright/ot1cmbr.fd
 File: ot1cmbr.fd 2005/04/13 v8.1 (WaS)
 )
@@ -1870,39 +1874,39 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Trying to load font information for OML+cmbrm on input line
- 17.
+ 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cmbright/omlcmbrm.fd
 File: omlcmbrm.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Trying to load font information for OMS+cmbrs on input line
- 17.
+ 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cmbright/omscmbrs.fd
 File: omscmbrs.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line
- 17.
+ 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 1
-7.
+8.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 17.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
@@ -1910,16 +1914,16 @@ File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 17
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 18
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <10.95> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 20.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 21.
 LaTeX Font Info:    Trying to load font information for T1+cmtl on input line 2
-4.
+5.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cmbright/t1cmtl.fd
 File: t1cmtl.fd 2005/04/13 v8.1 (WaS)
@@ -1929,49 +1933,49 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 41.
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 42.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/cm-super/cm-super-t1.enc}]
 
 LaTeX Font Warning: Font shape `T1/cmbr/b/it' undefined
-(Font)              using `T1/cmbr/b/n' instead on input line 86.
+(Font)              using `T1/cmbr/b/n' instead on input line 118.
 
 
-Overfull \hbox (47.89926pt too wide) in paragraph at lines 100--106
+Overfull \hbox (47.89926pt too wide) in paragraph at lines 132--138
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 109--109
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 141--141
 []|[][] \T1/cmbr/m/n/10.95 (-20) [1][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 117--117
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 149--149
 []|[][] \T1/cmbr/m/n/10.95 (-20) [2][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 123--123
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 155--155
 []|[][] \T1/cmbr/m/n/10.95 (-20) [3][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 130--130
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 162--162
 []|[][] \T1/cmbr/m/n/10.95 (-20) [4][][]| 
  []
 
 LaTeX Font Info:    Font shape `T1/cmbr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 131.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 163.
 [2]
-Overfull \hbox (1.24693pt too wide) in paragraph at lines 160--160
+Overfull \hbox (1.24693pt too wide) in paragraph at lines 192--192
 []|\T1/cmbr/m/n/10.95 (-20) Experimental| 
  []
 
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <9> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 188.
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 220.
 [3]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1994,24 +1998,26 @@ Package logreq Info: Writing requests to 'cv.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44771 strings out of 475735
- 868105 string characters out of 5784787
- 1877759 words of memory out of 5000000
- 64676 multiletter control sequences out of 15000+600000
- 536737 words of font info for 112 fonts, out of 8000000 for 9000
+ 44847 strings out of 475735
+ 869408 string characters out of 5784786
+ 1880759 words of memory out of 5000000
+ 64747 multiletter control sequences out of 15000+600000
+ 536779 words of font info for 112 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  110i,13n,110p,1127b,1740s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/share/tex
-mf/fonts/type1/public/cm-super/sfbbx10.pfb></usr/share/texmf/fonts/type1/public
-/cm-super/sfbmo10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmo9.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfbmr17.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfbmr9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on cv.pdf (5 pages, 117100 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfbbx10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmo1
+0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmo9.pfb></usr/share/texm
+f/fonts/type1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfbmr17.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmr9.pfb><
+/usr/share/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
+Output written on cv.pdf (5 pages, 133427 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 150 PDF objects out of 1000 (max. 8388607)
+ 96 compressed objects within 1 object stream
+ 17 named destinations out of 1000 (max. 500000)
  30365 words of extra memory for PDF output out of 35830 (max. 10000000)
 
