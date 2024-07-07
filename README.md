@@ -1,7 +1,7 @@
 # Academic template
 
 A simple academic template that is easy to deploy on Github page, and relatively
-easy to customize using css. You can find the [live](https://simongravelle.github.io/) version.
+easy to customize using css. You can find the [live](https://simongravelle.github.io/) version, and my resume [here](https://simongravelle.github.io/files/cv/cv.pdf).
 
 ## Overview
 
