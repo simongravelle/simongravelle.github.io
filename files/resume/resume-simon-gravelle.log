@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.14)  27 JUN 2024 16:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.14)  14 JUL 2024 13:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**cv.tex
-(./cv.tex
+**resume-simon-gravelle.tex
+(./resume-simon-gravelle.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
 (./concours.cls
@@ -1732,8 +1732,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'french'.
- (./cv.aux)
-\openout1 = `cv.aux'.
+ (./resume-simon-gravelle.aux)
+\openout1 = `resume-simon-gravelle.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -1752,7 +1752,8 @@ LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for OT2/cmr/m/n on input line 6.
 LaTeX Font Info:    Trying to load font information for OT2+cmr on input line 6
 .
- (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/ot2cmr.fd
 File: ot2cmr.fd 2001/08/11 v3.2c Computer Modern Cyrillic font definitions
 )
 LaTeX Font Info:    ... okay on input line 6.
@@ -1769,14 +1770,15 @@ File: french.lbx 2023/03/05 v3.19 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `cv.bcf'.
+\openout3 = `resume-simon-gravelle.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'cv.bbl' not found.
+Package biblatex Info: ... file 'resume-simon-gravelle.bbl' found.
 
-No file cv.bbl.
+(./resume-simon-gravelle.bbl)
 Package biblatex Info: Reference section=0 on input line 6.
 Package biblatex Info: Reference segment=0 on input line 6.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count519
@@ -1801,9 +1803,9 @@ e
 ))
 Package hyperref Info: Link coloring ON on input line 6.
 
-(./cv.out) (./cv.out)
+(./resume-simon-gravelle.out) (./resume-simon-gravelle.out)
 \@outlinefile=\write5
-\openout5 = `cv.out'.
+\openout5 = `resume-simon-gravelle.out'.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty
@@ -1940,49 +1942,49 @@ LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <10.95> not available
 dvips/cm-super/cm-super-t1.enc}]
 
 LaTeX Font Warning: Font shape `T1/cmbr/b/it' undefined
-(Font)              using `T1/cmbr/b/n' instead on input line 125.
+(Font)              using `T1/cmbr/b/n' instead on input line 127.
 
 
-Overfull \hbox (47.89926pt too wide) in paragraph at lines 139--145
+Overfull \hbox (47.89926pt too wide) in paragraph at lines 141--147
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 148--148
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 150--150
 []|[][] \T1/cmbr/m/n/10.95 (-20) [1][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 156--156
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 158--158
 []|[][] \T1/cmbr/m/n/10.95 (-20) [2][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 162--162
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 164--164
 []|[][] \T1/cmbr/m/n/10.95 (-20) [3][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 169--169
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 171--171
 []|[][] \T1/cmbr/m/n/10.95 (-20) [4][][]| 
  []
 
 LaTeX Font Info:    Font shape `T1/cmbr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 170.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 172.
 [2]
-Overfull \hbox (1.24693pt too wide) in paragraph at lines 199--199
+Overfull \hbox (1.24693pt too wide) in paragraph at lines 201--201
 []|\T1/cmbr/m/n/10.95 (-20) Experimental| 
  []
 
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <9> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 227.
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 229.
 [3]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4] [5] 
 enddocument/afterlastpage: lastpage setting LastPage.
-(./cv.aux)
+(./resume-simon-gravelle.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -1991,33 +1993,34 @@ L3 programming layer <2024-01-22>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `cv.out' has not changed.
+Package rerunfilecheck Info: File `resume-simon-gravelle.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package logreq Info: Writing requests to 'cv.run.xml'.
-\openout1 = `cv.run.xml'.
+Package logreq Info: Writing requests to 'resume-simon-gravelle.run.xml'.
+\openout1 = `resume-simon-gravelle.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44996 strings out of 474222
- 875184 string characters out of 5748733
+ 44998 strings out of 474222
+ 875685 string characters out of 5748733
  1953975 words of memory out of 5000000
  66408 multiletter control sequences out of 15000+600000
  581461 words of font info for 114 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 110i,13n,110p,1127b,1742s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 110i,13n,110p,1146b,1742s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/hfbright/hfbrsy10.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfbbx10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmo1
-0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmo9.pfb></usr/share/texm
-f/fonts/type1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fonts/type1/public/
-cm-super/sfbmr17.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmr9.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on cv.pdf (5 pages, 134326 bytes).
+hare/texlive/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/hfbright/hfbrmi10.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/hfbright/hfbrsy10.pfb></usr/share/texmf/fonts/type1/public/cm-
+super/sfbbx10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmo10.pfb></u
+sr/share/texmf/fonts/type1/public/cm-super/sfbmo9.pfb></usr/share/texmf/fonts/t
+ype1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfbmr17.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmr9.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
+Output written on resume-simon-gravelle.pdf (5 pages, 138384 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 156 PDF objects out of 1000 (max. 8388607)
+ 100 compressed objects within 1 object stream
  17 named destinations out of 1000 (max. 500000)
  30365 words of extra memory for PDF output out of 35830 (max. 10000000)
 
