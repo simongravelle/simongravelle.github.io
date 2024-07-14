@@ -64,7 +64,7 @@ social:
       header: true
   - icon: cv
     icon_pack: ai
-    link: files/cv/cv.pdf
+    link: files/resume/resume-simon-gravelle.pdf
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true

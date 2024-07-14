@@ -44,10 +44,10 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>cv.bcf</file>
+      <file>resume-simon-gravelle.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>cv.bbl</file>
+      <file>resume-simon-gravelle.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -65,19 +65,19 @@
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>cv</infile>
+      <infile>resume-simon-gravelle</infile>
     </cmdline>
     <input>
-      <file>cv.bcf</file>
+      <file>resume-simon-gravelle.bcf</file>
     </input>
     <output>
-      <file>cv.bbl</file>
+      <file>resume-simon-gravelle.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>cv.bbl</file>
+      <file>resume-simon-gravelle.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>cv.bcf</file>
+      <file>resume-simon-gravelle.bcf</file>
     </requires>
   </external>
 </requests>
