@@ -3,6 +3,7 @@
 /assets/jsconfig.json
 .hugo_build.lock
 
-./static/files/cv/cv.aux
-./static/files/cv/cv.bcf
-./static/files/cv/cv.log
+# Latex files
+./static/files/resume/resume*.aux
+./static/files/resume/resume*.bcf
+./static/files/resume/resume*.log
