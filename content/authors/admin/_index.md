@@ -71,21 +71,16 @@ highlight_name: true
 ---
 **About me**
 
-I am a [CNRS](https://www.cnrs.fr/) researcher at [LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble, France. I use molecular simulations to study fluids at interfaces and soft matter systems.
+I am a [CNRS](https://www.cnrs.fr/) researcher at [LIPhy](https://liphy.univ-grenoble-alpes.fr/)
+in Grenoble, France. I use molecular simulations to study fluids at interfaces
+and soft matter systems.
 
-**Open source and open data**
+**Open source and outreach activities**
 
-I share all the codes developed as part of my research as open source, see for instance:
+I share all the codes developed as part of my research as open source, see my
+[Github](https://github.com/simongravelle/) repository. See also
+[MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit for
+analyzing confined molecular simulations, [LAMMPS tutorials](https://github.com/lammpstutorials),
+[MDCourse](https://github.com/mdcourse/mdcourse.github.io), [GROMACS tutorials](https://gromacstutorials.github.io),
+my [gallery of animations](https://www.youtube.com/@SimonGravelle) and [molecular art](https://simongravelle.github.io/gallery/).
 
-- my [Github](https://github.com/simongravelle/) repository containing molecular simulation scripts and data,
-- [NMRforMD](https://nmrformd.readthedocs.io), a Python script for calculating hydrogen NMR relaxation rates from molecular dynamics simulations,
-
-In parallel to my open-source projects, I have been involved in the development of [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit for analyzing confined molecular simulations.
-
-**Outreach**
-
-In parallel to my research activities, I am developing several outreach projects, including:
-- the [LAMMPS tutorials](https://lammpstutorials.github.io) webpage and its associated [repositories](https://github.com/lammpstutorials),
-- [MDCourse](https://github.com/mdcourse/mdcourse.github.io): Learn Molecular Simulations with Python,
-- the [GROMACS tutorials](https://gromacstutorials.github.io) page,
-- a [gallery of animations](https://www.youtube.com/@SimonGravelle) and [molecular art](https://simongravelle.github.io/gallery/).
