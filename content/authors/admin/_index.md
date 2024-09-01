@@ -46,14 +46,10 @@ social:
   - icon: envelope
     icon_pack: fas
     link: mailto:simon.gravelle@live.fr
-    # link: '/#contact'
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/GravelleSimon
     label: Follow me on Twitter
-  #- icon: mastodon
-  #  icon_pack: fab
-  #  link: https://mastodon.social/@simongravelle
   - icon: graduation-cap
     icon_pack: fas
     link: https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=fr
@@ -66,21 +62,28 @@ social:
     icon_pack: ai
     link: files/resume/resume-simon-gravelle.pdf
 
-# Highlight the author in author lists? (true/false)
-highlight_name: true
+highlight_name: true # Highlight the author in author lists? (true/false)
 ---
 **About me**
 
-I am a [CNRS](https://www.cnrs.fr/) researcher at [LIPhy](https://liphy.univ-grenoble-alpes.fr/)
-in Grenoble, France. I use molecular simulations to study fluids at interfaces
-and soft matter systems.
+I am a [CNRS](https://www.cnrs.fr/) researcher at
+[LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble, France. I use
+molecular simulations to study fluids at interfaces and soft matter systems.
 
-**Open source and outreach activities**
+**Open Source and Outreach Activities**
 
-I share all the codes developed as part of my research as open source, see my
-[Github](https://github.com/simongravelle/) repository. See also
-[MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit for
-analyzing confined molecular simulations, [LAMMPS tutorials](https://github.com/lammpstutorials),
-[MDCourse](https://github.com/mdcourse/mdcourse.github.io), [GROMACS tutorials](https://gromacstutorials.github.io),
-my [gallery of animations](https://www.youtube.com/@SimonGravelle) and [molecular art](https://simongravelle.github.io/gallery/).
+I share all the code developed as part of my research as open source. You can
+find it in my [GitHub](https://github.com/simongravelle/) repository. 
+Additionally, see the following resources:
 
+- [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit 
+  for analyzing confined molecular simulations
+- [LAMMPS Tutorials](https://github.com/lammpstutorials), tutorials for 
+  beginners using LAMMPS
+- [GROMACS Tutorials](https://gromacstutorials.github.io), tutorials for 
+  beginners using GROMACS
+- [MDCourse](https://mdcourse.github.io), a Python course 
+  on molecular simulations
+- [Gallery of Animations](https://www.youtube.com/@SimonGravelle) and 
+  [Molecular Art](https://simongravelle.github.io/gallery/), high-resolution 
+  renderings of molecules
