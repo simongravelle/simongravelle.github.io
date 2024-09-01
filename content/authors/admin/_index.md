@@ -78,7 +78,7 @@ Additionally, see the following resources:
 
 - [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit 
   for analyzing confined molecular simulations
-- [LAMMPS Tutorials](https://github.com/lammpstutorials), tutorials for 
+- [LAMMPS Tutorials](https://lammpstutorials.github.io), tutorials for 
   beginners using LAMMPS
 - [GROMACS Tutorials](https://gromacstutorials.github.io), tutorials for 
   beginners using GROMACS
