@@ -19,8 +19,8 @@ links:
     icon: github
     name: Source
     url: 'https://github.com/mdcourse'
-  - icon_pack: fas
-    icon: python
+  - icon_pack: fab
+    icon: github
     name: Source
     url: 'https://github.com/mdcourse/python-codes'
 ---
@@ -35,7 +35,7 @@ from molecular simulations, including the pioneering works by Metropolis,
 Rosenbluth, Wood, and Parker in the 1950s, will be re-explored.
 
 If you want to take part in the project, reach out to me on
-[GitHub](https://github.com/mdcourse). I am looking for more contributors
+[GitHub](https://github.com/mdcourse). I am looking for contributors
 (co-writers, testers).
 
 This project has received funding from the European Union's Horizon 2020
