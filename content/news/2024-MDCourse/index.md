@@ -9,7 +9,7 @@ slides: example
 summary: Use Python to recreate step-by-step the first Monte Carlo simulations that were performed on an IBM 701 in the 1950s.
 tags:
 - Outreach
-title: Focus on Learn Molecular Simulation with Python (a side project:)
+title: Focus on Learn Molecular Simulation with Python
 links:
   - icon_pack: fas
     icon: scroll
