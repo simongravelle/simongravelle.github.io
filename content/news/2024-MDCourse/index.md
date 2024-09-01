@@ -19,8 +19,8 @@ links:
     icon: github
     name: Source
     url: 'https://github.com/mdcourse'
-  - icon_pack: fab
-    icon: fa-python
+  - icon_pack: fas
+    icon: python
     name: Source
     url: 'https://github.com/mdcourse/python-codes'
 ---
