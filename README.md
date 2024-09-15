@@ -3,8 +3,9 @@
 
 # Academic template
 
-A simple academic template that is easy to deploy on Github page, and relatively
-easy to customize using css. You can find the [live](https://simongravelle.github.io/) version, and my resume [here](https://simongravelle.github.io/files/resume/resume-simon-gravelle.pdf).
+A simple academic template that is easy to deploy on GitHub page, and relatively
+easy to customize using css. You can find the [live](https://simongravelle.github.io/)
+version, and my resume [here](https://simongravelle.github.io/files/resume/resume-simon-gravelle.pdf).
 
 ## Overview
 
@@ -16,7 +17,7 @@ easy to customize using css. You can find the [live](https://simongravelle.githu
 
 ## Credit
 
-This template was originally taken from [wowchemy](https://wowchemy.com/), with some custom css
+This template was originally taken from [wowchemy](https://wowchemy.com/), with some custom CSS
 adapted from [nickballousite](https://github.com/nballou) webpage.
 
 ## Build locally
