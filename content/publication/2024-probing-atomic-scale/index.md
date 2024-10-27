@@ -1,7 +1,7 @@
 ---
 title: "Probing atomic-scale processes at the ferrihydrite-water interface with reactive molecular dynamics"
 date: 2024-10-16
-publishDate:  2023-10-26
+publishDate:  2024-10-26
 authors: ["Ardalan Hayatifar", "**Simon Gravelle**", "Beatriz D. Moreno", "Valerie A. Schoepfer","Matthew B. J. Lindsay"]
 publication_types: ["2"]
 abstract: "Interfacial processes involving metal (oxyhydr)oxide phases are important for the mobility and bioavailability of nutri-
