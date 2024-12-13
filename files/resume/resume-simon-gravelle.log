@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.5.14)  4 AUG 2024 21:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.10.26)  13 DEC 2024 09:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1425,9 +1425,9 @@ Package: babel 2024/01/07 v24.1 The Babel package
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2023-12-19 v3.5r French support from the babel system
 Package babel Info: Hyphen rules for 'acadian' set to \l@french
-(babel)             (\language6). Reported on input line 91.
+(babel)             (\language63). Reported on input line 91.
 Package babel Info: Hyphen rules for 'canadien' set to \l@french
-(babel)             (\language6). Reported on input line 92.
+(babel)             (\language63). Reported on input line 92.
 \FB@stdchar=\count488
 Package babel Info: Making : an active character on input line 420.
 Package babel Info: Making ; an active character on input line 421.
@@ -1978,11 +1978,7 @@ Overfull \hbox (1.24693pt too wide) in paragraph at lines 201--201
 
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <9> not available
 (Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 229.
-[3]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[4] [5] 
+[3] [4] [5] [6] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./resume-simon-gravelle.aux)
  ***********
@@ -1993,6 +1989,9 @@ L3 programming layer <2024-01-22>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `resume-simon-gravelle.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 Package logreq Info: Writing requests to 'resume-simon-gravelle.run.xml'.
@@ -2000,11 +1999,11 @@ Package logreq Info: Writing requests to 'resume-simon-gravelle.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44998 strings out of 474222
- 875685 string characters out of 5748733
+ 45001 strings out of 474222
+ 875709 string characters out of 5748732
  1953975 words of memory out of 5000000
  66408 multiletter control sequences out of 15000+600000
- 581461 words of font info for 114 fonts, out of 8000000 for 9000
+ 581548 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  110i,13n,110p,1146b,1742s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb></usr/s
@@ -2017,10 +2016,10 @@ sr/share/texmf/fonts/type1/public/cm-super/sfbmo9.pfb></usr/share/texmf/fonts/t
 ype1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fonts/type1/public/cm-super/
 sfbmr17.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmr9.pfb></usr/shar
 e/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on resume-simon-gravelle.pdf (5 pages, 138373 bytes).
+Output written on resume-simon-gravelle.pdf (6 pages, 139648 bytes).
 PDF statistics:
- 156 PDF objects out of 1000 (max. 8388607)
- 100 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
+ 161 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
+ 18 named destinations out of 1000 (max. 500000)
  30365 words of extra memory for PDF output out of 35830 (max. 10000000)
 
