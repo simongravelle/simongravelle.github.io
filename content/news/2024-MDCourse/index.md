@@ -23,6 +23,8 @@ links:
     icon: github
     name: Source
     url: 'https://github.com/mdcourse/python-codes'
+type: "news"
+layout: "single"
 ---
 
 [Learn Molecular Simulations with Python](https://mdcourse.github.io/)

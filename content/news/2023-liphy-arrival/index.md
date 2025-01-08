@@ -19,5 +19,7 @@ links:
     icon: scroll
     name: MSCA
     url: 'https://marie-sklodowska-curie-actions.ec.europa.eu/'
+type: "news"
+layout: "single"
 ---
 After 2 great years at the ICP in Stuttgart, I am starting my own MSCA project (NanoSep) at [LIPhy](https://liphy.univ-grenoble-alpes.fr/) (UGA) in [Benoit Coasne group](https://benoitcoasne.github.io/).

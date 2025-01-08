@@ -15,6 +15,8 @@ links:
     icon: scroll
     name: LIPhy
     url: 'https://liphy.univ-grenoble-alpes.fr/'
+type: "news"
+layout: "single"
 ---
 **Scope.**
 

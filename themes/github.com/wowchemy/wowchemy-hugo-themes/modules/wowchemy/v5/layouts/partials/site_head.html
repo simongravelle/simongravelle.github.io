@@ -36,9 +36,10 @@
     {{ end }}
   {{ end }}
 
+  <!---
   {{ if site.Params.marketing.analytics.google_optimize | and hugo.IsProduction }}
     <script src="https://www.googleoptimize.com/optimize.js?id={{ site.Params.marketing.analytics.google_optimize }}"></script>
-  {{- end -}}
+  {{- end -}} -->
 
   {{/* Attempt to load superuser. */}}
   {{ $superuser_name := "" }}

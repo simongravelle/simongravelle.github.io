@@ -1,0 +1,3 @@
+[submodule ".submodule/scholar-collector"]
+	path = .submodule/scholar-collector
+	url = git@github.com:simongravelle/scholar-collector.git
