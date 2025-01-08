@@ -19,5 +19,7 @@ links:
     icon: scroll
     name: CNRS
     url: 'https://www.cnrs.fr/fr'
+type: "news"
+layout: "single"
 ---
 In the continuity of my MSCA fellowship, I've been hired by the French CNRS (Section 11) as a tenured full time researcher at [LIPhy](https://liphy.univ-grenoble-alpes.fr/) (UGA).

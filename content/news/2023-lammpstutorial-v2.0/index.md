@@ -19,6 +19,8 @@ links:
     icon: github
     name: Source
     url: 'https://github.com/lammpstutorials/lammpstutorials.github.io'
+type: "news"
+layout: "single"
 ---
 The [version 2.0](https://lammpstutorials.github.io/) of LAMMPS tutorial has just been published, and offers:
 * a new structure with a sphinx template

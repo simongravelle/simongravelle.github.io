@@ -15,6 +15,8 @@ links:
     icon: scroll
     name: LIPhy
     url: 'https://liphy.univ-grenoble-alpes.fr/'
+type: "news"
+layout: "single"
 ---
 **Update.** The offer has now expired, and the selection process has moved to the next step.
 
