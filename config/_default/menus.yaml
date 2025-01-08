@@ -4,8 +4,6 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: " "
-    weight: 5
   - name: Home
     url: '/index.html'
     weight: 10
@@ -15,37 +13,6 @@ main:
   - name: Publications
     url: '/publication.html'
     weight: 40
-#  - name: Blog
-#    url: '/blog/'
-#    weight: 60
- # - name: CV
- #   url: '/files/cv.pdf'
- #   weight: 70
-  
-# Sub-home menu
-#  - name: About
-#    url: '#about'
-#    parent: " "
-#    weight: 50
-#  - name: Background
-#    url: '#cv'
-#    parent: " "
-#    weight: 60
-#  - name: Recent Publications
-#    url: '#publications'
-#    parent: " "
-#    weight: 70  
-#  - name: Recent Blog Posts
-#    url: '#posts'
-#    parent: " "
-#    weight: 80
-#  - name: Contact
-#    url: '#contact'
-#    parent: " "
-#    weight: 90
-
-# Link to a PDF of your resume/CV from the menu.
-# To enable, copy your resume/CV to `static/uploads/resume.pdf` and uncomment the lines below.
-#  - name: CV
-#    url: uploads/resume.pdf
-#    weight: 70
+  - name: CV
+    url: uploads/resume.pdf
+    weight: 50

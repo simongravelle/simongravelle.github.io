@@ -3,11 +3,10 @@
 # Documentation: https://wowchemy.com/docs/
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-# Appearance
-
+# Appearance (customize the theme from data/themes)
 appearance:
-  theme_day: minimal
-  theme_night: minimal
+  theme_day: light
+  theme_night: dark
   font: custom_font
   font_size: L
 
@@ -62,7 +61,7 @@ locale:
 features:
   syntax_highlighter:
     theme_light: github-light
-    theme_dark: dracula
+    theme_dark: github-dark
     #theme_light: igor
     #theme_dark: nord
     enable: true
