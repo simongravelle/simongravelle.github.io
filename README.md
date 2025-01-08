@@ -7,9 +7,9 @@ A simple academic template that is easy to deploy on GitHub page, and relatively
 easy to customize using css. You can find the [live](https://simongravelle.github.io/)
 version, and my resume [here](https://simongravelle.github.io/files/resume/resume-simon-gravelle.pdf).
 
-## Publication list
+## Automatic update of the publication list
 
-The list of publications can be updated automatically from Google Scholar using
+The list of publications is updated automatically from Google Scholar using
 the [scholar-collector](https://github.com/simongravelle/scholar-collector).
 
 ## Overview
@@ -22,10 +22,10 @@ the [scholar-collector](https://github.com/simongravelle/scholar-collector).
 
 ## Credit
 
-This template was originally taken from [wowchemy](https://wowchemy.com/), with some custom CSS
-adapted from [nickballousite](https://github.com/nballou) webpage.
+This template was originally taken from [wowchemy](https://wowchemy.com/), with
+some custom CSS adapted from [nickballousite](https://github.com/nballou) webpage.
 
-## Build locally
+## How to build locally
 
 To build locally on your computer, type:
 

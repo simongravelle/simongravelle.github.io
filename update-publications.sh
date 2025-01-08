@@ -1,11 +1,10 @@
 #!/bin/bash
 
-# Ensure the script exits on errors
 set -e
 
-# Check if submodules are initialized and updated
 echo "Ensuring submodules are initialized and updated..."
-git submodule update --init --recursive
+git submodule update --init
+git submodule update --remote
 
 # Navigate to the submodule directory
 SUBMODULE_DIR=".submodule/scholar-collector"
