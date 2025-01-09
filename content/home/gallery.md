@@ -3,7 +3,7 @@ active: true
 widget: portfolio
 headless: true
 weight: 25
-title: Research interest
+title: Research
 subtitle: ''
 content:
   page_type: gallery

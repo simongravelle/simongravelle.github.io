@@ -65,10 +65,26 @@ social:
 highlight_name: true # Highlight the author in author lists? (true/false)
 ---
 
-**About me**
+### About me ##
 
-Computer physicist in soft matter and fluids at interfaces in LIPhy (UGA, CNRS), in Grenoble, France.
+I am a computer physicist in soft matter and fluids at interfaces, working at the LIPhy laboratory in Grenoble, France.
 
-**Open source**
+<a href="https://github.com/simongravelle" target="_blank" style="float: right">
+  <img src="https://raw.githubusercontent.com/lammpstutorials/lammpstutorials.github.io/2Aug2023/docs/avatars/level3/water-adsorption-in-silica/water-adsorption.png" alt="GitHub Logo" width="200">
+</a>
 
-"You won’t get sued for anticompetitive behavior." Linus Torvalds
+<span style="display: block; height: 8px;"></span>
+
+### What I share on <a href="https://github.com/simongravelle" target="_blank" style="text-decoration: none;">GitHub</a> ##
+
+  - Input files for molecular simulations
+  - Scripts for preparing and analyzing simulations
+  - Data and scripts from my recent publications
+
+<span style="display: block; height: 8px;"></span>
+
+### My primary outreach projects ##
+
+  - <a href="https://github.com/lammpstutorials" target="_blank" style="text-decoration: none;">LAMMPS tutorials</a> for LAMMPS beginners
+  - <a href="https://github.com/mdcourse" target="_blank" style="text-decoration: none;">Guides</a> for implementing molecular simulations from scratch
+  

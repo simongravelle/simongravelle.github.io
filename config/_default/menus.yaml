@@ -8,14 +8,14 @@ main:
     url: '/index.html'
     weight: 10
   - name: News
-    url: '/news.html'
+    url: '#news'
     weight: 50
   - name: Publications
-    url: '/publication.html'
+    url: '#publications'
     weight: 30
-  - name: Interests
-    url: '/gallery.html'
+  - name: Research
+    url: '#Research'
     weight: 20
   - name: CV
-    url: uploads/resume.pdf
+    url: files/resume/resume-simon-gravelle.pdf
     weight: 60

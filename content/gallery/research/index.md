@@ -13,9 +13,9 @@ title:
 **Systems that interest me**
 
 - Soft matter systems, such as polymers and proteins
-- Fluids, particularly in confined environments or near interfaces
+- Fluids in confined environments or near interfaces
 
 **Preferred method**
 
-- Molecular simulations (and its comparison to experiments like neutrons or NMR)
+- Molecular simulations (particulalry when it can be compared to experiments like neutrons or NMR)
 
