@@ -1,0 +1,16 @@
+# Theme metadata
+name = "Light"
+
+[light]
+  # Primary
+  primary = "hsl(212, 100%, 40%)"  # Consistent blue accent as in GitHub Light
+
+  # Menu
+  menu_primary = "rgb(255, 255, 255)"  # White background for menu
+  menu_text = "rgba(36, 41, 46, 0.6)"  # Muted dark text for menu
+  menu_text_active = "rgba(36, 41, 46, 1)"  # Dark active text
+  menu_title = "#24292e"  # GitHub Light's dark gray
+
+  # Home sections
+  home_section_odd = "rgb(246, 248, 250)"  # Slightly darker section
+  home_section_even = "rgb(255, 255, 255)"  # White, alternating

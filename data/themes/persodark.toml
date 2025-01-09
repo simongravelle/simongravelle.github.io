@@ -1,0 +1,26 @@
+# Theme metadata
+name = "dark"
+
+[dark]
+  # Primary
+  primary = "hsl(212, 100%, 40%)"  # A blue similar to GitHub Dark's highlights
+
+  # General Text
+  text = "rgba(201, 209, 217, 1)"  # General text color matching GitHub Dark
+
+  # Menu
+  menu_primary = "rgb(13, 17, 23)"  # Dark background color from GitHub Dark
+  menu_text = "rgba(201, 209, 217, 0.6)"  # Muted text color
+  menu_text_active = "rgba(201, 209, 217, 1)"  # Active text color
+  menu_title = "#c9d1d9"  # Light gray for titles, matching GitHub Dark
+
+  # Links
+  link = "hsl(212, 70%, 60%)"  # Slightly darker blue for links
+  link_hover = "hsl(212, 90%, 35%)"  # More vibrant, darker hover color
+  # link = "rgba(201, 209, 217, 1)"  # General text color matching GitHub Dark
+  link_decoration = "underline"
+
+  # Home sections
+  home_section_odd = "rgb(22, 27, 34)"  # Slightly darker section
+  home_section_even = "rgb(13, 17, 23)"  # Slightly lighter section, alternating
+
