@@ -58,9 +58,9 @@ social:
   - icon: graduation-cap
     icon_pack: fas
     link: https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl
-  #- icon: cv
-  #  icon_pack: ai
-  #  link: files/resume/resume-simon-gravelle.pdf
+  - icon: cv
+    icon_pack: ai
+    link: files/resume/resume-simon-gravelle.pdf
 
 highlight_name: true # Highlight the author in author lists? (true/false)
 ---
@@ -87,4 +87,4 @@ I am a computer physicist in soft matter and fluids at interfaces, working at th
 
   - <a href="https://github.com/lammpstutorials" target="_blank" style="text-decoration: none;">LAMMPS tutorials</a> for LAMMPS beginners
   - <a href="https://github.com/mdcourse" target="_blank" style="text-decoration: none;">Guides</a> for implementing molecular simulations from scratch
-  
+
