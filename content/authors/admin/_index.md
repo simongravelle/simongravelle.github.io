@@ -14,15 +14,15 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: CNRS research scientist, MSCA Fellow
+role: CNRS research scientist
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: LiPhy, UGA, CNRS
+  - name: LIPhy, Grenoble, France
     url: https://liphy.univ-grenoble-alpes.fr/
 
 # Short bio (displayed in user profile at end of posts)
-bio: I am a computer physicist in soft matter and fluids at interfaces at LIPhy (UGA/CNRS) in Grenoble, France.
+bio: Computer physicist in soft matter and fluids at interfaces in LIPhy (UGA, CNRS), in Grenoble, France.
 
 # Interests to show in About widget
 interests:
@@ -46,44 +46,29 @@ social:
   - icon: envelope
     icon_pack: fas
     link: mailto:simon.gravelle@live.fr
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/simongravelle
+    display:
+      header: true
   - icon: twitter
     icon_pack: fab
     link: https://twitter.com/GravelleSimon
     label: Follow me on Twitter
   - icon: graduation-cap
     icon_pack: fas
-    link: https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl=fr
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/simongravelle
-    display:
-      header: true
-  - icon: cv
-    icon_pack: ai
-    link: files/resume/resume-simon-gravelle.pdf
+    link: https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl
+  #- icon: cv
+  #  icon_pack: ai
+  #  link: files/resume/resume-simon-gravelle.pdf
 
 highlight_name: true # Highlight the author in author lists? (true/false)
 ---
+
 **About me**
 
-I am a [CNRS](https://www.cnrs.fr/) researcher at
-[LIPhy](https://liphy.univ-grenoble-alpes.fr/) in Grenoble, France. I use
-molecular simulations to study fluids at interfaces and soft matter systems.
+Computer physicist in soft matter and fluids at interfaces in LIPhy (UGA, CNRS), in Grenoble, France.
 
-**Open Source and Outreach Activities**
+**Open source**
 
-I share all the code developed as part of my research as open source. You can
-find it in my [GitHub](https://github.com/simongravelle/) repository. 
-Additionally, see the following resources:
-
-- [MAICoS](https://maicos-devel.gitlab.io/maicos/index.html), a Python toolkit 
-  for analyzing confined molecular simulations
-- [LAMMPS Tutorials](https://lammpstutorials.github.io), tutorials for 
-  beginners using LAMMPS
-- [GROMACS Tutorials](https://gromacstutorials.github.io), tutorials for 
-  beginners using GROMACS
-- [MDCourse](https://mdcourse.github.io), a Python course 
-  on molecular simulations
-- [Gallery of Animations](https://www.youtube.com/@SimonGravelle) and 
-  [Molecular Art](https://simongravelle.github.io/gallery/), high-resolution 
-  renderings of molecules
+"You won’t get sued for anticompetitive behavior." Linus Torvalds

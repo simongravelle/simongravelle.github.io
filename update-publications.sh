@@ -18,7 +18,7 @@ fi
 
 # Run the Python script with the specified path
 SCRIPT="collect_publications.py"
-TARGET_PATH="../../content/publication/"
+TARGET_PATH="../../content/publications/"
 
 if [ -f "$SCRIPT" ]; then
     echo "Executing $SCRIPT with path $TARGET_PATH"

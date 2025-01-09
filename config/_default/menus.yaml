@@ -9,10 +9,13 @@ main:
     weight: 10
   - name: News
     url: '/news.html'
-    weight: 30
+    weight: 50
   - name: Publications
     url: '/publication.html'
-    weight: 40
+    weight: 30
+  - name: Interests
+    url: '/gallery.html'
+    weight: 20
   - name: CV
     url: uploads/resume.pdf
-    weight: 50
+    weight: 60

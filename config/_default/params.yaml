@@ -6,7 +6,7 @@
 # Appearance (customize the theme from data/themes)
 appearance:
   theme_day: light
-  theme_night: dark
+  theme_night: persodark
   font: custom_font
   font_size: L
 
@@ -60,8 +60,8 @@ locale:
 
 features:
   syntax_highlighter:
-    theme_light: github-light
-    theme_dark: github-dark
+    #theme_light: github-light
+    #theme_dark: github-dark
     #theme_light: igor
     #theme_dark: nord
     enable: true
@@ -113,7 +113,7 @@ security:
   # Allow frame for embedding speaker notes in slides
   allow_frame: true
 
-plugins_css: ["custom","codefolding"]
+plugins_css: ["custom"] #,"codefolding"]
 
 ############################
 ## Code folding
