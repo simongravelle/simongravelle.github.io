@@ -16,7 +16,7 @@ the [scholar-collector](https://github.com/simongravelle/scholar-collector).
 
 [![image](static/img/Screenshot01.png)](https://simongravelle.github.io/)
 
-[![image](static/img/Screenshot01.png)](https://simongravelle.github.io/)
+[![image](static/img/Screenshot02.png)](https://simongravelle.github.io/)
 
 ## Credit
 
