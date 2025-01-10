@@ -9,7 +9,7 @@ slides: example
 summary: Microporous Polymer for Fluid Mixture Separation
 tags:
 - Job
-title: PostDoc Position Available in LIPhy (closed)
+title: PostDoc Position Available in LIPhy (Filled)
 links:
   - icon_pack: fas
     icon: scroll
