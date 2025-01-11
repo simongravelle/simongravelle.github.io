@@ -24,8 +24,12 @@
   {{ with $notice }}
   <p class="powered-by copyright-license-text">
     {{ replace (replace . "{year}" now.Year) "{license}" (printf "<a href=\"%s\" rel=\"noopener noreferrer\" target=\"_blank\">CC %s 4.0</a>" $license_url (replace $cc_code "-" " " | upper)) | markdownify }}
+    The site code is available on <a href="https://github.com/simongravelle/simongravelle.github.io" target="_blank" rel="noopener">Github</a>.
+
+  
   </p>
   {{ end }}
+
 
   <p class="powered-by footer-license-icons">
     <a href="{{$license_url}}" rel="noopener noreferrer" target="_blank" aria-label="Creative Commons">
