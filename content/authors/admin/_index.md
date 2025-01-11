@@ -70,7 +70,7 @@ highlight_name: true # Highlight the author in author lists? (true/false)
 I am a computer physicist in soft matter and fluids at interfaces, working at the LIPhy laboratory in Grenoble, France.
 
 <a href="https://github.com/simongravelle" target="_blank" style="float: right">
-  <img src="https://raw.githubusercontent.com/lammpstutorials/lammpstutorials.github.io/2Aug2023/docs/avatars/level3/water-adsorption-in-silica/water-adsorption.png" alt="GitHub Logo" width="200">
+  <img src="https://raw.githubusercontent.com/simongravelle/simongravelle.github.io/refs/heads/main/static/img/water-in-polymer.png" alt="Water in polymer - molecular dynamics" width="200">
 </a>
 
 <span style="display: block; height: 8px;"></span>
