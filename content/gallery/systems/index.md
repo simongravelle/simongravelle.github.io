@@ -1,6 +1,6 @@
 ---
-date: 2025-01-01
-publishDate: 2025-01-01
+date: 2025-01-02
+publishDate: 2025-01-02
 external_link: "https://github.com/simongravelle"
 image:
   caption: Fluid transport through polymers
@@ -10,12 +10,7 @@ summary:
 tags:
 title: 
 ---
-**Systems that interest me**
+## Systems that interest me
 
 - Soft matter systems, such as polymers and proteins
 - Fluids in confined environments or near interfaces
-
-**Preferred method**
-
-- Molecular simulations (particulalry when it can be compared to experiments like neutrons or NMR)
-
