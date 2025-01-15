@@ -13,9 +13,9 @@ main:
   - name: Publications
     url: '#publications'
     weight: 30
-  - name: Research
-    url: '#gallery'
-    weight: 20
+  #- name: Research
+  #  url: '#gallery'
+  #  weight: 20
   # - name: CV
   #   url: files/resume/resume-simon-gravelle.pdf
   #   weight: 60
