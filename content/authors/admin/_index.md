@@ -51,10 +51,10 @@ social:
     link: https://github.com/simongravelle
     display:
       header: true
-  - icon: twitter
+  - icon: mastodon
     icon_pack: fab
-    link: https://twitter.com/GravelleSimon
-    label: Follow me on Twitter
+    link: https://mastodon.social/@simongravelle
+    label: Follow me on Mastodon
   - icon: graduation-cap
     icon_pack: fas
     link: https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl
