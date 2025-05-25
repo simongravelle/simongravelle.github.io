@@ -24,22 +24,22 @@ I am running as a candidate for the *Collège B1* of the new Section 08 of the C
 
 **Personal statement (See French version here below)**
 
-Recruited at LIPhy in 2023 by the former Section 11, I study soft matter systems  
-(polymers, bio-inspired systems, nanoporous materials), with a focus on the  
-behavior of molecules at interfaces. I primarily use molecular simulation, and my  
-background, which combines simulations and experiments, facilitates my  
-collaborations with experimentalists (NMR, neutrons, X-rays). I also dedicate time  
-to creating open and freely accessible educational content for both beginners and  
+Recruited at LIPhy in 2023 by the former Section 11, I study soft matter systems
+(polymers, bio-inspired systems, nanoporous materials), with a focus on the
+behavior of molecules at interfaces. I primarily use molecular simulation, and my
+background, which combines simulations and experiments, facilitates my
+collaborations with experimentalists (NMR, neutrons, X-rays). I also dedicate time
+to creating open and freely accessible educational content for both beginners and
 experts.
 
-The CNRS remains one of the few institutions that guarantees independent research  
-that is not subject to trends—an essential condition for producing critical, open,  
-and long-term knowledge. In this regard, the National Committee plays a  
+The CNRS remains one of the few institutions that guarantees independent research
+that is not subject to trends—an essential condition for producing critical, open, 
+and long-term knowledge. In this regard, the National Committee plays a
 fundamental role as a space for scientific collegiality, debate, and counterbalance.
 
-As an elected member, I am committed to fully dedicating myself to the National  
-Committee and to contributing to recruitment and evaluation processes in a  
-thoughtful way, not based solely on bibliometric indicators. I will work to equally  
+As an elected member, I am committed to fully dedicating myself to the National
+Committee and to contributing to recruitment and evaluation processes in a
+thoughtful way, not based solely on bibliometric indicators. I will work to equally
 defend interdisciplinarity, established disciplines, and emerging themes.
 
 **Profession de foi (In French)**
