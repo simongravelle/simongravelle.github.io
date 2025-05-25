@@ -5,7 +5,7 @@ widget: pages
 headless: true
 
 # Order that this section appears on the page.
-weight: 26
+weight: 40
 
 title: Publications
 subtitle: 'See also my [Scholar](https://scholar.google.com/citations?user=9fD2JlYAAAAJ&hl) profile'
