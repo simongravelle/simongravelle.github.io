@@ -45,7 +45,7 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: mailto:simon.gravelle@live.fr
+    link: mailto:simon.gravelle@cnrs.fr
   - icon: github
     icon_pack: fab
     link: https://github.com/simongravelle
