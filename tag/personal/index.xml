@@ -1,10 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personal | Simon Gravelle</title><link>https://simongravelle.github.io/tag/personal.html</link><atom:link href="https://simongravelle.github.io/tag/personal/index.xml" rel="self" type="application/rss+xml"/><description>Personal</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Mar 2025 00:00:00 +0000</lastBuildDate><image><url>https://simongravelle.github.io/media/logo_hu5025324560545862583.png</url><title>Personal</title><link>https://simongravelle.github.io/tag/personal.html</link></image><item><title>I am migrating to the Fediverse</title><link>https://simongravelle.github.io/news/2025-mastodon.html</link><pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2025-mastodon.html</guid><description>&lt;p>Starting now, I am migrating to the Fediverse and
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Personal | Simon Gravelle</title><link>https://simongravelle.github.io/tag/personal.html</link><atom:link href="https://simongravelle.github.io/tag/personal/index.xml" rel="self" type="application/rss+xml"/><description>Personal</description><generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 25 May 2025 00:00:00 +0000</lastBuildDate><image><url>https://simongravelle.github.io/media/logo_hu5025324560545862583.png</url><title>Personal</title><link>https://simongravelle.github.io/tag/personal.html</link></image><item><title>Running for the CNRS National Committee – Section 08</title><link>https://simongravelle.github.io/news/2025-conrs.html</link><pubDate>Sun, 25 May 2025 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2025-conrs.html</guid><description>&lt;p>I am running as a candidate for the &lt;em>Collège B1&lt;/em> of the new Section 08 of the CoNRS:&lt;br>
+&lt;strong>Physique de la matière complexe et du vivant&lt;/strong> (Physics of Complex Matter and Life).&lt;/p>
+&lt;p>&lt;strong>Personal statement (See French version here below)&lt;/strong>&lt;/p>
+&lt;p>Recruited at LIPhy in 2023 by the former Section 11, I study soft matter systems&lt;br>
+(polymers, bio-inspired systems, nanoporous materials), with a focus on the&lt;br>
+behavior of molecules at interfaces. I primarily use molecular simulation, and my&lt;br>
+background, which combines simulations and experiments, facilitates my&lt;br>
+collaborations with experimentalists (NMR, neutrons, X-rays). I also dedicate time&lt;br>
+to creating open and freely accessible educational content for both beginners and&lt;br>
+experts.&lt;/p>
+&lt;p>The CNRS remains one of the few institutions that guarantees independent research&lt;br>
+that is not subject to trends—an essential condition for producing critical, open,&lt;br>
+and long-term knowledge. In this regard, the National Committee plays a&lt;br>
+fundamental role as a space for scientific collegiality, debate, and counterbalance.&lt;/p>
+&lt;p>As an elected member, I am committed to fully dedicating myself to the National&lt;br>
+Committee and to contributing to recruitment and evaluation processes in a&lt;br>
+thoughtful way, not based solely on bibliometric indicators. I will work to equally&lt;br>
+defend interdisciplinarity, established disciplines, and emerging themes.&lt;/p>
+&lt;p>&lt;strong>Profession de foi (In French)&lt;/strong>&lt;/p>
+&lt;p>Recruté au LIPhy en 2023 par l’ancienne Section 11, j’étudie les systèmes de la
+matière molle (polymères, systèmes bio-inspirés, matériaux nanoporeux), avec un
+intérêt pour le comportement des molécules aux interfaces. J’utilise principalement
+la simulation moléculaire, et mon parcours mêlant simulations et expériences facilite
+mes collaborations avec les expérimentateurs (RMN, neutrons,
+rayons X). Je consacre aussi du temps à la création de contenus pédagogiques
+libres et ouverts pour débutants et experts.&lt;/p>
+&lt;p>Le CNRS reste l’un des rares organismes à garantir une recherche indépendante et
+non soumise aux effets de mode, conditions indispensables à la production de
+savoirs critiques, ouverts et de long terme. À ce titre, le Comité National joue un rôle fondamental
+en tant qu’espace de collégialité scientifique, de débat et de contre-pouvoir.&lt;/p>
+&lt;p>En tant que membre élu, je m’engage à me consacrer pleinement au Comité National
+et à contribuer aux recrutements et aux évaluations de façon raisonnée et non
+fondée uniquement sur des indicateurs bibliométriques, afin de défendre de manière égale
+l’interdisciplinarité, les disciplines reconnues et les thématiques émergentes.&lt;/p></description></item><item><title>I am migrating to the Fediverse</title><link>https://simongravelle.github.io/news/2025-mastodon.html</link><pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2025-mastodon.html</guid><description>&lt;p>Starting now, I am migrating to the Fediverse and
 will no longer be publishing on X. This also applies to the communication
-associated with the &lt;a href="https://lammpstutorials.github.io" target="_blank" rel="noopener">LAMMPS Tutorials&lt;/a> organization.
+associated with the LAMMPS Tutorials organization.
 The main exceptions are my LinkedIn and Youtube accounts that I am keeping (for now).&lt;/p>
-&lt;p>The &lt;a href="https://fr.wikipedia.org/wiki/Fediverse" target="_blank" rel="noopener">Fediverse&lt;/a> is a network of social
+&lt;p>The Fediverse is a network of social
 platforms. Its decentralized nature prevents corporate monopolies and censorship.&lt;/p>
-&lt;p>You can &lt;a href="https://mastodon.social/@simongravelle" target="_blank" rel="noopener">follow me on Mastodon&lt;/a>, where
+&lt;p>You can follow me on Mastodon (&lt;a href="https://mastodon.social/@simongravelle%29" target="_blank" rel="noopener">https://mastodon.social/@simongravelle)&lt;/a>, where
 I will primarily post about science, molecular simulations, and open-source projects.&lt;/p></description></item><item><title>New ANR project - CO₂ capture by foam</title><link>https://simongravelle.github.io/news/2025-anr-miamco2.html</link><pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2025-anr-miamco2.html</guid><description>&lt;p>This marks the official start of an ANR project led by Elise Lorenceau, in collaboration
 with the CEA. Together, we aim to demonstrate the feasibility of a foam reactor
 for CO₂ capture.&lt;/p></description></item><item><title>I have obtained a position at French CNRS</title><link>https://simongravelle.github.io/news/2023-cnrs-start.html</link><pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2023-cnrs-start.html</guid><description>&lt;p>In the continuity of my MSCA fellowship, I&amp;rsquo;ve been hired by the French CNRS (Section 11) as a tenured full time researcher at &lt;a href="https://liphy.univ-grenoble-alpes.fr/" target="_blank" rel="noopener">LIPhy&lt;/a> (UGA).&lt;/p></description></item></channel></rss>
