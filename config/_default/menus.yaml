@@ -10,7 +10,7 @@ main:
   - name: News
     url: '#news'
     weight: 20
-  - name: Group
+  - name: Team
     url: '#group'
     weight: 30
   - name: Publications

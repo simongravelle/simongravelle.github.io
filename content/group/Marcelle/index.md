@@ -19,4 +19,4 @@ type: "group"
 layout: "single"
 ---
 
-Non-permanent researcher part of the MicroSep project since September 2025. .
+Research associate on the MicroSep project since September 2025. .

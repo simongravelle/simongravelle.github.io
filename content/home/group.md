@@ -3,7 +3,7 @@ active: true
 widget: portfolio
 headless: true
 weight: 30
-title: Group
+title: Team
 subtitle: ''
 content:
   page_type: group

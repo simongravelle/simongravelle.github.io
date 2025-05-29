@@ -11,12 +11,12 @@ tags:
 - Personal
 title: Pablo Grisanti
 links:
-  - icon_pack: fas
-    icon: scroll
+  - icon_pack: fab
+    icon: github
     name: Pablo's GitHub
-    url: 'pablogrisanti.github.io'
+    url: 'https://github.com/pablogrisanti'
 type: "group"
 layout: "single"
 ---
 
-PhD candidate since April 2024.
+PhD candidate in LIPhy (UGA Grenoble) since April 2024.
