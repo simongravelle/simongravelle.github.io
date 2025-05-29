@@ -9,13 +9,11 @@ main:
     weight: 10
   - name: News
     url: '#news'
-    weight: 50
+    weight: 20
+  - name: Team
+    url: '#group'
+    weight: 30
   - name: Publications
     url: '#publications'
-    weight: 30
-  #- name: Research
-  #  url: '#gallery'
-  #  weight: 20
-  # - name: CV
-  #   url: files/resume/resume-simon-gravelle.pdf
-  #   weight: 60
+    weight: 40
+  

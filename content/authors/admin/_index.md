@@ -45,7 +45,7 @@ education:
 social:
   - icon: envelope
     icon_pack: fas
-    link: mailto:simon.gravelle@live.fr
+    link: mailto:simon.gravelle@cnrs.fr
   - icon: github
     icon_pack: fab
     link: https://github.com/simongravelle
@@ -67,7 +67,8 @@ highlight_name: true # Highlight the author in author lists? (true/false)
 
 ### About me ##
 
-I am a computer physicist in soft matter and fluids at interfaces, working at the LIPhy laboratory in Grenoble, France.
+I am a computer physicist in soft matter and fluids at interfaces, working at
+the LIPhy institute in Grenoble, France.
 
 <a href="https://github.com/simongravelle" target="_blank" style="float: right">
   <img src="https://raw.githubusercontent.com/simongravelle/simongravelle.github.io/refs/heads/main/static/img/water-in-polymer.png" alt="Water in polymer - molecular dynamics" width="200">

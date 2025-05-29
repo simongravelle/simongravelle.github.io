@@ -33,14 +33,15 @@ hugo server
 
 ## How to modify
 
-After cloning this repository, you can adapt it by:
+After cloning this repository:
 
 - add your own content in the [content](content/) folder,
-- custom css script can be written in [assets/scss/custom.scss](assets/scss/custom.scss),
-- each publication can be entered as a folder in [content/publication/](content/publication/).
+- modify the custom css script in [assets/scss/custom.scss](assets/scss/custom.scss),
+- enter your publications in [content/publication/](content/publication/).
 
 ## How to deploy
 
 In Settings, Pages, select:
+
 - Deploy from a branch as Source
 - gh-pages, `/(root)` as Branch
