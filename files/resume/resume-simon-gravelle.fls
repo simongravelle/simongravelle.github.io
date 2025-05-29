@@ -557,7 +557,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmbright/ebmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmbright/ebmo10.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/eurosym/feymr10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmbright/ebbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmbright/ebmr9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cmbright/ebmo9.tfm
@@ -566,8 +565,6 @@ INPUT ./resume-simon-gravelle.out
 INPUT ./resume-simon-gravelle.out
 INPUT resume-simon-gravelle.run.xml
 OUTPUT resume-simon-gravelle.run.xml
-INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/eurosym/feymr10.pfb
-INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/hfbright/hfbr10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/hfbright/hfbr8.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/hfbright/hfbrmi10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/hfbright/hfbrsy10.pfb

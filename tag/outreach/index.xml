@@ -11,10 +11,4 @@ Rosenbluth, Wood, and Parker in the 1950s, will be re-explored.&lt;/p>
 (co-writers, testers).&lt;/p>
 &lt;p>This project has received funding from the European Union&amp;rsquo;s Horizon 2020
 research and innovation programme under the Marie Skłodowska-Curie grant
-agreement No 101065060.&lt;/p></description></item><item><title>The version 2.0 of LAMMPS tutorials has been released</title><link>https://simongravelle.github.io/news/2023-lammpstutorial-v2.0.html</link><pubDate>Sun, 05 Feb 2023 00:00:00 +0000</pubDate><guid>https://simongravelle.github.io/news/2023-lammpstutorial-v2.0.html</guid><description>&lt;p>The &lt;a href="https://lammpstutorials.github.io/" target="_blank" rel="noopener">version 2.0&lt;/a> of LAMMPS tutorial has just been published, and offers:&lt;/p>
-&lt;ul>
-&lt;li>a new structure with a sphinx template&lt;/li>
-&lt;li>tutorials are now written in rst format, instead of html, which should facilitate future collaborations&lt;/li>
-&lt;li>a gorgeous dark mode (for the tutorials, not yet for the index page)&lt;/li>
-&lt;/ul>
-&lt;p>The &lt;a href="https://lammpstutorials.github.io/lammpstutorials-version1.0/" target="_blank" rel="noopener">version 1.0&lt;/a> is still visible here, but is not maintained and some commands are likely to be obsolete.&lt;/p></description></item></channel></rss>
+agreement No 101065060.&lt;/p></description></item></channel></rss>
