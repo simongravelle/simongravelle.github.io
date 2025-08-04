@@ -38,7 +38,7 @@ After cloning this repository:
 - add your own content in the [content](content/) folder,
 - modify the custom css script in [assets/scss/custom.scss](assets/scss/custom.scss),
 - enter your publications in [content/publication/](content/publication/).
-- replace Simon Gravelle by your name in [layouts/partials/widgets.about.html](layouts/partials/widgets.about.html).
+- replace Simon Gravelle by your name in [layouts/partials/widgets/about.html](layouts/partials/widgets/about.html).
 
 ## How to deploy
 
