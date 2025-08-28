@@ -19,4 +19,4 @@ type: "group"
 layout: "single"
 ---
 
-PhD candidate in LIPhy (UGA Grenoble) since April 2024.
+PhD candidate at LIPhy, Université Grenoble Alpes, since April 2024.
