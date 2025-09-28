@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.7.20)  25 MAY 2025 18:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.8.9)  28 SEP 2025 12:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1425,9 +1425,9 @@ Package: babel 2024/01/07 v24.1 The Babel package
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/french.ldf
 Language: french 2023-12-19 v3.5r French support from the babel system
 Package babel Info: Hyphen rules for 'acadian' set to \l@french
-(babel)             (\language36). Reported on input line 91.
+(babel)             (\language74). Reported on input line 91.
 Package babel Info: Hyphen rules for 'canadien' set to \l@french
-(babel)             (\language36). Reported on input line 92.
+(babel)             (\language74). Reported on input line 92.
 \FB@stdchar=\count488
 Package babel Info: Making : an active character on input line 420.
 Package babel Info: Making ; an active character on input line 421.
@@ -1935,49 +1935,49 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 42.
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 44.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf/fonts/enc/
 dvips/cm-super/cm-super-t1.enc}]
 
 LaTeX Font Warning: Font shape `T1/cmbr/b/it' undefined
-(Font)              using `T1/cmbr/b/n' instead on input line 131.
+(Font)              using `T1/cmbr/b/n' instead on input line 130.
 
 
-Overfull \hbox (47.89926pt too wide) in paragraph at lines 145--151
+Overfull \hbox (47.89926pt too wide) in paragraph at lines 144--150
 $[]$ $[]$ 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 154--154
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 153--153
 []|[][] \T1/cmbr/m/n/10.95 (-20) [1][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 162--162
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 161--161
 []|[][] \T1/cmbr/m/n/10.95 (-20) [2][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 168--168
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 167--167
 []|[][] \T1/cmbr/m/n/10.95 (-20) [3][][]| 
  []
 
 
-Overfull \hbox (2.77051pt too wide) in paragraph at lines 175--175
+Overfull \hbox (2.77051pt too wide) in paragraph at lines 174--174
 []|[][] \T1/cmbr/m/n/10.95 (-20) [4][][]| 
  []
 
 LaTeX Font Info:    Font shape `T1/cmbr/b/it' in size <10.95> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 176.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 175.
 [2]
-Overfull \hbox (1.24693pt too wide) in paragraph at lines 205--205
+Overfull \hbox (1.24693pt too wide) in paragraph at lines 204--204
 []|\T1/cmbr/m/n/10.95 (-20) Experimental| 
  []
 
 LaTeX Font Info:    Font shape `T1/cmbr/m/it' in size <9> not available
-(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 233.
+(Font)              Font shape `T1/cmbr/m/sl' tried instead on input line 232.
 [3] [4] [5] [6] 
 enddocument/afterlastpage: lastpage setting LastPage.
 (./resume-simon-gravelle.aux)
@@ -1997,8 +1997,8 @@ Package logreq Info: Writing requests to 'resume-simon-gravelle.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  44994 strings out of 474222
- 875599 string characters out of 5748733
- 1953975 words of memory out of 5000000
+ 875599 string characters out of 5748734
+ 1951975 words of memory out of 5000000
  66404 multiletter control sequences out of 15000+600000
  581344 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2011,7 +2011,7 @@ er/sfbmo10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmo9.pfb></usr/s
 hare/texmf/fonts/type1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfbmr17.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfb
 mr9.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbtl10.pfb>
-Output written on resume-simon-gravelle.pdf (6 pages, 127068 bytes).
+Output written on resume-simon-gravelle.pdf (6 pages, 127015 bytes).
 PDF statistics:
  150 PDF objects out of 1000 (max. 8388607)
  97 compressed objects within 1 object stream
